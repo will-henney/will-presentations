@@ -1,0 +1,271 @@
+#+TITLE:     Is oxygen well-mixed in the sites where it is found?
+#+AUTHOR:    William Henney
+#+EMAIL:     will@henney.org
+#+DATE:      2012-05-07 Mon
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation]
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_HEADER_EXTRA: \usepackage{will-beamer-tenerife}
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+
+
+
+
+* Preamble
+
+** Legal disclaimer
+
+The views expressed in this talk are mine alone and should not be taken as representing the views of ...
+
+*** ... either my Employer					    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+
++ Universidad Nacional Autónoma de México
+  + Centro de Radioastronomía y Astrofísica
+  + Morelia, Michoacán, México
+
+*** ... or my Collaborators					    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
++ Grazyna Stasinska (Mbeudon, France)
++ Mónica Rodríguez, Guillermo Tenorio-Tagle (INAOE, Mexico)
+
+** The flippant answer
+    :PROPERTIES:
+    :BEAMER_envargs: [<+->] 
+    :END:
+
+*** Is O well-mixed in the sites where it is found?	       :B_alertblock:
+    :PROPERTIES:
+    :BEAMER_env: alertblock
+    :END:
+  + Yes
+  + (mainly)
+  + But possibly not entirely ...
+
+
+* Plan of talk
+
+* Abundance fluctuations in HII regions and PNe
+
+** Observational support
+    :PROPERTIES:
+    :END:
++ PNe - ADF - (Liu 2002 and talk by Xuan Fang on Tuesday)
+  + Indications that \(T(\mathrm{ORL}) < T(\mathrm{Bac}) < T(\mathrm{He}) < T(\mathrm{CEL})\)
+    + @The kappa-distribution cannot explain this!@
+      + (unless we have \(\kappa^2\) fluctuations!!!)
+  + natural explanation is cool, high-metallicity clumps
++ HII - yet another explanation for the t2/ADF phenomenon
+
+** Where does the metal-rich gas come from?
+    :PROPERTIES:
+    :END:
+Different sources required in the two different classes of object
+
+
+*** Planetary nebulae						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+  + Nucleosynthesis products?
+    + Some PNe have evidence for O enrichment
+      + O-rich knots in born-again objects (Abel 70, Abel 58)
+      + O enhancement in atmospheres of PG1159 stars
+    + But unlikely to apply to most PNe (see Amanda Karakas talk on Monday)
+  + [X] Evaporation of solid bodies? 
+    + Survival of planetary systems and/or debris disks through post-MS evolutionary stages
+    + Evidence for dust disks around hot white dwarfs (Chu et al 2011)
+
+
+*** H II regions						    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+ + Evaporation of solid bodies?
+ + [X] Metal-rich droplets from galactic fountain + spray?
+
+
+
+** How can metal-rich fluctuations be preserved?
+
++ Mixing is the enemy
+  + molecular diffusion
+  + turbulence
++ Turbulence stirs up the gas
+  + reducing the spatial scale of the inhomogeneities
+  + then molecular diffusion can act to achieve true microscopic mixing
+
+
+** Advection, diffusion, sources and sinks 
+
+#+LATEX: \begin{overprint}
+
+*** Conservation equation for any quantity \(A\)		    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_envargs: <1>
+    :END:
+\[
+\frac{\partial A}{\partial t}  + \vec{\nabla} \cdot \vec{F}_A = S_A
+\]
++ \(S_A\): net \(\mathrm{sources} - \mathrm{sinks}\) of \(A\)
++ \(\vec{F}_{A}\): Flux of \(A\) (advective plus diffusive)
+  + Advective flux due to bulk velocity \(u\)
+  + Diffusive flux with diffusion coefficient \(D = v_{\mathrm{rms}}\, \lambda_{\mathrm{mfp}}\)
+
+\[\Rightarrow\) \( \vec{F}_{A} = \vec{u} A - D\, \vec{\nabla} A \]
+
+
+*** For constant diffusion coefficient:				    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_envargs: <2>
+    :END:
+\[
+\frac{\partial A}{\partial t}  =  S_A - \vec{\nabla} \cdot (A \vec{u}) + D\, \nabla^2 A
+\]
+
+#+LATEX: \end{overprint}
+
+
+** Advection/diffusion of a metallicity peak
+   :PROPERTIES:
+   :BEAMER_envargs: [c]
+   :END:
+
+[[./ipad-advection-diffusion.jpg]]
+
+ 
+* Introduction
+
+** What is mixing?
+
+*** Does mixing create or destroy inhogeneity
+
+** What scales are we talking about?
+
+
+* Inhomogeneities in HII regions
+
+** Where do inhomogeneities come from?
+
+** Mixing in the HII phase
+
+** Mixing in the HI and molecular phases
+
+* Inhomogeneities in planetary nebulae
+
+* More clear-cut cases: novae and supernovae
+
+* Mixing at Galactic scales
+
+* Conclusions
+
+
+* COMMENT Notes
+  :LOGBOOK:
+  CLOCK: [2012-05-07 Mon 09:50]--[2012-05-07 Mon 11:30] =>  1:40
+  :END:
+
+
+** Timescale table
+
+| Object           | Size (pc) | Density (pcc) | Temp (K) | D (cm^2 / s) | t_d (yr) | t_evo (yr) | Lmix (pc) |
+|------------------+-----------+---------------+----------+--------------+----------+------------+-----------|
+| Giant HII Region |       100 |            10 |      1e4 |         1e16 |   3.0e17 |        1e7 |    5.8e-4 |
+| Planetary nebula |       0.1 |           1e4 |      1e4 |         1e13 |   3.0e14 |        1e4 |    5.8e-7 |
+| Superbubble      |       100 |         0.003 |      1e6 |       3.3e24 |    9.1e8 |        1e8 |     3.3e1 |
+| Molecular cloud  |         1 |           1e4 |      100 |         1e17 |   3.0e12 |        1e7 |    1.8e-3 |
+| Proplyd          |      3e-4 |          1.e6 |      1e4 |         1e11 |   2.7e11 |        100 |    5.8e-9 |
+   #+TBLFM: $5=1e17 ($4/1.e4)**2.5 / $3 ; s2::$6=($2 $pc)**2 / $5 $yr  ; s2::$8=sqrt($5 $7 $yr) / $pc ; s2::@5$5=1e21 ($4/100) / $3 ; s2
+
+See Tenorio-Tagle (1996), Oey (2003)
+
++ Neutral case:
+  + mean free path: lambda = 1e16/n
+  + v_rms = (2 k T / m)^{1/2} = 1e5 cm/s T_2^{1/2}
+  + D = lambda v = 1e21  T_2^{1/2} / n
+
+
+** Mixing within ionized nebulae
+
+This is main focus because this is what I have worked on.  
+
+*** Can chemical inhomogeneities be sustained?
+
++ What causes the imhomogeneities in the first place?
+
++ How quickly are they wiped out?
+
+
+**** HII regions
+
++ Cloudlets from galactic fountain with spray (but see Spitoni)
+  + Mixing within superbubbles gives locally homogeneous but enhanced metallicity
+    + details?
+
+**** Planetary nebulae
+
+
+** Galactic large-scale mixing
+
+*** Spitoni et al 2009
++ http://adsabs.harvard.edu/abs/2009A%26A...504...87S
++ Effects of galactic fountains and delayed mixing in the chemical evolution of the Milky Way
++ They claim that realistic "Galactic Fountain mixing delays" (0.1 Gyr) have no effect on chemical evolution models for the Galaxy
+  + Supposedly, galactic fountains can't throw stuff much further than 1kpc away from its point of origin
+  + But the material stays up in the halo orbiting around for a while before falling back down
++ There is also the "metal cooling delay"
+  + Stars only form in cold gas, but it takes the hot gas a long time to cool
+  + This is basically the Tenorio-Tagle idea 
++ More massive present-day galaxies formed earlier in the evolution of the universe
+
+
+** Nova shells
+
+Here, mixing plays a rather different role - it actually produces the inhomogeneities, rather than destroying them.  Through KH, buoyant plumes, breaking waves, etc.
+
+But this requires a pre-existing inhomogeneity in abundances, caused by gravity (all the CO material locked in the stellar core). 
+
+*** Casanova et al 2011
++ http://adsabs.harvard.edu/abs/2011Natur.478..490C
++ Kelvin–Helmholtz instabilities as the source of inhomogeneous mixing in nova explosions
++ Nova shells at early stages always show both enriched and inhomogensous abundances
+  + e.g., threefold differences in C/He ratio between knots
++ Nova outbursts triggered by CNO reactions that make super-solar 13N 14O, 15O, 17F
++ Convection drives some of these into the envelope and their decay helps drive the expansion
++ So, the clue is in the title:
+  + KH instabilities mean that the mixing of enriched material from the core to the envelope is inhomogeneous
+  + They say that this can explain the observed dispersion in abundances seen between individual ejecta knots.  And can explain the origin of the knots themselves.
+
+
+*** Glasner and Truran 2012
++ http://adsabs.harvard.edu/abs/2012JPhCS.337a2071G
++ Novae -The study of the reactive flow
++ Recent review - a bit lightweight
++ Color image of 12C abundance during runaway, showing plumes
+
+*** Alexakis et al 2004
++ http://adsabs.harvard.edu/abs/2004ApJ...602..931A
++ ON HEAVY ELEMENT ENRICHMENT IN CLASSICAL NOVAE
++ Has breaking waves from 2d simulations
++ Then uses mixing-length theory in 1d models
+
+
+
+
+

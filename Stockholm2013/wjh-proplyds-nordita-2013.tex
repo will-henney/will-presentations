@@ -1,0 +1,689 @@
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{comment}
+
+\usepackage{pgfpages}
+\usepackage{will-beamer} 
+\usepackage{xcolor}
+\tolerance=1000
+
+\newcommand\backskip{\vspace*{-\baselineskip}}
+\newcommand\backsmallskip{\vspace*{-\smallskipamount}}
+\newcommand\backmedskip{\vspace*{-\medskipamount}}
+\newcommand\backbigskip{\vspace*{-\bigskipamount}}
+\newcommand\ha{H\(\upalpha\) 6563\,\AA}
+\newcommand\nii{[\ion{N}{2}] 6584\,\AA}
+\newcommand\oi{[\ion{O}{1}] 6300\,\AA} 
+\newcommand\sii{[\ion{S}{2}] 6716,31\,\AA}
+\newcommand\siil{[\ion{S}{2}] 6731\,\AA}
+\newcommand\siii{[\ion{S}{3}] 6312\,\AA}
+\newcommand\oiii{[\ion{O}{3}] 5007\,\AA} 
+\newcommand\Bull{\ensuremath{\bullet}}
+
+\graphicspath{ {figs/}, }
+
+\title[Proplyds and friends]{Proplyds and other photoevaporation flows in \hii{} regions}
+\author{William J. Henney}
+\date[Nordita 2013]{June 2013 \(\cdot\) Nordita, Stockholm, Sweden}
+\institute[CRyA, UNAM]
+{
+  \structure{Centro de Radioastronomía y Astrofísica\\
+  UNAM, Morelia, México}
+}
+
+\hypersetup{
+  pdfkeywords={Orion Nebula, Astrophysics, Dynamics},
+  pdfsubject={},
+  pdfcreator={Lovingly hand-crafted by the author using pdflatex and beamer}
+}
+
+
+\AtBeginSection[]
+{ 
+  \begin{frame}<beamer>
+    \frametitle{Outline of Talk}
+    \flushleft\vspace*{-1.5\baselineskip}
+    \tableofcontents[currentsubsection, hideothersubsections, sectionstyle=show/shaded]
+    \par
+  \end{frame}
+}
+
+
+
+\begin{document}
+
+\maketitle
+
+% make the figures get centered horizontally
+% Note that this has to be undone for the TOC slides (see \flushleft above)
+\centering 
+
+
+\begin{frame}
+\frametitle{Collaborators}
+\begin{block}{Theory/modelling}
+  % \begin{itemize}
+  % \item Jorge Tarango Yong -- CRyA-UNAM, Morelia, Mexico
+  % \item Nahiely Flores Fajardo -- CRyA-UNAM, Morelia, Mexico
+  % \item Jane Arthur -- CRyA-UNAM, Morelia, Mexico
+  % \end{itemize}
+  \parbox{11em}{
+  \begin{itemize}
+  \item Jorge Tarango Yong
+  \item Nahiely Flores Fajardo
+  \item Jane Arthur
+  \end{itemize}
+  }~{\LARGE \(\biggr\}\)}  -- CRyA-UNAM, Morelia, Mexico
+\end{block}
+
+\begin{block}{Observations}
+  \begin{itemize}
+  \item Adal Mesa Delgado -- Pontificia Universidad Católica, Chile
+  \item Yiannis Tsamis -- \alert{Please someone give this guy a job!}
+  \item María Teresa García-Díaz -- IA-UNAM, Ensenada, Mexico
+  \item Bob O'Dell -- Vanderbilt, US
+  \item Bob Rubin (\textdagger{} 2013-03-03) -- NASA-Ames/Orion Enterprises, US
+  \end{itemize}
+
+\end{block}
+\end{frame}
+
+\section{Introduction to proplyds}
+
+\tikzstyle{photonstyle}=[->, >=open triangle 45,
+ultra thick,  color=blue, semitransparent, 
+snake=snake, 
+segment amplitude=5pt, 
+segment length=15pt,
+line after snake=12pt]
+
+\newcommand\photons{%
+  \draw[style=photonstyle] (-140:1.0) -- (-140:4.0);
+  \draw[style=photonstyle] (-160:1.5) -- (-160:4.5);
+  \draw[style=photonstyle] (-170:2.5) -- (-170:5.5);
+}
+\newcommand\myarrow{%
+  % pinch in the upstroke
+  (0, 0) .. controls +(60:0.3) and +(-60:0.3) .. ++(80:1) 
+  % sweep back the head
+  -- ++(200:0.2) -- ++(70:0.5) -- ++(-50:0.5) -- ++(180:0.2)
+  % and curve out the downstroke
+  .. controls +(-70:0.3) and +(70:0.3) .. (0.3,-0.1) -- cycle
+  }
+
+\subsection{What is a proplyd?}
+\setbeamercovered{highly dynamic}
+\begin{frame}\frametitle{What is a proplyd?}
+
+  \begin{tikzpicture}
+    \path[use as bounding box, draw, dashed](-1, -1) rectangle (8, 3);
+    \begin{scope}[shift={(1,0.3)}, rotate=-30]
+      % disk
+      \shade[
+      scale=1.6,
+      shading=radial, inner color=green!20!black, outer color=meanbg
+      ] 
+      (165:1) arc (165:195:1) -- +(15:2) arc (15:-15:1) -- cycle;
+      % low-mass star
+      \uncover<2->{
+        \shade[ball color=red] (0, 0) circle (.2);
+      }
+      \uncover<3->{
+        \begin{scope}
+          [bottom color=meanbg, 
+          top color=red!50!black,
+          shift={(north:0.2)}]
+          \shade[shift={(-1.3,0.4)}, rotate=30] \myarrow ; 
+          \shade[shift={(-0.5,0.2)}, xslant=-0.1, rotate=15, scale=1.3] \myarrow ; 
+          \begin{scope}[xscale=-1]
+            \shade[shift={(-1.3,0.4)}, rotate=30] \myarrow ; 
+            \shade[shift={(-0.5,0.2)}, xslant=-0.1, rotate=15, scale=1.3] \myarrow ; 
+          \end{scope}
+        \end{scope}
+      }
+    \end{scope}
+    \begin{scope}[shift={(6,2.3)}]
+      \uncover<4->\photons
+      \uncover<5>{
+        \path[shade, ball color=blue!50!cyan] (0,0) circle (.4);
+      }
+    \end{scope}
+  \end{tikzpicture}
+  \bigskip
+  \begin{block}{A proplyd is \dots}
+    \dots a circumstellar disk\pause\dots around a young low-mass
+    star\pause\dots that is being evaporated\pause\dots by the ultraviolet
+    radiation\pause\dots of a nearby massive star
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Schematic cartoon of a proplyd}
+  \includegraphics[width=\linewidth]{modcart_col.pdf}
+  \par\tiny
+  \structure{Ref:}\quad 
+  [Henney \& O'Dell 1998]
+\end{frame}
+
+\begin{frame} \frametitle{Radiation from a massive star}
+
+
+  \begin{sidefig}{%
+      \includegraphics[height=0.8\textheight]{sed-graph}\quad
+      }
+      \begin{exampleblock}{FUV (6--13.6~eV)}
+        Can dissociate and heat the disk to 500--1000~K
+      \end{exampleblock}
+      \bigskip
+      \begin{alertblock}{EUV (13.6--100~eV)}
+        Can ionize and heat the disk to $\simeq 10,000$~K
+      \end{alertblock}
+      \medskip
+      \begin{alertblock}{}\tiny
+        \structure{Refs:}\quad 
+        [Pauldrach et al.\ 2001]\quad
+        \mbox{[Simón-Díaz et al.~2006]}
+      \end{alertblock}
+
+  \end{sidefig}
+\end{frame}
+
+\subsection{Mass loss}
+
+\begin{frame}{Mass loss is driven by photo-heating}
+
+  \begin{block}{Critical radius $R_\mathrm{c}$ for mass loss from the disk}
+    Substantial mass loss will occur if 
+    \[
+    R_\mathrm{d} > R_\mathrm{c} = \frac{G M_*}{2 a^2}
+    \]
+    \par
+    \begin{center}
+      \begin{tabular}{rr}
+        \structure{molecular} & 
+        \(\displaystyle
+        R_\mathrm{c} = 1270~\mathrm{AU}
+        \left(\frac{T}{100~\mathrm{K}}\right)^{-1} 
+        \left(\frac{M_*}{M_\odot}\right)
+        \) \\[1.5\bigskipamount]
+        \structure{neutral} & 
+        \(\displaystyle
+        R_\mathrm{c} = 70~\mathrm{AU}
+        \left(\frac{T}{1000~\mathrm{K}}\right)^{-1} 
+        \left(\frac{M_*}{M_\odot}\right)
+        \) \\[1.5\bigskipamount]
+        \structure{ionized} & 
+        \(\displaystyle
+        R_\mathrm{c} = 3.5~\mathrm{AU} 
+        \left(\frac{T}{10,000~\mathrm{K}}\right)^{-1} 
+        \left(\frac{M_*}{M_\odot}\right)
+        \)\\[1.5\bigskipamount]
+      \end{tabular}
+    \end{center}
+  \end{block}
+  
+  
+\end{frame}
+
+
+\begin{frame}\frametitle{The fundamental mass loss equation}
+  {\huge \(
+    \dot M = \rho \cdot u \cdot A
+    \)\quad}
+  \structure{$\rho$:} density\quad
+  \structure{$u$:} velocity\quad
+  \structure{$A$:} area
+  \bigskip
+  \begin{itemize}
+  \item Usually applied at the sonic point in the flow
+    \[ \Rightarrow u = a \]
+    where $a$ is the sound speed
+  \item For direct mass loss from disk, $A = \pi R_\mathrm{d}^2$
+  \item But what about $\rho$?
+  \end{itemize}
+  
+\end{frame}
+
+
+%% Just because we can - copied from Kjell Magne Fauske's site
+\tikzstyle{every picture}+=[remember picture]
+\everymath{\displaystyle}
+\begin{frame}
+  \frametitle{Evaporation by ionizing EUV radiation}
+
+  \renewcommand\baselinestretch{1.3}
+  \begin{exampleblock}{}\small
+    \centering
+    \structure{$Q_H$:} stellar ionizing luminosity\quad
+    \structure{$D$:} star-proplyd distance\\
+    \structure{$\alpha_B$:} recombination coefficient\quad
+    \structure{$n_p,n_e$:} proton, electron density\\
+    \structure{$\omega_i$:} dimensionless flow thickness $\simeq
+    0.1$
+  \end{exampleblock}
+  \smallskip
+  \tikzstyle{na} = [baseline=-.5ex]
+  \begin{itemize}[<+->]
+  \item Ionizing flux
+    \tikz[na] \node[coordinate] (n1) {};
+    \ 
+  \(
+  \tikz[baseline=(t1.base)]{
+    \node[fill=blue!20] (t1)
+    {$\frac{Q_H}{4 \pi D^2}$};
+  }
+  =
+  \tikz[baseline=(t2.base)]{
+    \node[fill=red!20, ellipse] (t2)
+    {$\alpha_B n_p n_e \omega_i R_d$};
+  }
+  + 
+  \tikz[baseline=(t3.base)]{
+    \node[fill=green!20, ellipse] (t3)
+    {$a_i n_p$};
+  }
+  \)
+  \item Recombinations in flow
+    \tikz[na]\node [coordinate] (n2) {};
+  \item Particle flux at ionization front
+    \tikz[na]\node [coordinate] (n3) {};
+    \begin{itemize}
+    \item<2-> only important for $R_{d, \mathrm{AU}} < 13\, D_{\mathrm{pc}}$
+    \end{itemize}
+  \end{itemize}
+  \uncover<3->{
+    \smallskip
+    \structure{\[
+      \frac{\dot M_{\mathrm{EUV}}}{M_{\odot}/\mathrm{yr}}
+      = 1.6 \times 10^{-7} 
+      \left(\frac{R_d}{50~\mathrm{AU}}\right)^{1.5} 
+      \left(\frac{D}{10^{17}~\mathrm{cm}}\right)^{-1}
+      \]}
+  }
+\bigskip
+  {\tiny
+  \structure{Refs:}\quad
+  [Dyson 1968]\quad
+  [Bertoldi 1989]\quad
+  [Henney \& Arthur 1998]
+  }
+% Now it's time to draw some edges between the global nodes. Note that we
+% have to apply the 'overlay' style.
+  \begin{tikzpicture}[overlay, very thick]
+    % The flux arrow never worked well - ditch it
+%     \path[->]<1-> (n1) edge [bend right] (t1);
+    \path[->]<2-> (n2) edge [bend right] (t2);
+    \path[->]<3-> (n3) edge [out=0, in=-90] (t3);
+  \end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}  \frametitle{Evaporation by dissociating FUV radiation}
+  
+  \begin{onlyenv}<1>
+    \begin{block}{Supercritical evaporation: $R_d > R_c$}
+      \[
+      \frac{\dot M_{\mathrm{FUV}}}{M_{\odot}/\mathrm{yr}} = 1.3\times
+      10^{-7} \left(\frac{R_d}{50~\mathrm{AU}}\right)
+      \left(\frac{a_n}{2~\mathrm{km/s}}\right)
+      \left(\frac{N_n}{10^{21}~\mathrm{cm^{-2}}}\right)
+      \]
+    \end{block}
+    \begin{exampleblock}{}
+      \structure{$N_n$:} column density of neutral flow
+    \end{exampleblock}
+    Neutral column of flow $N_n$ and sound speed at base $a_n$ must be
+    derived from PDR models, which are arguably still not mature.  
+    \begin{alertblock}{}\tiny
+      \structure{Refs:}\quad
+      [Johnstone, Hollenbach \& Bally 1998]\quad
+      [St\"orzer \& Hollenbach 1999]
+    \end{alertblock}
+  \end{onlyenv}
+  \begin{onlyenv}<2>
+    \begin{block}{Subcritical evaporation: $R_d < R_c$}
+      Flow is from disk edges
+      \smallskip
+
+      Subsonic, $\approx$ hydrostatic flow between $R_d$ and $R_c$
+      \smallskip
+
+      $\Rightarrow$ Much reduced mass loss rate:
+
+      \[
+      \dot M \propto \frac{R_c}{R_d} \exp\left(-\frac{R_c}{2 R_d}\right)
+      \]
+    \end{block}
+    \begin{alertblock}{}\tiny
+      \structure{Refs:}\quad
+      [Lamers \& Cassinelli 1999]\quad
+      [Adams, Hollenbach, Laughlin, \& Gorti 2004]\quad
+    \end{alertblock}
+  \end{onlyenv}
+
+  \begin{onlyenv}<3>
+    \begin{block}{Photon-counting limit for FUV-driven wind}
+      Suppose there is no dust and no re-association, so that each and
+      every FUV photon gets to radiatively pump a new H$_2$
+      molecule
+      \[
+      n_n a_n = 2 f_d F_{\mathrm{FUV}}  
+      \]
+      \structure{$f_d$:} fraction of H$_2$ pumpings that lead to dissociation\\
+      \structure{$F_{\mathrm{FUV}}$:} FUV photon flux $\simeq
+      F_{\mathrm{EUV}} / 1.6$ for $\theta^1\,$Ori~C
+      \[
+      \frac{\dot M_{\mathrm{FUV}}}{M_{\odot}/\mathrm{yr}} 
+      < 3\times 10^{-6} 
+      \left(\frac{R_d}{50~\mathrm{AU}}\right)^2
+      \left(\frac{D}{10^{17}~\mathrm{cm}}\right)^{-2}
+      \]
+      \tiny
+      \structure{Refs:}\quad
+      [Bertoldi \& Draine 1996] but see [Henney et al.\@ 2007] for a loophole
+    \end{block}
+  \end{onlyenv}
+
+
+\end{frame}
+
+{
+  \setbeamertemplate{background}{%
+    \includegraphics
+    [width=\paperwidth, height=\paperheight, keepaspectratio=true]
+    {Proplyd_Mdot_Revisited}
+  }
+  \begin{frame}[plain]
+%     \note{Q is very well constrained}
+  \end{frame}
+}
+{
+  \setbeamertemplate{background}{%
+    \includegraphics
+    [width=\paperwidth, height=\paperheight, keepaspectratio=true]
+    {Proplyd_Mdot_Plus_X_Rays}
+  }
+  \begin{frame}[plain]
+%     \note{Q is very well constrained}
+  \end{frame}
+}
+
+
+
+\section{Proplyd bowshocks}
+
+\subsection{Appearance and location}
+\begin{frame}{Bowshock appearance in infrared and optical}
+  \includegraphics[width=\linewidth]{Smith-MIR-Arcs}
+  \par
+  \tiny
+  \structure{Ref:}\quad 
+  [Smith et al.\@ 2005]]
+\end{frame}
+
+\begin{frame}{Location of bowshocks within the Orion Nebula}
+  \includegraphics[height=0.8\textheight]{wind-geometry}
+  \par
+  \tiny
+  \structure{Ref:}\quad 
+  [O'Dell, Henney, Abel, Ferland, \& Arthur 2007]
+\end{frame}
+
+\begin{frame}{Structure of the bowshock}
+  \includegraphics[height=0.8\textheight]{proplyd-bowshock}
+\end{frame}
+\begin{frame}{Not to be confused with\dots HH jets}
+  \includegraphics[height=0.8\textheight]{hh-bowshock}
+\end{frame}
+\begin{frame}{Nor to be confused with\dots LL objects}
+  \includegraphics[height=0.8\textheight]{LLOri-bowshock}
+\end{frame}
+
+\subsection{Wind-wind interaction models}
+
+\begin{frame}{CRW formalism}
+\begin{sidefig}{\includegraphics[height=0.7\textheight]{esquema_bowshock}}
+  \begin{block}{[Cantó, Raga, \& Wilkin 1996]}
+    \begin{itemize}
+    \item Two isotropic, non-accelerating winds
+    \item Radiative shocks
+    \item Thin shell, hypersonic approximation
+    \item Efficient mixing across contact discontinuity
+    \item Single parameter family of solutions:
+      \[
+      \beta \equiv \frac{\dot{M}\, V_\mathrm{w}}{\dot{M_1} V_\mathrm{w,1}}
+      \]
+      gives both \(R_0/D\) and \(\theta_\infty\)
+    \end{itemize}
+  \end{block}
+\end{sidefig}
+\end{frame}
+
+\begin{frame}{Third-party application of CRW models}
+  \begin{sidefig}{
+      \includegraphics[height=0.8\textheight]{Robberto_2005_R0_R90}}
+    \begin{block}{[Robberto et al.\@ 2005]}
+      \begin{itemize}
+      \item Used low-resolution MIR observations of the bowshocks
+      \item Compared with unmodified CRW models\dots
+      \item \dots and it didn't work
+      \item \emph{Not surprising, since proplyd wind is not spherically symmetric}
+      \end{itemize}
+    \end{block}
+    
+  \end{sidefig}
+\end{frame}
+
+\begin{frame}{Let's do the theory better\dots}
+\begin{sidefig}{
+  \includegraphics[height=0.8\textheight, trim=40 0 55 0, clip]{shell-test-compare}
+}
+\parbox[c]{0.4\linewidth}{
+  \includegraphics[width=\linewidth, trim=0 0 150 0, clip]{Jorge-Tarango}
+}%
+\parbox[c]{0.6\linewidth}{\centering \textit{Jorge\\ Tarango}\\[\medskipamount] \footnotesize MSc Project}
+\par
+\bigskip
+Proplyd wind has density 
+\[n(\theta) \propto \cos^{1/2}\theta\]
+Bowshock is less open than for isotropic wind at the same \(\beta\)
+\end{sidefig}
+\end{frame}
+
+\subsection{Measuring projected shapes}
+
+\begin{frame}{\dots and let's do the observations better too}
+  \includegraphics[height=0.8\textheight]{177-341-will-anota}
+\end{frame}
+
+\begin{frame}{Circular fits to the \textit{observed} projected  shapes}
+  \setkeys{Gin}{width=0.5\linewidth}
+  \centerline{
+    \only<1>{LV3 -- small asymmetry}%
+    \only<2>{LV4 -- small asymmetry}%
+    \only<3>{LV5 -- moderate asymmetry}%
+    \only<4>{HST1 -- small asymmetry}%
+    \only<5>{141-301 -- gross asymmetry -- \textit{rejected}}%
+  }
+  \begin{tabular}{@{}c@{}c@{}}
+    \includegraphics<1>{LV-bowshocks-xyfancy-onaxis-OIII3a-LV3}%
+    \includegraphics<2>{LV-bowshocks-xyfancy-onaxis-OIII3a-LV4}%
+    \includegraphics<3>{LV-bowshocks-xyfancy-onaxis-OIII3a-LV5}%
+    \includegraphics<4>{LV-bowshocks-xyfancy-onaxis-502epositions-177-341}%
+    \includegraphics<5>{LV-bowshocks-xyfancy-onaxis-OIII3a-141-301}%
+    & 
+    \includegraphics<1>{LV-bowshocks-xyfancy-OIII3a-LV3}%
+    \includegraphics<2>{LV-bowshocks-xyfancy-OIII3a-LV4}%
+    \includegraphics<3>{LV-bowshocks-xyfancy-OIII3a-LV5}%
+    \includegraphics<4>{LV-bowshocks-xyfancy-502epositions-177-341}%
+    \includegraphics<5>{LV-bowshocks-xyfancy-OIII3a-141-301}%
+    \\
+    Center constrained to star--proplyd axis &
+    Center unconstrained
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Circular fits to the \textit{theoretical} projected  shapes}
+  \setkeys{Gin}{width=0.5\linewidth}
+  \includegraphics{Bowshock-wind-plane-sky-beta-004-fit3}% 
+  \includegraphics<1>{Residual-b-004-w-45}%
+  \includegraphics<2>{Residual-b-004-w-60}%
+  \includegraphics<3>{Residual-b-004-w-90}
+  \par
+  \begin{itemize}
+  \item Best results from restricting fit to \(\lvert \theta' \rvert
+    \le 45^\circ\)
+  \item Residuals \(\ll 1\%\)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Final results}
+  \includegraphics[height=0.8\textheight]{proplyd-shell-R0-Rc-errors-1}
+\end{frame}
+
+
+\section{Modelling multiline spectroscopy of Orion proplyds}
+
+\subsection{Cloudy plus dynamics}
+\begin{frame}{Coupling Cloudy to a dynamical model}
+  \begin{itemize}
+  \item Comparison with integral field optical emission line spectrophotometry
+  \item Collaboration with \textit{Nahiely Flores Fajardo}
+  \end{itemize}
+  \bigskip
+  \begin{center}
+    \includegraphics[height=0.4\textheight]{Nahiely_and_panda}
+  \end{center}
+\end{frame}
+
+\newcommand\Max{_{\mathrm{m}}}
+\begin{frame}{Photoevaporation models}
+  \begin{itemize}
+  \item \textbf{Analytic model} for photoevaporation flow dynamics:
+    \begin{itemize}
+    \item \textbf{Sonic point} occurs at radius \(r_0\) where sound speed \(a\) is maximum: \(a\Max\)
+    \item \textbf{Subsonic} part (\textit{plane parallel}) in spirit of Henney et al.\@
+      (2005)
+      \[ u = a\Max - (a\Max^2 - a^2)^{1/2} \]
+    \item \textbf{Supersonic} part (\textit{spherical}) is in spirit of Dyson
+      (1968) with \(a \simeq a\Max\):
+      \[ r / r_0 \simeq (a\Max/u)^{1/2} \exp\left[ \left(u^2 - a\Max^2\right)/ 4 a\Max^2 \right] \] 
+    \end{itemize}
+  \item \textbf{Cloudy} is in charge of finding the ionization and temperature
+    structure \(\Rightarrow a(r)\), given a density structure found from continuity equation with above velocity laws \(u(r)\)
+  \item \textbf{Iterate} to get both sonic point and ionization front in the right place
+  \item {\tiny No advection terms in ion/thermal balance (\textit{yet}) \quad Not modelling the PDR (\textit{yet})}
+  \item \textbf{Patch together} pseudo-cylindrical proplyd from multiple 1D models
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Example results for flow structure}
+  \setkeys{Gin}{width=\linewidth}
+  \begin{center}
+    HST 10 (182-413)\quad\(\Phi_{\mathrm{H}} = 1.27 \times 10^{12} \mathrm{\
+      cm^{-2}\ s^{-1}}\)\quad \(\theta = 30^\circ\)
+  \end{center}
+  \includegraphics<1>{HST_10_structure_physical}%
+  \includegraphics<2>{HST_10_structure_ions}%
+  \includegraphics<3>{HST_10_structure_lines}
+\end{frame}
+
+\subsection{Comparison with VLT FLAMES observations}
+
+\begin{frame}{Environment of HST 10}
+  \centerline{\tiny \textbf{Ref:} [Tsamis et al.\@ 2013]}
+  \includegraphics[width=0.85\linewidth]{hst10-environment-inkscape}
+\end{frame}
+
+\begin{frame}{Line ratio comparison: HST 10, 182-413}
+  \setkeys{Gin}{height=0.8\textheight}
+  \includegraphics<1>{ratios-figure-figure0}
+  \includegraphics<2>{ratios-figure-figure1}
+\end{frame}
+
+\begin{frame}{Line ratio comparison: HST 1, 177-341}
+  \setkeys{Gin}{height=0.8\textheight}
+  \includegraphics<1>{HST_1_line_ratios_cloudy}
+  \includegraphics<2>{HST_1_line_ratios_bespoke}
+\end{frame}
+
+\begin{frame}{What observers like to do with line ratios \dots}
+  \centerline{\tiny \textbf{Ref:} [Mesa Delgado et al.\@ (2012)]}
+  \includegraphics[height=0.8\textheight]{Adal-Fig7a}
+\end{frame}
+
+\begin{frame}{\dots and why they really should not do that}
+  \centerline{\tiny \textbf{Ref:} [Mesa Delgado et al.\@ (2012)]}
+  \includegraphics[height=0.8\textheight]{ne-Te-overlay}
+\end{frame}
+
+\subsection{Velocity resolved spectrophotometry of 244-440}
+
+\begin{frame}{The Giant Proplyd, 244-440}
+  \includegraphics[height=0.65\textheight]{244-440-NHO}%
+  \includegraphics[height=0.65\textheight]{244-440-OSC}%
+  \par
+  I-front radius: \(10^{16}\) cm\quad \textit{Illuminated by two stars}
+\end{frame}
+
+
+
+\newcommand<>\OnePV[2][line]{%
+  \includegraphics#3[width=\linewidth]
+  {p84-#2-stamp-#1-stages}
+}
+
+\begin{frame}{Keck HIRES spectroscopy of the Giant Proplyd}
+  \OnePV<1>{O_III_5007}%
+  \OnePV<2>{C_II_6578}%
+  \OnePV<3>{He_I_T_5876}%
+  \OnePV<4>{He_I_S_6678}%
+  \OnePV<5>{Cl_III_5518}%
+  \OnePV<6>{Cl_III_5538}%
+  \OnePV<7>{S_III_6312}%
+  \OnePV<8>{Fe_III_4881}%
+  \OnePV<9>{Fe_III_5270}%
+  \OnePV<10>{N_II_5755}%
+  \OnePV<11>{N_II_6548}%
+  \OnePV<12>{S_II_6716}%
+  \OnePV<13>{S_II_6731}%
+  \OnePV<14>{O_I_6300}%
+  \OnePV<15>{O_I_5577}%
+  \OnePV<16>{N_I_5198}%
+  \OnePV<17>{N_I_5200}%
+  \OnePV<18>{Fe_II_5159}%
+  \OnePV<19>{Fe_II_5262}%
+  \OnePV<20>{Si_II_6347}%
+  \OnePV<21>{Si_II_6371}%
+  \OnePV<22>[doublet]{O_I_6046}%
+  \OnePV<23>[doublet]{O_I_7002}%
+\end{frame}
+
+\section{Extra stuff if we have time}
+
+\subsection{LL Ori bowshocks}
+\begin{frame}{LL Ori bowshocks}
+ \includegraphics[height=0.8\textheight]{Bowshocks_LL_and_LP_Ori}
+\end{frame}
+
+\subsection{Three-wind interactions}
+\begin{frame}{Three-wind interactions}
+  \includegraphics[height=0.8\textheight]{Three-winds}
+ \end{frame}
+
+
+
+\subsection{Slightly supersonic \hii{} regions}
+\begin{frame}{Slightly supersonic \hii{} regions}
+  \includegraphics[height=0.8\textheight]{Slightly-supersonic}
+\end{frame}
+
+
+
+\end{document}

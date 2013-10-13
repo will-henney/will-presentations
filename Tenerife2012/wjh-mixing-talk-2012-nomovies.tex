@@ -1,0 +1,717 @@
+% Created 2012-05-17 Thu 11:59
+\documentclass[presentation, compress]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{movie15}
+\usepackage{will-beamer-tenerife} 
+\graphicspath{ {../TownsvillePoster/figs/}, {../LarimTalk2010/movies/}, }
+
+\tolerance=1000
+
+\providecommand{\alert}[1]{\textbf{#1}}
+\newcommand\backskip{\vspace*{-\baselineskip}}
+\newcommand\backsmallskip{\vspace*{-\smallskipamount}}
+\newcommand\backmedskip{\vspace*{-\medskipamount}}
+\newcommand\backbigskip{\vspace*{-\bigskipamount}}
+
+\setkeys{Gin}{width=\linewidth}
+
+\renewcommand\baselinestretch{1.2}
+
+\title[Is oxygen well-mixed where it is found?]{Is oxygen well-mixed in the sites where it is found?}
+\author{William J. Henney}
+
+\institute[CRyA, UNAM]
+{
+  \structure{Centro de Radioastronomía y Astrofísica\\
+  UNAM, Morelia, México}
+}
+
+\date[Tenerife 2012]{May 2012 \(\cdot\) Mapping Oxygen in the Universe, Tenerife}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.8.06}}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Plan of the talk}
+    \tableofcontents[currentsubsection, hideothersubsections]
+  \end{frame}
+}
+
+
+\begin{document}
+
+\maketitle
+
+
+
+
+\begin{frame}
+\frametitle{Legal disclaimer}
+\label{sec-1-1}
+\footnotesize
+
+The opinions expressed in this talk are mine alone and should not be taken as representing the views of \ldots{}
+
+\medskip
+\begin{block}{\ldots{} my collaborators \ldots{}}
+\begin{itemize}
+\item Grażyna Stasińska (LUTH, Observatoire de Paris)
+\item Mónica Rodríguez \& Guillermo Tenorio-Tagle (INAOE, Puebla, Mexico)
+\item Jane Arthur \& Enrique Vázquez-Semadeni (CRyA-UNAM, Morelia, Mexico)
+\item Fabio de Colle (UC Santa Cruz, USA)
+\item Garrelt Mellema (Stockholm Observatory, Sweden)
+\end{itemize}
+\end{block}
+
+\begin{block}{\ldots{} or my employer}
+\begin{itemize}
+\item CRyA, UNAM
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The flippant answer}
+\label{sec-1-2}
+\begin{block}{Is O well-mixed in the sites where it is found?}
+\centering
+Yes\ldots \onslide<2->{(mainly)\ldots} \onslide<3>{but possibly not entirely \ldots{}}
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Talk based in part on \dots}
+  \begin{block}{\Ref{Henney \& Stasińska (2010)}}\centering
+    \bigskip
+    \includegraphics[width=0.75\linewidth]{Masthead-Henney-2010.png}
+  \end{block}
+  \begin{block}{\Ref{Stasińska et al. (2007)}}\centering
+    \bigskip
+    \includegraphics[width=0.6\linewidth]{Masthead-Stasinska-2007.png}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\dots and also on \dots}
+  \begin{block}{\Ref{Henney et al. (2009)}}\centering
+    \bigskip
+    \includegraphics[width=0.65\linewidth]{Masthead-Henney-2009.png}
+  \end{block}
+  \begin{block}{\Ref{Arthur et al. (2011)}}\centering
+    \bigskip
+    \includegraphics[width=0.65\linewidth]{Masthead-Arthur-2011.png}
+  \end{block}
+\end{frame}
+
+
+\section{Abundance fluctuations in \hii{} regions and PNe}
+\label{sec-3}
+\subsection{Observational evidence}
+\begin{frame}
+\frametitle{Evidence for metallicity fluctuations}
+
+\begin{itemize}
+\item PNe
+  \begin{itemize}
+  \item Abundance discrepancies -- ADF 
+    \begin{itemize}
+    \item \Ref{Liu (2002)}
+    \item \Ref{Talk by Xuan Fang on Tuesday}
+    \end{itemize}
+  \item Indications that \(T(\mathrm{ORL}) < T(\mathrm{Bac}) < T(\mathrm{He}) < T(\mathrm{CEL})\)
+    \begin{itemize}
+    \item \alert{The \(\kappa\)-distribution cannot easily explain this}
+    \item (unless we have \(\kappa^2\) fluctuations!!!)
+    \end{itemize}
+  \item Natural explanation is cool, high-metallicity clumps
+  \end{itemize}
+\item \hii{} regions
+  \begin{itemize}
+  \item Yet another explanation for the t\textsuperscript{2}/ADF phenomenon
+  \item Advantage is that it requires no additional energy
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\subsection{Origin and preservation}
+\begin{frame}
+\frametitle{Where does the metal-rich gas come from?}
+\label{sec-3-2}
+Different sources required in different classes of object
+\begin{overprint}
+\onslide<1>
+\begin{block}{Planetary nebulae}
+\begin{itemize}
+\item Nucleosynthesis products? \quad \alert{Probably not}
+  \begin{itemize}
+  \item Some PNe have evidence for O enrichment
+    \begin{itemize}
+    \item O-rich knots in born-again objects (Abel 70, Abel 58)
+    \item O enhancement in atmospheres of PG1159 stars
+    \end{itemize}
+  \item But unlikely to apply to most PNe (see \Ref{Amanda Karakas talk on Monday})
+  \end{itemize}
+\item Evaporation of solid bodies?  \quad \alert{Maybe}
+  \begin{itemize}
+  \item Survival of planetary systems and/or debris disks through post-MS evolutionary stages
+  \item Evidence for dust disks around hot WD \Ref{(Chu et al. 2011)}
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\onslide<2> 
+\begin{block}{\hii{} regions}
+\begin{itemize}
+\item Evaporation of solid bodies? \quad \alert{\rlap{Probably not}\textcolor{structure.fg}{/\,/\,/\,/\,/\,/\,/\,/\,/\,/\,/\,/\,/\,}\quad Possibly}
+  \begin{itemize}
+  \item Free-floating planets and planetesimals (KBOs to Jupiters)
+  \item e.g., \Ref{Strigari et al. (2011)}
+  \end{itemize}
+\item Metal-rich droplets from galactic fountain?  \quad \alert{Maybe}
+  \begin{itemize}
+  \item e.g., \Ref{Tenorio-Tagle (1996)}, \Ref{Spitoni et al. (2009)}
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\end{overprint}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{How can metal-rich fluctuations survive?}
+\label{sec-3-3}
+
+
+\begin{itemize}
+\item Mixing is the enemy
+\begin{itemize}
+\item molecular diffusion
+\item turbulence
+\end{itemize}
+\item Turbulence stirs up the gas
+\begin{itemize}
+\item reducing the spatial scale of the inhomogeneities
+\item then molecular diffusion can act to achieve true microscopic mixing
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Mixing processes}
+
+\subsection{Basic definitions}
+\begin{frame}
+\frametitle{Advection, diffusion, sources and sinks}
+\label{sec-3-4}
+
+
+\only<1>{%
+\begin{block}{Conservation equation for any quantity \(A\)}
+  \label{sec-3-4-1}
+
+  \[
+  \frac{\partial A}{\partial t}  + \vec{\nabla} \cdot \vec{F}_A = S_A
+  \]
+  
+  \begin{itemize}
+  \item \(S_A\): net \(\mathrm{sources} - \mathrm{sinks}\) of \(A\)
+  \item \(\vec{F}_{A}\): Flux of \(A\) (advective plus diffusive)
+    \begin{itemize}
+    \item Advective flux due to bulk velocity \(u\)
+    \item Diffusive flux with diffusion coefficient \(D\)
+    \end{itemize}
+    \[
+    \Rightarrow  \vec{F}_{A} = \vec{u} A - D\, \vec{\nabla} A 
+    \]
+  \end{itemize}
+  
+
+\end{block}
+}
+
+\only<2>{%
+\begin{block}{For constant diffusion coefficient:}
+  \label{sec-3-4-2}
+
+  \[
+  \begin{aligned}
+    \frac{\partial A}{\partial t} \  &=  \ \ \quad S_A \quad \ \ - \ \vec{\nabla} \cdot (A \vec{u})\quad + \quad D\, \nabla^2 A \\[\bigskipamount]
+    \begin{matrix}\mathrm{rate~of}\cr \mathrm{change}\end{matrix} \ &= \ \mathrm{sources}\  + \ \mathrm{advection}\  + \  \mathrm{diffusion}
+  \end{aligned} 
+  \]
+\end{block}
+}
+
+
+\end{frame}
+
+
+\begin{frame}[c]
+\frametitle{Advection/diffusion of a metallicity peak}
+\label{sec-3-5}
+
+\centering
+\includegraphics[width=.8\linewidth]{./ipad-advection-diffusion.jpg}
+
+ 
+\end{frame}
+
+\subsection{Molecular and turbulent diffusion}
+
+\begin{frame}
+  \frametitle{Molecular diffusion}
+  Random thermal motion of molecules/atoms/ions
+
+  \begin{description}
+  \item[Diffusion coefficient] 
+    \dotfill{} \(
+    D = u_{\mathrm{rms}}\, \lambda_{\mathrm{mfp}}
+    \)
+  \item[RMS velocity]
+    \dotfill{} \(
+    u_{\mathrm{rms}} = (2 k T / m)^{1/2}
+    \)
+  \item[Mean free path] 
+    \dotfill{} \(
+    \lambda_{\mathrm{mfp}} = 1 / (n \sigma)
+    \)
+  \end{description}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Molecular diffusion timescale}
+  
+  \begin{block}{Random walk to reach a distance \(L\)}
+    \bigskip
+    \begin{columns}
+      \column{0.6\linewidth}
+      \[
+      t_\mathrm{d} = L^2 / D
+      \]
+      \column{0.4\linewidth}
+      \includegraphics[width=0.7\linewidth]{ipad-random-walk}
+    \end{columns}
+  \end{block}
+  \begin{block}{Example}
+    O\textsuperscript{++} ions moving in a field of H\textsuperscript{+} ions
+    \[
+    \frac{t_\mathrm{d}}{\SI{1}{Myr}} \simeq 0.3
+    \left( \frac{L}{\SI{1e15}{cm}} \right)^2 
+    \left( \frac{n}{\SI{1}{cm^{-3}}} \right)
+    \left( \frac{T}{\SI{e4}{yr}}  \right)^{-5/2}
+    \]
+  \end{block}
+
+\end{frame}
+
+\newcommand\M[1]{\multicolumn{1}{@{}c}{#1}}
+\begin{frame}
+  \frametitle{Molecular diffusion timescale}
+  \setlength\tabcolsep{-0.4em}
+  \renewcommand\arraystretch{1.5}
+  \hspace*{-0.15cm}\resizebox{0.97\paperwidth}{!}{%
+  % \begin{tabular}{@{}l@{}S@{\hspace*{-1em}}S@{\,}S@{\hspace*{-6em}}S@{}S@{\hspace*{-2em}}S@{}}
+  \begin{tabular}{@{}lSS@{}S@{\hspace*{-6em}}SS@{\hspace*{-2em}}S@{}}
+\toprule
+\M{Object}           & 
+\M{\(L\ (\si{pc})\)} & 
+\M{\(n\ (\si{cm^{-3}})\)} & 
+\M{\quad \(T\ (\si{K})\)} & 
+\M{\quad \(t_\mathrm{d}\ (\si{yr})\)} & 
+\M{\quad \(t_\mathrm{evo}\ (\si{yr})\)} & 
+\M{\quad \(L_\mathrm{d}\ (\si{pc})\)} \\ \midrule
+Giant \hii{} Region &       100 &            10 &      10000 &   3.0e17 &        1e7 &    5.8e-4 \\
+Planetary nebula &       0.1 &           1e4 &      10000 &   3.0e14 &        1e4 &    5.8e-7 \\
+Superbubble      &       100 &         0.003 &      1000000 &  9.1e8 &        1e8 &     3.3e1 \\
+Molecular cloud  &         1 &           1e4 &      100 &    3.0e12 &        1e7 &    1.8e-3 \\
+Proplyd          &      3e-4 &          1e6 &      10000 &   2.7e11 &        1e2 &    5.8e-9 \\ \bottomrule
+  \end{tabular}
+  }
+  \bigskip
+  \begin{block}{Diffusion times are \emph{looooong}}
+    See also \Ref{Tenorio-Tagle (1996)}, \Ref{Oey (2003)}
+  \end{block}
+\end{frame}
+  
+
+\begin{frame}
+  \frametitle{Turbulent diffusion: dispersal vs mixing}
+  \begin{overprint}
+    \onslide<1>
+    \begin{itemize}
+    \item Assume turbulent eddies of velocity \(u_\mathrm{turb}\) and
+      size \(\ell_\mathrm{turb}\)
+    \item For times greater than the turnover time \(t >
+      \ell_\mathrm{turb} / u_\mathrm{turb} \), the turbulent diffusion
+      coefficient saturates at
+      \[
+      D_\mathrm{turb} = \ell_\mathrm{turb}\, u_\mathrm{turb}
+      \]
+      \backskip
+    \item But \(u_\mathrm{turb}\) varies with scale:
+      \begin{description}
+      \item[Kolmogorov:] \( u_\mathrm{turb} \sim \ell_\mathrm{turb}^{1/3} \) (Incompressible)
+        \smallskip
+      \item[\ \ \ \ \ \ Shocks:] \( u_\mathrm{turb} \sim \ell_\mathrm{turb}^{1/2} \) (Highly compressible)
+      \end{description}
+      \smallskip
+    \item \alert{So, which scale should we pick?}
+    \end{itemize}
+    \onslide<2>
+    \centering\null
+    \includegraphics[width=.8\linewidth]{./ipad-eddies.jpg}
+
+    \onslide<3>
+    \begin{itemize}
+    \item Mixing timescale arises from exponental stretching of fluid elements by turbulent shear \Ref{Pan \& Scalo (2007)}: 
+      \[
+      t_\mathrm{mix} \sim t_\mathrm{d, turb} \, \ln \mathcal{P}
+      \]
+      \backskip
+      \begin{itemize}
+      \item \(\mathcal{P}\) is the \alert{Péclet number} of the
+        turbulence:
+        \[
+        \mathcal{P} = D_\mathrm{turb} / D = \ell_\mathrm{turb}
+        u_\mathrm{turb} / D \gg 1
+        \]
+        \backskip
+      \item Similar to the \alert{Reynolds number}:
+        \[
+        \mathrm{Re} = \ell_\mathrm{turb} u_\mathrm{turb} / \nu \gg 1
+        \]
+        where \(\nu\) is the kinematic viscosity (diffusion
+        coefficient for momentum).
+      \end{itemize}
+    \end{itemize}
+  \end{overprint}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Turbulent diffusion: laboratory analogs}
+  \centering
+  \includegraphics[width=0.6\linewidth]{coffee-swirl}\\
+  \smallskip
+  Courtesy of \url{http://puttingweirdthingsincoffee.com}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Turbulent diffusion: numerical simulation}
+  \setkeys{Gin}{height=0.31\textwidth, keepaspectratio=true}
+  \begin{block}{SN-driven ISM \Ref{(de Avillez \& Mac Low 2002)}}
+    \bigskip
+    \begin{tabular}{@{}c@{\,}c@{\,}c@{}}
+      \includegraphics{DeAvillez-01} &
+      \includegraphics{DeAvillez-02} &
+      \includegraphics{DeAvillez-03} \\
+      \(t = \SI{0}{Myr} \) &  
+      \(t = \SI{50}{Myr} \) &  
+      \(t = \SI{126.6}{Myr} \) \\
+    \end{tabular}
+  \end{block}
+\end{frame}
+
+
+
+\section{Survival of metal-rich droplets in \hii{} regions}
+
+\subsection{Survival times}
+
+
+\begin{frame}
+  \frametitle{Survival time with no turbulence}
+  \begin{block}{Molecular diffusion}
+    Assuming \(n \simeq \SI{e4}{cm^{-3}}\) and \(T \simeq \SI{6000}{K}\) for the O-rich droplets, we obtain
+    \[
+    t_\mathrm{d} \simeq \SI{e9}{yr} \left( \frac{L}{\SI{e15}{cm}} \right)^2, 
+    \]
+    so droplets as small as \(\SI{e14}{cm}\) could survive for the entire lifetime of a typical \hii{} region. 
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Survival time \emph{with} turbulence}
+  \begin{block}{Turbulent mixing}
+    Assuming turbulent driving by transonic photoevaporation flows at scales of \(0.1\) to \(\SI{1}{pc}\), we find
+    \[
+    t_\mathrm{mix} \simeq \SI{e4}{yr} \left( \frac{L}{\SI{e15}{cm}} \right)^{1/2} \left( \frac{\ell_\mathrm{out}}{\SI{e18}{cm}} \right)^{1/2}  
+    \left( \frac{u_\mathrm{out}}{\SI{10}{km s^{-1}}} \right)^{-1}, 
+    \]
+    so turbulent mixing is efficient on timescales much smaller than the \hii{} region lifetime. 
+  \end{block}
+\end{frame}
+
+
+\subsection{Turbulence in \hii{} regions}
+
+\newlength\maxheight
+\setlength\maxheight{0.8\textheight}
+\newlength\moviewidth
+\setlength\moviewidth{0.7\textwidth}
+\begin{frame}\frametitle{Uniform magnetic medium\hfill \(0\textrm{--}2~\mathrm{Myr}\)}
+\centering
+\includemovie[label=krum, autoplay, autopause, repeat]
+{\moviewidth}{0.69875\moviewidth}{mhdcuts-B30krum-stitchup-nolabels.avi}\\\small
+\color{white!30!black}{Cold} \color{white!70!black}{neut}\color{white}{ral}
+\(\bullet\)
+\color{red!10!blue!50!white!50!black}{Warm} \color{red!10!blue!30!white}{neutral}
+\(\bullet\)
+\color{blue!80!black}{Parti}\color{green!80!black}{ally io}\color{yellow!80!black}{nized}
+\(\bullet\)
+\color{red!70!black}{Fully} \color{red!90!white}{ionized}
+\medskip
+\centerline{\Ref{Krumholz et al. (2007)} \quad \Ref{Arthur et al. (2011)}}
+\end{frame}
+
+% \begin{frame}\frametitle{Uniform magnetic medium\hfill \(2\textrm{--}7~\mathrm{Myr}\)}
+% \includemovie[label=krumx, autoplay, autopause, repeat]
+% {\textwidth}{0.69875\textwidth}{mhdcuts-B30krumx-stitchup-nolabels.avi}\\\small
+% \color{white!30!black}{Cold} \color{white!70!black}{neut}\color{white}{ral}
+% \(\bullet\)
+% \color{red!10!blue!50!white!50!black}{Warm} \color{red!10!blue!30!white}{neutral}
+% \(\bullet\)
+% \color{blue!80!black}{Parti}\color{green!80!black}{ally io}\color{yellow!80!black}{nized}
+% \(\bullet\)
+% \color{red!70!black}{Fully} \color{red!90!white}{ionized}
+% \end{frame}
+
+
+\begin{frame}
+  \frametitle{Globule: 2D simulation \quad \Ref{\small Henney et al. (2009)}}
+  \begin{columns}
+    \column{0.6\linewidth}
+    \includemovie[label=glob-2d, autoplay, autopause, repeat,
+    controls]
+    {0.9543\maxheight}{\maxheight}{hsv-xtd-bbb-cuts-s80-2d501m.avi}
+    \column{0.4\linewidth} \small
+    \begin{block}{Upper panel}
+      \color{red!70!black}{Vertical} \color{red!90!white}{field} \rotatebox{90}{\(\leftrightarrows\)}\\
+      \color{magenta!70!black}{Diagonal} \color{magenta!90!white}{field \rotatebox{45}{\(\leftrightarrows\)}}\\
+      \color{blue!70!black}{Horizontal}~\color{blue!90!white}{field~\(\leftrightarrows\)}\\
+      \color{green!70!black}{Diagonal} \color{green!90!white}{field \rotatebox{135}{\(\leftrightarrows\)}}\\
+      \color{white!60!black}{Out-of-plane} \color{white!80!black}{field
+        \scalebox{1.2}{\(\otimes~\odot\)}}\\
+      \color{white!30!black}{Weak} \color{red!30!black}{fi}\color{green!30!black}{el}\color{blue!30!black}{d}
+    \end{block}
+    \begin{block}{Lower panel}
+      \color{white!30!black}{Cold}
+      \color{white!70!black}{neut}\color{white}{ral}\\
+      \color{red!10!blue!50!white!50!black}{Warm}
+      \color{red!10!blue!30!white}{neutral}\\
+      \color{blue!80!black}{Parti}\color{green!80!black}{ally
+        io}\color{yellow!80!black}{nized}\\
+      \color{red!70!black}{Fully} \color{red!90!white}{ionized}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Globule: 3D simulation \quad \Ref{\small Henney et al. (2009)}}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \includemovie[label=glob-s80-255-side, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{rgb-NHO-s80-255-evo+350+350.avi}\\
+    \bigskip
+    \includemovie[label=glob-s80-255-top, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{rgb-NHO-s80-255-evo+010+080.avi}
+    \column{0.5\linewidth}
+    \includemovie[label=glob-s80-127-side, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{rgb-NHO-s80-127m-evo+350+350.avi}\\
+    \bigskip
+    \includemovie[label=glob-s80-127-top, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{rgb-NHO-s80-127m-evo+010+080.avi}
+  \end{columns}
+  \bigskip
+  \centerline{\color{red}{[N\,II]}\quad
+    \color{green}{H\large\bfseries\begin{greek}a\end{greek}}\quad
+    \color{blue}{[O\,III]}}
+\end{frame}
+
+
+\begin{frame}[compact]
+\frametitle{O star in a turbulent medium: the movie}
+\begin{columns}
+\column{0.65\linewidth}
+\includemovie[label=ostar-512, autoplay, autopause, controls, repeat=1]
+{\maxheight}{\maxheight}{/Users/will/Work/Fabio/Cozumel/Jane/kb512-combo.mp4}
+\column{0.35\linewidth}\small
+\begin{block}{Sequence}
+  \begin{enumerate}
+  \item Evolution\\ \(\textrm{0--50~kyr}\) 
+  \item Tumble cube\\ @ \(\textrm{50~kyr}\)
+  \item Evolution\\ \(\textrm{50--400~kyr}\)
+  \item Tumble cube\\ @ \(\textrm{400~kyr}\)
+  \end{enumerate}
+\end{block}
+\begin{block}{Color coding}
+  \color{red}{[N\,II]}\quad
+  \color{green}{\setbeamercolor{math text}{fg=green}H\(\alpha\)}\quad
+  \color{blue}{[O\,III]}
+\end{block}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{O star in a turbulent, magnetic medium}
+  \begin{columns}
+    \column{0.65\linewidth}
+    \includemovie[label=ostar, autoplay, autopause, repeat, controls]
+    {0.929\maxheight}{\maxheight}{movie-Ostar-stitchup-nolabels.avi}
+    \column{0.35\linewidth} 
+    \Ref{Arthur et al. (2011)}
+    \bigskip
+    \begin{block}{Upper panels}
+      \color{red}{[N\,II]}\quad
+      \color{green}{\setbeamercolor{math text}{fg=green}H\(\alpha\)}\quad
+      % \color{green}{H\large\bfseries\begin{greek}a\end{greek}}\quad
+      \color{blue}{[O\,III]}
+    \end{block}
+    \begin{block}{Lower panels}
+      \color{red}{FIR Cold dust}\\
+      \color{green}{MIR Warm~PAHs}\\
+      \color{blue}{Radio Free-free}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Is anywhere safe from turbulence?}
+  \begin{alertblock}{Yes!}
+    Simulations show that 10--30\% of the [\ion{O}{3}] emission comes from the base of bright photoevaporation flows, where the velocity field is \alert{ordered}. 
+  \end{alertblock}
+  \backbigskip
+  \hfill\includegraphics[width=0.6\linewidth]{ipad-photoevap}
+\end{frame}
+
+
+\section{Solid body evaporation in planetary nebulae}
+\label{sec-6}
+
+\subsection{Metal release during the PN phase}
+\begin{frame}
+  \frametitle{Size and mass constraints}
+  \begin{overprint}
+    \onslide<1>
+    \begin{block}{Destruction processes considered}
+      \begin{itemize}
+      \item EUV photosputtering (stellar CSPN continuum)
+      \item FUV photosputtering (Lyman \(\alpha\))
+      \item Sputtering by ion impact
+      \item Thermal sublimation
+      \end{itemize}
+    \end{block}
+    \onslide<2>
+    \begin{block}{The constraints that we find are very tight}
+      \begin{itemize}
+      \item The solid bodies must be meter-size or larger
+      \item The total mass of solid bodies must exceed a few hundredths of a solar mass for kilometer-sized bodies, scaling linearly with size
+      \item This applies to volatile materials such as ices. For silicates, the constraints are tighter still
+      \end{itemize}
+    \end{block} 
+    \onslide<3>
+    \begin{block}{Possible solid body populations:}
+      \begin{description}
+      \item[Planets] \alert{No} \dots Minimum mass \(\sim 1000~M_\odot\)!
+      \item[Comets] \alert{No} \dots Mass of the Oort cloud \(< 10^{-5}~M_\odot\), but we need \(\sim 0.03~M_\odot\)
+      \item[Debris disks] \alert{No} \dots Mass \(\sim 3 \times 10^{-6}~M_\odot\) but for \(a = \SI{10}{m}\) we need \(\sim 0.001~M_\odot\)
+      \end{description}
+    \end{block}
+  \end{overprint}
+\end{frame}
+
+\subsection{Metal release during the AGB phase}
+\begin{frame}
+  \frametitle{\dots but, what about the AGB phase?}
+  \begin{overprint}
+    \onslide<1>
+    \begin{block}{The Asymptotic Giant Branch phase}
+      \begin{itemize}
+      \item High luminosity -- \(10^3\) to \(10^4~L_\odot\)
+      \item Unstable He- and H-burning shells -- thermal pulses
+      \item Strong mass loss -- \(10^{-7}~M_\odot/\mathrm{year}\)
+      \item Duration \(\sim 10^6~\mathrm{years}\) -- much longer than PN phase
+      \end{itemize}
+    \end{block}
+    \begin{block}{Could comets be \emph{pre-}ablated?}
+      \begin{itemize}
+      \item Photosphere is cool -- only thermal sublimation
+      \end{itemize}
+    \end{block}
+    \onslide<2> 
+    \begin{block}{Possible observational evidence}
+      \begin{itemize}
+      \item H\(_\text{2}\)O emission from C-rich AGB star
+      \item Melnick et al.\@ (2001); Ford \& Neufeld (2001)
+      \end{itemize}
+    \end{block}
+    \begin{block}{However, you need a lot of comets around 100~AU}
+      Solar System does not have them, but are we special?
+      \begin{itemize}
+      \item Late Heavy Bombardment
+      \item Nice model
+      \end{itemize}
+    \end{block}
+    \onslide<3> 
+    \begin{block}{\dots and you don't really have a megayear to do it}
+      \vspace*{-\baselineskip}
+      \[V_{\mathrm{exp}}(\mathrm{PN}) < 6 V_{\mathrm{wind}}(\mathrm{AGB})\]
+      Most mass lost on AGB is never incorporated into PN
+    \end{block}
+    \begin{block}{Finally, mixing would kill you}
+      How can the evaporated metals be accelerated up to the AGB wind speed without also mixing them?
+    \end{block}
+  \end{overprint}
+\end{frame}
+
+\section{Conclusions}
+\label{sec-9}
+
+\begin{frame}
+  \frametitle{Conclusions}
+  \begin{overprint}
+    \onslide<1>
+    \begin{alertblock}{\hii{} regions}
+      \begin{itemize}
+      \item Sub-milliparsec--sized, moderately metal-enriched droplets are a possible
+        alternative explanation for observed \(t^2\) and ADFs
+      \item Turbulence efficiently destroys them, but they may survive long enough to contribute significantly to the observed spectrum. 
+      \end{itemize}
+    \end{alertblock}
+    \onslide<2>
+    \begin{alertblock}{Planetary nebulae}
+      \begin{itemize}
+      \item Solid body destruction during the PN phase cannot explain posited abundance fluctuations in the ionized gas
+        \begin{itemize}
+        \item The mass of the comet reservoir is unrealistically high
+        \end{itemize}
+      \item But, comet sublimation during the AGB phase could work for stars with a comet population ten times more massive than the Sun's \dots 
+        \begin{itemize}
+        \item \dots so long as mixing is inefficient 
+        \end{itemize}
+      \end{itemize}
+    \end{alertblock}
+  \end{overprint}
+\end{frame}
+
+\begin{frame}[plain]
+  \includegraphics{ipad-the-end}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,7 @@
+* Will
+** Title
+Structure and Evolution of Ionized Nebulae
+** Authors
+William Henney, Jane Arthur, Sac-Nicté Serrano Medina
+** Abstract
+We discuss the dynamics of photoionized regions around massive stars,  covering the fundamental physical processes that are important in setting ionized gas in motion: thermal pressure gradients, stellar winds, jets and other outflows, radiation pressure, magnetic fields, instabilities, turbulence.   We summarise results from recent numerical simulations of  the evolution of photoionized nebulae, which are finally reaching a level of sophistication where they can meaningfully be compared with the complex structures observed in real H II regions. 

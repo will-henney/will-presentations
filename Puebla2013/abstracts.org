@@ -1,0 +1,8 @@
+* Will
+** Title
+Dynamics of ionized gas around massive young star clusters
+** Authors
+William Henney, Jane Arthur, Sac-Nicté Serrano Medina
+** Abstract
+We discuss the dynamics of photoionized regions around massive young star clusters,  covering the fundamental physical processes that are important in setting ionized gas in motion: thermal pressure gradients, stellar winds, jets and other outflows, radiation pressure, magnetic fields, instabilities, turbulence.  We describe results from recent numerical simulations of the evolution of turbulent HII regions, and discuss to what extent the properties of the turbulence may be inferred from two-point velocity statistics derived from observations. 
+

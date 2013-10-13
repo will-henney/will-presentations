@@ -1,0 +1,31 @@
+Abstracts for O'Dell Orion Meeting - Warsaw 2012
+
+
+* Will
+** Title
+Dynamics of the Orion Nebula
+** Author
+William J. Henney
+** Affiliation
+Centro de Radioastronomía y Astrofísica, UNAM, Morelia, Mexico
+** Abstract
+I review what we know about the dynamics of photoionized regions in general and the Orion Nebula in particular.  I will cover the fundamental physical processes that are important in setting ionized gas in motion: thermal pressure gradients, stellar winds, jets and other outflows, radiation pressure, magnetic fields, instabilities, turbulence.  I will also describe results from recent numerical simulations and observations of the kinematics of the ionized gas in Orion.  Some questions that I will address are:  Why does Orion not look like a Strömgren sphere?  What is the cause of all of the structure that we see?  Does the stellar wind have any effect on the dynamics of the nebula?  When is it OK to just ignore the dynamics?
+
+* Nahiely
+
+** Title
+Ionization-hydrodynamic models of the Orion proplyds as a tool for gas-phase abundance determinations
+** Authors
++ Nahiely Flores-Fajardo
++ William J. Henney
+** Affiliation
+Centro de Radioastronomía y Astrofísica, UNAM, Morelia, Mexico
+
+** Shorter abstract (150 words)
+Proplyds are disks around young low-mass stars inside M42 photoevaporated by ultraviolet radiation from the massive Trapezium stars.  Recent spectrophotometry gives tantalizing evidence of abundance differences between proplyds and the surrounding nebula, with important implications for the evolution of protoplanetary disks.  However, proplyds are highly structured at very small scales, which must be taken into account in any abundance analysis.   We present physical models of the proplyds that combine a simplified (but realistic) treatment of the acceleration of the flow through the ionization front with a detailed calculation of the radiative transfer, ionization, and thermal balance using the CLOUDY code.  We predict the emissivity structure in multiple emission lines, together with the flux, morphology and kinematic profile of any given line. Comparison with high-resolution imaging, high-dispersion spectroscopy, and deep spectrophotometry tightly constrains the model parameters, giving abundances much more reliably than can be acheived by empirical methods.  
+
+** Abstract
+The Orion proplyds are circumstellar disks around young low-mass stars inside the Orion Nebula that are being photoevaporated by the ultraviolet radiation from the massive Trapezium stars.  Optical line emission from ionized gas in the proplyd outflows has a very high surface brightness, which makes them attractive targets for spectroscopic observations, and several recent studies have provided tantalizing evidence that the gas-phase abundances in the proplyds might be different from those in the surrounding nebula, which has important implications for the evolution of protoplanetary disks.  However, high resolution (HST and radio-interferometric) observations make it clear that the proplyds are highly structured at very small scales, and this must be taken account in any abundance analysis.   We present physical models of the proplyds that combine a simplified (but realistic) treatment of the acceleration of the flow through the ionization front with a detailed calculation of the radiative transfer, ionization, and thermal balance using the CLOUDY plasma code.  This allows us to predict the emissivity structure in multiple emission lines and to simulate the total flux, spatial morphology and kinematic profile of any given line.  By comparing simultaneously with high-resolution imaging, high-dispersion spectroscopy, and deep spectrophotometry, we can tightly constrain the model parameters and thus determine abundances much more reliably than could ever be acheived by purely empirical methods.  
+
+
+* Will

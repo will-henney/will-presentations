@@ -1,0 +1,588 @@
+\documentclass{beamer}
+\usepackage{arevtext}
+\usepackage{microtype}
+% \usepackage[origletters, varv, vari, varw]{arevmath}
+\usepackage[varv, vari, varw]{arevmath}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[draft]{movie15}
+\usepackage{upgreek,lgreek}
+\usetikzlibrary{mindmap,positioning,shadows,backgrounds,calc,shapes.geometric}
+\usetheme{WillBlack}
+\setbeamercolor{math text}{fg=orange!60!yellow}
+% \setbeamercolor{normal text in math text}{fg=normal text.fg}
+\setbeamerfont{structure}{series=\bfseries\boldmath}
+\setbeamercolor{alerted text}{fg=orange!50!red}
+\newcommand\Ref[1]{\textcolor{white!70!black!90!yellow}{#1}}
+%% global typesetting parameters
+\frenchspacing
+
+%% Talk data
+% \title{3D MHD Simulations of H\,II Region Expansion in Turbulent Molecular Clouds}
+\title{H\,II region expansion in a magnetized turbulent medium}
+\author
+{
+  William J. Henney
+}
+
+\institute[CRyA, UNAM]
+{
+  \structure{Centro de Radioastronomía y Astrofísica\\
+  UNAM, Morelia, México}
+}
+
+\date{October 2010 \(\cdot\) Rice University, Houston}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Plan}
+    \tableofcontents[currentsubsection]
+  \end{frame}
+}
+
+\DeclareMathSymbol{i}{\mathalpha}{extraitalic}{100} % uniEBE9
+
+\graphicspath{ {../TownsvillePoster/figs/}, {figs/}, }
+
+
+\setkeys{Gin}{
+  width=\linewidth, 
+  % draft
+}
+
+\newcommand\Authors{
+  William J. Henney\(^1\), S. Jane Arthur\(^1\), Fabio de Colle\(^2\), Garrelt Mellema\(^3\), Enrique Vázquez\(^1\)
+}
+
+\newcommand\Important[1]{\textbf{\LARGE #1}}
+\newcommand\EM[1]{\textbf{\emph{#1}}\color{white}}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\section{Introduction}
+
+\newlength\photowidth
+\setlength\photowidth{1.2cm}
+
+\subsection{Collaborators}
+
+
+\begin{frame}
+  \frametitle{The \boldmath\(\vec{B}\) Team}
+  \setkeys{Gin}{width=\photowidth}
+  \begin{block}{CRyA, UNAM, Morelia, Mexico}
+    William J. Henney\hfill \smash{\includegraphics[clip, trim=0 5 0 5]{people/Will_crop-1}}\hspace*{2\photowidth}~\\
+    \smallskip
+    \quad S. Jane Arthur\hfill \smash{\includegraphics[clip, trim=30 90 30 30]{people/Jane_new}}\hspace*{\photowidth}~\\
+    \smallskip
+    \quad\quad Enrique Vázquez\hfill \smash{\includegraphics[clip, trim=0 0 0 10]{people/Enrique_crop}}\\
+  \end{block}
+
+  \begin{block}{University of California, Santa Cruz}
+    Fabio de Colle\hfill \smash{\includegraphics[clip, trim=0 15 0 0]{people/Fabio_crop}}
+  \end{block}
+  \begin{block}{Stockholm Observatory, Sweden}
+    Garrelt Mellema\hfill \smash{\includegraphics[clip, trim=0 5 0 5]{people/Garrelt_crop}}\hspace*{\photowidth}~
+  \end{block}
+
+\end{frame}
+
+\subsection{Aims}
+
+\begin{frame}
+  \frametitle{Long term aims}
+  \begin{alertblock}{Increased realism in H\,II region simulations}
+  \end{alertblock}
+  \begin{block}{Already implemented}
+    \begin{itemize}
+    \item Extremely inhomogeneous and turbulent medium
+    \item Realistic microphysics
+      \begin{itemize}
+      \item FUV heating of PDR
+      \item X-ray heating of molecular gas
+      \end{itemize}
+    \item Magnetic field
+    \end{itemize}
+  \end{block}
+  \begin{columns}
+    \column{0.4\linewidth}
+    \begin{block}{In progress}
+      \begin{itemize}
+      \item Diffuse field
+      \item Stellar wind
+      \end{itemize}
+    \end{block}
+    \column{0.4\linewidth}
+    \begin{block}{TODO}
+      \begin{itemize}
+      \item Radiation pressure
+      \item Gravity
+      \end{itemize}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{But why\dots ?}
+  \begin{columns}
+    \column{0.15\linewidth}
+    \includegraphics{hiiregion-images/AGN/OsterbrockFerland}
+    \column{0.85\linewidth}
+    \begin{alertblock}{Why study H\,II regions?}
+      Isn't it all covered in Osterbrock \& Ferland?
+    \end{alertblock}
+  \end{columns}
+  \begin{columns}
+    \column{0.55\linewidth}
+    \begin{block}{Intrinsic interest}
+      \begin{itemize}
+      \item \alert<2>{Pretty pictures!}
+      \item Understand internal dynamics
+        \begin{itemize}
+        \item Transonic velocity dispersions
+        \end{itemize}
+      \item Puzzles with the microphysics
+        \begin{itemize}
+        \item Temperature fluctuations
+        \item Abundance discrepancies
+        \end{itemize}
+      \end{itemize}
+    \end{block}
+    \column{0.45\linewidth}
+    \begin{block}{Extrinsic interest}
+      \begin{itemize}
+      \item Feedback on star formation
+        \begin{itemize}
+        \item Induced SF
+        \item Suppression of SF
+        \end{itemize}
+      \item Galactic-scale feedback
+        \begin{itemize}
+        \item Supershells, galactic fountain, galactic wind
+        \end{itemize}
+      \end{itemize}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pretty pictures: observations vs theory}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \includegraphics[height=\linewidth]{hiiregion-images/astroanarchy/M8_HST_NoStars-crop}\\
+    \tiny
+    \smallskip
+    Lagoon Nebula, M8, \copyright\, J-P Metsavainio\\ \url{http://astroanarchy.blogspot.com/}
+    \column{0.5\linewidth}
+    \includegraphics[height=\linewidth]{hiiregion-images/fake/kb512-like-lagoon-usm}\\
+    \tiny
+    \smallskip
+    \alert{Not} the Lagoon Nebula\\
+    \Ref{Mellema et al. (2006)}; \Ref{Henney et al. (2011)}
+  \end{columns}
+\end{frame}
+
+\section{Non-magnetic turbulent HII region evolution}
+
+\subsection{Parameters}
+\begin{frame}\frametitle{O star in a turbulent medium: parameters}
+\linespread{1.3}\selectfont
+\begin{itemize}
+\item $512^3$ radiation-hydrodynamics simulation
+\item Initial conditions (\Ref{V\'azquez-Semadeni et al. 2005}):
+\begin{itemize}
+  \item $\langle n_0 \rangle = 1000~\mathrm{cm}^{-3}$; $T_0 \simeq 5~\mathrm{K}$
+  \item Driven turbulence. Mach number $M_\mathrm{rms} = 10$
+  \item Box size, $L = 4~\mathrm{pc}$. Jeans length, $L_\mathrm{J} = 4~\mathrm{pc}$ 
+  \item 1 massive collapsing object (\(> 100 M_\odot\))
+\end{itemize}
+\item Ionizing source:
+\begin{itemize}
+  \item $T_* = 37000~\mathrm{K}$; $Q_\mathrm{H} = 10^{48.5}~\mathrm{s}^{-1}$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\newlength\maxheight
+\setlength\maxheight{0.8\textheight}
+
+\subsection{Results}
+\begin{frame}[compact]
+\frametitle{O star in a turbulent medium: the movie}
+\begin{columns}
+\column{0.7\linewidth}
+\includemovie[label=ostar-512, autopause, controls, repeat=1]
+{\maxheight}{\maxheight}{movies/kb512-combo.avi}
+\column{0.3\linewidth}
+\begin{block}{Sequence}
+  \begin{enumerate}
+  \item Evolution\\ \(\textrm{0--50~kyr}\) 
+  \item Tumble cube\\ @ \(\textrm{50~kyr}\)
+  \item Evolution\\ \(\textrm{50--400~kyr}\)
+  \item Tumble cube\\ @ \(\textrm{400~kyr}\)
+  \end{enumerate}
+\end{block}
+\begin{block}{Color coding}
+  \color{red}{[N\,II]}\quad
+  \color{green}{H\large\bfseries\begin{greek}a\end{greek}}\quad
+  \color{blue}{[O\,III]}
+\end{block}
+\end{columns}
+\end{frame}
+
+
+\subsection{But is it right to ignore the magnetic field?}
+
+
+\begin{frame}
+  \frametitle{But what about the magnetic field?}
+  \begin{alertblock}{Last refuge of the \(\vec{B}\)-free heresy?}
+    H\,II regions are the only places in the Galaxy with a chance to
+    escape the tyranny
+    of magnetic fields\dots\par\centering
+    \includegraphics[width=0.8\linewidth]{myers-1978-fig1}\\
+    \Ref{Myers (1978)}
+  \end{alertblock}
+\end{frame}
+
+
+\section{Magnetic HII regions}
+
+\subsection{Methods}
+
+\begin{frame}
+  \frametitle{Implementation details}
+  \begin{itemize}
+  \item \structure{Magnetohydrodynamics}
+    \begin{itemize}
+    \item Ideal MHD
+    \item Upwind Godunov method \Ref{(De Colle \& Raga 2006)}
+    \item \(\nabla \cdot \mathbf{B} = 0\): constrained transport \Ref{(Tóth 2000)}
+    \item Entropy fix: \Ref{(Balsara \& Spicer 1999)}
+    \item Boundary conditions: outflow/inflow or reflective
+    \end{itemize}
+  \item \structure{Radiative transfer and ionization}
+    \begin{itemize}
+    \item Short characteristics
+    \item C\textsuperscript{2}-Ray method \Ref{(Mellema et al.\ 2006)}
+    \end{itemize}
+  \item \structure{Heating/Cooling}
+    \begin{itemize}
+    \item Ionized gas: simple \Ref{(Osterbrock \& Ferland 2006)}
+    \item Neutral gas: not so simple \dots
+    \end{itemize}
+  \item \structure{Paralellization}
+    \begin{itemize}
+    \item Open-MP
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Heating in the neutral gas}
+  \begin{block}{Ultraviolet luminosity of star clusters}
+    \centering
+    \Ref{Fatuzzo \& Adams 2008}\medskip
+    \begin{columns}
+      \column{0.5\linewidth}\centering
+      \includegraphics{fatuzzo_L_euv-black}\\
+      Ionizing
+      \column{0.5\linewidth}\centering
+      \includegraphics{fatuzzo_L_fuv-black}\\
+      Non-ionizing
+    \end{columns}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}\frametitle{\mbox{Uniform magnetic medium: parameters}}
+  \linespread{1.2}\selectfont
+  Following \Ref{Krumholz, Stone, \& Gardiner (2007)}
+  \begin{itemize}
+  \item Start simple\dots~uniform medium
+    \begin{itemize}
+    \item $n_0 = 100~\mathrm{cm^{-3}}$; $T_0 = 11~\mathrm{K}$
+    \item $B = 14.2 \mu\mathrm{G}$
+    \item $L = 20~\mathrm{pc}$ (or $40~\mathrm{pc}$)
+    \end{itemize}
+  \item Ionizing source
+    \begin{itemize}
+    \item $Q_H = 4.\times 10^{46}~\mathrm{s}^{-1}$ (\alert{weak!})
+    \end{itemize}
+  \end{itemize}
+\begin{block}{Color coding for following movies}\small
+  \structure{Top panels}\\
+  \medskip
+  \begin{columns}
+    \column{0.28\linewidth}
+    \color{red!70!black}{Vertical} \color{red!90!white}{field} \rotatebox{90}{\(\leftrightarrows\)}\\
+    \color{magenta!70!black}{Diagonal} \color{magenta!90!white}{field \rotatebox{45}{\(\leftrightarrows\)}}\\
+    \column{0.3\linewidth}
+    \color{blue!70!black}{Horizontal} \color{blue!90!white}{field \(\leftrightarrows\)}
+   \color{green!70!black}{Diagonal} \color{green!90!white}{field \rotatebox{135}{\(\leftrightarrows\)}}\\
+    \column{0.35\linewidth}
+    \hbox{\color{white!60!black}{Out-of-plane} \color{white!80!black}{field
+      \scalebox{1.2}{\(\otimes~\odot\)}}}\\
+    \color{white!30!black}{Weak} \color{red!30!black}{fi}\color{green!30!black}{el}\color{blue!30!black}{d}
+  \end{columns}
+  \bigskip
+  \structure{Bottom panels}\\
+  \color{white!30!black}{Cold} \color{white!70!black}{neut}\color{white}{ral}
+    \(\bullet\)
+    \color{red!10!blue!50!white!50!black}{Warm} \color{red!10!blue!30!white}{neutral}
+    \(\bullet\)
+    \color{blue!80!black}{Parti}\color{green!80!black}{ally io}\color{yellow!80!black}{nized}
+    \(\bullet\)
+    \color{red!70!black}{Fully} \color{red!90!white}{ionized}
+\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Uniform magnetic medium\hfill \(0\textrm{--}2~\mathrm{Myr}\)}
+\includemovie[label=krum, autoplay, autopause, repeat]
+{\textwidth}{0.69875\textwidth}{movies/mhdcuts-B30krum-stitchup-nolabels.avi}\\\small
+\color{white!30!black}{Cold} \color{white!70!black}{neut}\color{white}{ral}
+\(\bullet\)
+\color{red!10!blue!50!white!50!black}{Warm} \color{red!10!blue!30!white}{neutral}
+\(\bullet\)
+\color{blue!80!black}{Parti}\color{green!80!black}{ally io}\color{yellow!80!black}{nized}
+\(\bullet\)
+\color{red!70!black}{Fully} \color{red!90!white}{ionized}
+\end{frame}
+\begin{frame}\frametitle{Uniform magnetic medium\hfill \(2\textrm{--}7~\mathrm{Myr}\)}
+\includemovie[label=krumx, autoplay, autopause, repeat]
+{\textwidth}{0.69875\textwidth}{movies/mhdcuts-B30krumx-stitchup-nolabels.avi}\\\small
+\color{white!30!black}{Cold} \color{white!70!black}{neut}\color{white}{ral}
+\(\bullet\)
+\color{red!10!blue!50!white!50!black}{Warm} \color{red!10!blue!30!white}{neutral}
+\(\bullet\)
+\color{blue!80!black}{Parti}\color{green!80!black}{ally io}\color{yellow!80!black}{nized}
+\(\bullet\)
+\color{red!70!black}{Fully} \color{red!90!white}{ionized}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Uniform magnetic medium: summary}
+  \linespread{1.3}\selectfont
+  \begin{itemize}
+  \item Neutral shell and ionization front distorted\\ at late times
+  \item Ionization front instabilities form around ``waist'' (parallel field)
+  \item Low velocity recombination flow out of poles
+  \end{itemize}
+  \begin{alertblock}{Heretics repent their errors in old age\dots}
+    \rightline{\dots if they are weak}
+  \end{alertblock}
+\end{frame}
+\begin{frame}{Isolated magnetic globule}
+  \only<1>{\includegraphics{globule/Globule-Structure-New}\\
+    \Ref{Henney et al. (2009)}}%
+  \only<2>{\includegraphics[angle=90,width=\linewidth]{carina-finger-detail}\\
+    \Ref{Smith, Barbá, \& Walborn (2004)}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Isolated magnetic globule: parameters}
+  All models are identical \emph{apart} from the magnetic field
+  \begin{block}{Globule}
+    \smallskip
+    $R_0 = 0.2~\mathrm{pc}$ \quad $n_0 = 10^4~\mathrm{cm}^{-3}$ \quad
+    $T_0 = 10~\mathrm{K}$ \quad $M_0 \simeq 15~M_\odot$
+  \end{block}
+  \begin{block}{Environment}
+    \begin{description}
+      \item[Gas]\quad $n_\mathrm{env} = 100~\mathrm{cm}^{-3}$ \quad $T_\mathrm{env} = 1000~\mathrm{K}$\\
+      \item[Star]\quad $Q_\mathrm{H} = 10^{49}~\mathrm{s}^{-1}$ @ $D = 0.5~\mathrm{pc}$
+    \end{description}
+  \end{block}
+  \begin{block}{Magnetic field}
+    \begin{description}
+    \item[Zero]\quad $B = 0$\quad $\beta_0 = \infty$ 
+    \item[Weak]\quad $B = 59~\mu\mathrm{G}$\quad $\beta_0 = 0.1$\quad $\beta_\mathrm{zap} = 200.0$ 
+    \item[Strong]\quad $B = 186~\mu\mathrm{G}$\quad $\beta_0 = 0.01$\quad $\beta_\mathrm{zap} = 20.0$ 
+    \end{description}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Isolated magnetic globule: 2D simulation}
+  \begin{columns}
+    \column{0.7\linewidth}
+    \includemovie[label=glob-2d, autoplay, autopause, repeat,
+    controls]
+    {0.9543\maxheight}{\maxheight}{movies/hsv-xtd-bbb-cuts-s80-2d501m.avi}
+    \column{0.3\linewidth} 
+    \begin{block}{Upper panel}
+      \color{red!70!black}{Vertical} \color{red!90!white}{field} \rotatebox{90}{\(\leftrightarrows\)}\\
+      \color{magenta!70!black}{Diagonal} \color{magenta!90!white}{field \rotatebox{45}{\(\leftrightarrows\)}}\\
+      \color{blue!70!black}{Horizontal}~\color{blue!90!white}{field~\(\leftrightarrows\)}\\
+      \color{green!70!black}{Diagonal} \color{green!90!white}{field \rotatebox{135}{\(\leftrightarrows\)}}\\
+      \color{white!60!black}{Out-of-plane} \color{white!80!black}{field
+        \scalebox{1.2}{\(\otimes~\odot\)}}\\
+      \color{white!30!black}{Weak} \color{red!30!black}{fi}\color{green!30!black}{el}\color{blue!30!black}{d}
+    \end{block}
+    \begin{block}{Lower panel}
+      \color{white!30!black}{Cold}
+      \color{white!70!black}{neut}\color{white}{ral}\\
+      \color{red!10!blue!50!white!50!black}{Warm}
+      \color{red!10!blue!30!white}{neutral}\\
+      \color{blue!80!black}{Parti}\color{green!80!black}{ally
+        io}\color{yellow!80!black}{nized}\\
+      \color{red!70!black}{Fully} \color{red!90!white}{ionized}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Isolated magnetic globule: 3D simulation}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \includemovie[label=glob-s80-255-side, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{movies/rgb-NHO-s80-255-evo+350+350.avi}\\
+    \bigskip
+    \includemovie[label=glob-s80-255-top, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{movies/rgb-NHO-s80-255-evo+010+080.avi}
+    \column{0.5\linewidth}
+    \includemovie[label=glob-s80-127-side, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{movies/rgb-NHO-s80-127m-evo+350+350.avi}\\
+    \bigskip
+    \includemovie[label=glob-s80-127-top, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{movies/rgb-NHO-s80-127m-evo+010+080.avi}
+  \end{columns}
+  \bigskip
+  \centerline{\color{red}{[N\,II]}\quad
+    \color{green}{H\large\bfseries\begin{greek}a\end{greek}}\quad
+    \color{blue}{[O\,III]}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Isolated magnetic globule: summary}
+  \linespread{1.3}\selectfont
+  \begin{enumerate}
+  \item Magnetic field in globule must be rather strong ($\beta_0 \le
+    0.01$) in order to significantly effect globule evolution
+    \begin{itemize}
+    \item distort globule shape
+    \item counteract rocket effect
+    \item confine ionized flow $\Rightarrow$ late-time recombination
+    \end{itemize}
+  \item B-field geometry in ionized flow depends only weakly on
+    initial orientation
+    \begin{itemize}
+    \item preceding slow-mode shock efficiently orients field $\perp$ i-front
+    \item ionized flow is thermally dominated
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{O star in a turbulent, magnetic medium}
+  \begin{columns}
+    \column{0.7\linewidth}
+    \includemovie[label=ostar, autoplay, autopause, repeat, controls]
+    {0.929\maxheight}{\maxheight}{movies/movie-Ostar-stitchup-nolabels.avi}
+    \column{0.3\linewidth} 
+    \begin{block}{Upper panels}
+      \color{red}{[N\,II]}\quad
+      \color{green}{H\large\bfseries\begin{greek}a\end{greek}}\quad
+      \color{blue}{[O\,III]}
+    \end{block}
+    \begin{block}{Lower panels}
+      \color{red}{FIR Cold dust}\\
+      \color{green}{MIR Warm~PAHs}\\
+      \color{blue}{Radio Free-free}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{B star in a turbulent, magnetic medium}
+  \begin{columns}
+    \column{0.7\linewidth}
+    \includemovie[label=bstar, autoplay, autopause, repeat, controls]
+    {0.929\maxheight}{\maxheight}{movies/movie-Bstar-stitchup-nolabels.avi}
+    \column{0.3\linewidth} 
+    \begin{block}{Upper panels}
+      \color{red}{[S\,II]}\quad
+      \color{green}{[N\,II]}\quad
+      \color{blue}{H\large\bfseries\begin{greek}a\end{greek}}
+    \end{block}
+    \begin{block}{Lower panels}
+      \color{red}{FIR Cold dust}\\
+      \color{green}{MIR Warm~PAHs}\\
+      \color{blue}{Radio Free-free}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Turbulent, magnetic medium: summary}
+  \linespread{1.3}\selectfont
+  \begin{itemize}
+  \item The global evolution of an HII region in a \textit{turbulent
+      medium} is not changed by 
+    realistic magnetic field levels \textit{\alert{for the time- and
+        size scales we are looking at}}.
+  \item But\dots 
+    the shape of the HII region is more regular when the B-field is included.
+  \item At small scales, the magnetic field
+    reduces the efficiency of fragmentation of the molecular gas by impeding
+    radiation-driven implosion and the formation of globules.
+  \end{itemize}
+\end{frame}
+
+\section{Conclusions}
+
+\begin{frame}
+  \frametitle{Conclusions -- Future work}
+  \begin{alertblock}{\hspace*{0.25\linewidth} Still much to do!}
+  \end{alertblock}
+  \begin{columns}
+    \column{0.6\linewidth}
+    \begin{block}{\hbox{Push down to smaller scales}}
+      \begin{itemize}
+      \item Utracompact H\,II regions
+      \item Proplyds
+      \end{itemize}
+    \end{block}
+    \begin{block}{Push out to larger scales}
+      \begin{itemize}
+      \item Richer clusters
+        \begin{itemize}
+        \item 30~Dor
+        \end{itemize}
+      \item Galactic scale 
+        \begin{itemize}
+        \item WMAP sources 
+        \end{itemize}
+      \end{itemize}
+    \end{block}
+
+    \column{0.4\linewidth}
+    \begin{block}{More physics}
+      \begin{itemize}
+      \item (Self) gravity
+      \item Better microphysics
+      \item Stellar winds
+      \item Radiation pressure
+      \end{itemize}
+    \end{block}
+    \begin{block}{Observations}
+      \begin{itemize}
+      \item Faraday Rotation
+        \begin{itemize}
+        \item E-VLA
+        \end{itemize}
+      \end{itemize}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\end{document}

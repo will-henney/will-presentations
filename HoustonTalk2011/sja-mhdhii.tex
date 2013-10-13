@@ -1,0 +1,652 @@
+\documentclass
+[
+%compress, notes=only
+]
+{beamer}
+%\usetheme{Jane2}
+\usetheme{Jane2}
+
+\usecolortheme[rgb={0.2,0.3,0.75}]{structure}
+
+%\usetheme{Jane1}
+%\setkeys{Gin}{width=\linewidth, height=0.8\textheight, keepaspectratio=true}
+%% LOCALIZATION
+\usepackage[spanish]{babel}\decimalpoint % spanish hyphenization
+\usepackage[latin1]{inputenc}
+
+%% FONTS
+\usepackage[mtbold]{mathtime}
+
+%% GRAPHICS
+\usepackage{graphicx,color}
+\graphicspath{
+   {/home/jane/MHDHII/RESUBMIT/PACKAGE/},
+   {/home/jane/MHDHII/TALKMEX/},
+   {/home/jane/IAU270/TALK/}
+}
+
+%% MOVIES
+\usepackage{movie15}
+
+%% DOCJUMP to get round too many videos problem
+\usepackage{docjump}
+
+%% tikz package for more graphics flexibility
+\usepackage{tikz,pgf}
+
+%% PERSONAL
+\newcommand\red{\textcolor{red}}
+\newcommand\green{\textcolor{green}}
+\newcommand\darkgreen{\textcolor{green!85!black}}
+\newcommand\blue{\textcolor{blue}}
+\newcommand\darkblue{\textcolor{blue!85!black}}
+\newcommand\white{\textcolor{white}}
+
+%% FRONTMATTER
+\title[3D MHD Simulations of Turbulent HII Regions] % (optional\, use only with long paper titles)
+{\Large 3D MHD Simulations of HII Region Expansion in Turbulent Molecular Clouds}
+
+\author{Jane Arthur}
+
+\institute[CRyA-UNAM] % (optional, but mostly needed)
+{
+  Centro de Radioastronom\'{\i}a y Astrof\'{\i}sica\\
+  Universidad Nacional Aut\'{o}noma de M\'exico\\
+  Campus Morelia
+}
+\date[IAUNAM/INAOE] % (optional, should be abbreviation of conference name)
+{23-25 marzo 2011, IAUNAM y INAOE}
+%{\includegraphics{14sncyt.jpg}}
+\subject{Astrophysics}
+
+%\AtBeginSection[] % Do nothing for \section*
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Esquema}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
+
+\defbeamertemplate{background canvas}{my bg}[1]{\includegraphics[height=\paperheight]{#1}}
+\begin{document}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{blocks}{rounded}[shadow=false]
+
+\newlength\movieheight
+\setlength\movieheight{0.9\textheight}
+\newlength\moviewidth
+\setlength\moviewidth{1.1996\textheight}
+\newlength\maxheight
+\setlength\maxheight{0.8\textheight}
+
+
+\newcommand\mymovie[1]{%
+  \setkeys{Gin}{height=\movieheight}
+  \includemovie
+  [
+  autoplay,
+  autopause,
+  repeat
+%  controls,
+%   text=\includegraphics{#1-0001.png},
+  ]
+  {\moviewidth}{\movieheight}{#1}
+}
+
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+  \titlepage
+%\centering
+%\centerline{\includegraphics[width=\textwidth]{iau270}}
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\centerline{\Large \white{The Team}}
+\vspace*{0.03\textheight}
+\begin{columns}
+\column{0.33\linewidth}
+\centerline{\white{Jane Arthur}}
+\vspace*{0.005\textheight}
+
+\centerline{\includegraphics[width=0.6\textwidth]{Jane_crop}}
+\column{0.33\linewidth}
+\centerline{\white{Will Henney}}
+\vspace*{0.005\textheight}
+
+\centerline{\includegraphics[width=0.6\textwidth]{Will_crop}}
+\centerline{\white{Fabio De Colle}}
+\vspace*{0.005\textheight}
+
+\centerline{\includegraphics[width=0.6\textwidth]{Fabio_crop}}
+\column{0.33\linewidth}
+\centerline{\white{Garrelt Mellema}}
+\vspace*{0.005\textheight}
+
+\centerline{\includegraphics[width=0.6\textwidth]{Garrelt_crop}}
+\centerline{\white{Enrique V\'azquez}}
+\vspace*{0.005\textheight}
+
+\centerline{\includegraphics[width=0.6\textwidth]{Enrique_crop}}
+\end{columns}
+\end{frame}
+}
+%%THE MONEY SHOT
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\centering
+\centerline{\includegraphics[height=0.9\textheight]{movie-Ostar-stitchup-nolabels-019}}
+%put movie in here
+\end{frame}
+}
+%CODE DEVELOPMENT
+%%(MAGNETO)HYDRODYNAMICS
+%%RADIATIVE TRANSFER
+%%HEATING AND COOLING
+%%INITIAL CONDITIONS
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{\large C\'ODIGO NUM\'ERICO}
+\vfill
+\centering
+\begin{itemize}
+\item<1-> Magnetohidrodin\'amica
+\begin{itemize}
+\item<2->\blue{MHD ideal}
+\item<2->\blue{M\'etodo Godunov \textit{upwind} [De Colle \& Raga 2006]}
+\item<2->\blue{$\nabla \cdot \mathbf{B} = 0$: transporte restringido
+  [T\`oth 2000]}
+\item<4->\darkgreen{\textit{Entropy Fix} [Balsara \& Spicer 1999]}
+\item<4->\darkgreen{Condiciones de frontera}
+\item<5->\red{Variables centradas}
+\end{itemize}
+\vfill
+\item<1-> Transferencia Radiativa
+\begin{itemize}
+\item<3->\blue{M\'etodo C$^2$-Ray: [Mellema et al.\ (2006)]}
+\end{itemize}
+\vfill
+\item<1-> Enfriamiento y Calentamiento
+\vfill
+\item<1-> Condiciones iniciales
+\vfill
+\item<1-> Paralelizado con Open-MP
+\vfill
+\end{itemize}
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{\large ENFRIAMIENTO Y CALENTAMIENTO EN EL GAS NEUTRO}
+\vfill
+\centering
+\begin{itemize}
+\item<1->Enfriamiento
+ \begin{itemize}
+\item<2->\blue{L\'{\i}neas excitadas por colisiones}
+\item<2->\blue{de iones, \'atomos o mol\'eculas }
+  \end{itemize}
+\vfill
+\item<1->Calentamiento
+\begin{itemize}
+     \item<3->\red{ absorpci\'on de luz estelar EUV por gas ionizado y polvo}
+     \item<3->\red{ absorpci\'on de luz estelar FUV por gas neutro y polvo}
+     \item<3->\red{ absorpci\'on de luz estelar rayos X por gas molecular y polvo }
+  \end{itemize}
+\end{itemize}
+\vfill
+\end{frame}
+}
+%\end{document}
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{\large ENFRIAMIENTO EN EL GAS NEUTRO}
+\vfill
+\centering
+\centerline{\includegraphics[width=0.95\textwidth]{plot-pdr-cool}}
+\vfill
+\centerline{Ajustes a modelos de Cloudy [Henney et al.\ 2009]}
+\vfill
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{\large CALENTAMIENTO EN EL GAS NEUTRO}
+\vfill
+\centering
+\centerline{\includegraphics[height=0.9\textheight]{nicmosorioncluster}}
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{\large CALENTAMIENTO EN EL GAS NEUTRO}
+\vfill
+\centering
+\centerline{\includegraphics[width=0.45\textwidth]{fatuzzo_L_euv}~%
+\includegraphics[width=0.45\textwidth]{fatuzzo_L_fuv}}
+\vfill
+\centerline{Distribuciones de flujos EUV y FUV para c\'umulos de
+  estrellas}
+\centerline{[Fatuzzo \& Adams 2008]}
+\vfill
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{\large CALENTAMIENTO EN EL GAS NEUTRO}
+\vfill
+\centering
+\centerline{\includegraphics[width=0.95\textwidth]{plot-pdr-heat}}
+\vfill
+\centerline{Ajustes a modelos de Cloudy [Henney et al.\ 2009]}
+\vfill
+\end{frame}
+}
+%TEST PROBLEMS
+%%UNIFORM MEDIUM HD
+%{
+%\setbeamercolor{background canvas}{bg=green}
+%\begin{frame}[plain]
+%  \includegraphics[height=\textheight]{radii_vs_t_unif-weak-zerob-256}
+%\end{frame}
+
+%\begin{frame}[plain]
+%  \includegraphics[height=\textheight]{velocities_vs_t_unif-weak-zerob-256}
+%\end{frame}
+%}
+%%UNIFORM MEDIUM MHD
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{PROBLEMAS DE PRUEBA}
+\vfill
+\centering
+\begin{itemize}
+\item<1->Expansi\'on de una regi\'on H\,{\sc ii} en un medio uniforme
+\vfill
+\item<1->Expansi\'on MHD de una regi\'on H\,{\sc ii} en un medio
+  uniforme
+\begin{itemize}
+\item<-2>Par\'ametros de Krumholz et al.\ [2007]
+\item<-2>$n_0 = 100$~cm$^{-3}$; $T_0 = 11$~K;\\ $B_0 = 14.2\,\mu$G;
+  $Q_\mathrm{H} = 4\times10^{46}$~s$^{-1}$
+\end{itemize}
+\end{itemize}
+\vfill
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\centering
+  \includegraphics[width=0.95\textwidth]{mhdcuts-B30krum-stitchup-nolabels-020}
+%movie in here
+\end{frame}
+\begin{frame}[plain]
+\centerline{\color{white}{Medio magn\'etico uniforme\hfill \(0\textrm{--}2~\mathrm{Myr}\)}}
+\vfill
+\includemovie[label=krum, autoplay, autopause, repeat]
+{\textwidth}{0.69875\textwidth}{movies/mhdcuts-B30krum-stitchup-nolabels.avi}\\\small
+\color{white!30!black}{Cold} \color{white!70!black}{neut}\color{white}{ral}
+\(\bullet\)
+\color{red!10!blue!50!white!50!black}{Warm} \color{red!10!blue!30!white}{neutral}
+\(\bullet\)
+\color{blue!80!black}{Parti}\color{green!80!black}{ally io}\color{yellow!80!black}{nized}
+\(\bullet\)
+\color{red!70!black}{Fully} \color{red!90!white}{ionized}
+\end{frame}
+\begin{frame}[plain]
+\centering
+  \includegraphics[width=0.95\textwidth]{mhdcuts-B30krumx-stitchup-nolabels-060}
+%movie in here
+\end{frame}
+\begin{frame}[plain]
+\centerline{\color{white}{Medio magn\'etico uniforme\hfill
+  \(2\textrm{--}7~\mathrm{Myr}\)}}
+\vfill
+\includemovie[label=krumx, autoplay, autopause, repeat]
+{\textwidth}{0.69875\textwidth}{movies/mhdcuts-B30krumx-stitchup-nolabels.avi}\\\small
+\color{white!30!black}{Cold} \color{white!70!black}{neut}\color{white}{ral}
+\(\bullet\)
+\color{red!10!blue!50!white!50!black}{Warm} \color{red!10!blue!30!white}{neutral}
+\(\bullet\)
+\color{blue!80!black}{Parti}\color{green!80!black}{ally io}\color{yellow!80!black}{nized}
+\(\bullet\)
+\color{red!70!black}{Fully} \color{red!90!white}{ionized}
+\end{frame}
+}
+%\begin{frame}[plain]
+%  \includegraphics[height=\textheight]{radii_vs_t_krum}
+%\end{frame}
+%\begin{frame}[plain]
+%  \includegraphics[height=\textheight]{velocities_vs_t_krum}
+%\end{frame}
+
+%HII REGION IN TURBULENT MAGNETIZED MEDIUM
+%%MORPHOLOGIES AND IMAGES
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{EXPANSI\'ON MHD DE UNA REGI\'ON H~II EN UN MEDIO TURBULENTO}
+\vfill
+\centerline{Condiciones iniciales: V\'azquez-Semadeni et al.\ [2005]}
+\vfill
+\begin{itemize}
+    \item<1-> Simulaci\'on turbulenta MHD independiente de escala
+  \begin{itemize}
+  \item<2-> \blue{  $M_\mathrm{iso} = \sigma/c = 10$; \\$J = L/L_\mathrm{j} = 4$;\\
+    $\beta = P_\mathrm{ter}/P_\mathrm{mag} = 0.1$ inicialmente}
+  \end{itemize}
+\item<1-> Fijamos la escala
+\darkgreen{    \begin{itemize}
+  \item<3-> $L = 4$~pc
+    \item<3-> $T_0 = 5$~K; $\langle n_0 \rangle = 10^3$~cm$^{-3}$;
+    $\langle B_0 \rangle = 14.2\,\mu$G
+     \item<3-> $\beta = 0.032$; $B_\mathrm{rms} = 24.16\,\mu$G
+       \item<3-> $n_\mathrm{max} > 10^6$~cm$^{-3}$  
+  \end{itemize} }
+\item<1-> Estrella 
+\red{   \begin{itemize}
+   \item<4-> $T_\mathrm{eff} = 37\,500$~K; $M_* = 32\,M_\odot$
+      \item<4-> `tipo O9': $Q_\mathrm{H} = 10^{48.5}$~s$^{-1}$
+      \item<4-> `tipo B0.5': $Q_\mathrm{H} = 5\times10^{46}$~s$^{-1}$ 
+  \end{itemize} }
+\end{itemize}
+\vfill
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\centerline{\includegraphics[height=0.9\textheight]{movie-Ostar-stitchup-nolabels-019}}
+\end{frame}
+\begin{frame}[plain]
+\centerline{\color{white}{Estrella O en un medio turbulento}}
+\vfill
+  \begin{columns}
+    \column{0.7\linewidth}
+    \includemovie[label=ostar, autoplay, autopause, repeat, controls]
+    {0.929\maxheight}{\maxheight}{movies/movie-Ostar-stitchup-nolabels.avi}
+    \column{0.3\linewidth} 
+    \begin{block}{Arriba}
+      \color{red}{[N\,II]}\quad
+      \color{green}{H$\alpha$}\quad
+      \color{blue}{[O\,III]}
+    \end{block}
+    \begin{block}{Abajo}
+      \color{red}{FIR polvo fr\'{\i}o}\\
+      \color{green}{MIR PAHs tibias}\\
+      \color{blue}{Radio Libre-libre}
+    \end{block}
+  \end{columns}
+\end{frame}
+\begin{frame}[plain]
+\centerline{\includegraphics[height=0.9\textheight]{movie-Bstar-stitchup-nolabels-100}}
+\end{frame}
+\begin{frame}
+\centerline{\color{white}{Estrella B en un medio turbulento}}
+\vfill
+  \begin{columns}
+    \column{0.7\linewidth}
+    \includemovie[label=bstar, autoplay, autopause, repeat, controls]
+    {0.929\maxheight}{\maxheight}{movies/movie-Bstar-stitchup-nolabels.avi}
+    \column{0.3\linewidth} 
+    \begin{block}{Upper panels}
+      \color{red}{[S\,II]}\quad
+      \color{green}{[N\,II]}\quad
+      \color{blue}{H$\alpha$}
+    \end{block}
+    \begin{block}{Abajo}
+      \color{red}{FIR polvo fr\'{\i}o}\\
+      \color{green}{MIR PAHs tibias}\\
+      \color{blue}{Radio Libre=libre}
+    \end{block}
+  \end{columns}
+\end{frame}
+
+}
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{\large MORFOLOG\'{I}AS e IM\'AGENES}
+\vfill
+\begin{itemize}
+\item<1-> Estrella O
+ \begin{itemize}
+\item<2-> \blue{  Estructura irregular con filamentos (dedos)}
+    \item<2->\blue{   Campo magn\'etico no afecta morfolog\'{\i}a global}
+\item<2->\blue{   CM afecta estructuras a peque\~na escala}
+\item<2-> \blue{  CM soporta filamentos contra la implosi\'on radiativa }
+\end{itemize}
+\item<1-> Estrella B
+\begin{itemize}
+\item<3-> \darkgreen{  Regi\'on HII m\'as esf\'erica que para estrella O, y sin
+  filamentos}
+\item<3-> \darkgreen{  Regiones de alta densidad est\'an evaporadas en la PDR}
+\end{itemize}
+\item<4-> \red{ Diferencia entre estrellas O y B es mayor que entre HD y MHD}
+\end{itemize}
+\vfill
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\centerline{\large \color{white}{COMPARACI\'ON CON RCW\,120}}
+\vfill
+\centering
+\centerline{\includegraphics[width=0.45\textwidth]{RCW120}~\hfill%
+\includegraphics[width=0.45\textwidth]{RCW120b}}
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{\large{COMPARACI\'ON CON RCW\,120}}
+\vfill
+\begin{itemize}
+\item $D \sim 3.5$~pc a 1.35~kpc 
+\item Estrella \'unica ionizadora, tipo O6-O8
+\item $T_\mathrm{eff} = 37.5\pm2$~kK
+\item $Q_\mathrm{H} = 48.58\pm0.22$
+\item $M_\mathrm{870} \sim 1100$--$2100\,M_\odot$
+\item Edad $< 5$~Myr
+\item \red{Concluimos $\mathrm{Edad} \sim 200\,000$~yrs}
+\end{itemize}
+\vfill
+\centerline{{\small{Zavagno et al.\ [2007,2010]; Deharveng et al.\
+    [2009]}}}
+\centerline{{\small{Anderson et al.\ [2010]; Martins et al.\ [2010] }}}
+\end{frame}
+}
+%\end{document}
+
+%%GLOBAL PROPERTIES
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+%\begin{frame}[plain]
+%\includegraphics[height=\textheight]{comparison1_vs_t_Ostar}
+%\end{frame}
+%\begin{frame}[plain]
+%\includegraphics[height=\textheight]{comparison1_vs_t_Bstar}
+%\end{frame}
+%\begin{frame}[plain]
+%\includegraphics[height=\textheight]{comparison2_vs_t_Ostar}
+%\end{frame}
+%\begin{frame}[plain]
+%\includegraphics[height=\textheight]{comparison2_vs_t_Bstar}
+%\end{frame}
+\begin{frame}[plain]
+\centerline{Expansi\'on}
+\vfill
+\centering
+\centerline{\includegraphics[width=0.45\textwidth]{comparison2b_vs_t_Ostar}~%
+\includegraphics[width=0.45\textwidth]{comparison2b_vs_t_Bstar}}
+\vfill
+\centerline{\hfill Estrella O \hfill Estrella B \hfill}
+\vfill
+\centerline{S\'{\i}mbolos: MHD}
+\end{frame}
+\begin{frame}[plain]
+\centerline{Velocidades del gas}
+\vfill
+\centering
+\centerline{\includegraphics[height=0.8\textheight]{comparison3_vs_t_Ostar}~%
+\includegraphics[height=0.8\textheight]{comparison3_vs_t_Bstar}}
+\vfill
+\centerline{\hfill Estrella O \hfill Estrella B \hfill}
+\end{frame}
+}
+%%MAGNETIC QUANTITIES
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+%\begin{frame}[plain]
+%\includegraphics[height=\textheight]{mhdcuts-Bstar-stitchup-nolabels-100}
+%\end{frame}
+\begin{frame}[plain]
+\centerline{CANTIDADES MAGN\'ETICAS}
+\vfill
+\centering
+\centerline{\includegraphics[width=0.45\textwidth]{mhd-pressures-rgb-Bstar-ep-1000-n-B}~\hfill~%
+\includegraphics[width=0.4\textwidth]{HS5}}
+\vfill
+\centerline{Resultados num\'ericos \hfill Harvey-Smith et al
+  [en prep]}
+\end{frame}
+}
+%\begin{frame}[plain]
+%\includegraphics[height=\textheight]{mhd-pressures-rgb-Bstar-ep-1000-pram-pmag}
+%\end{frame}
+
+%DISCUSSION
+%%PROJECTED B FIELD
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{Campo Magn\'etico Proyectado: T\'ecnicas Observacionales}
+\vfill
+\begin{itemize}
+\item<1-> Componente paralela a la l\'{\i}nea de visi\'on
+\begin{itemize}
+\item<2-> \blue{Medida de rotaci\'on de Faraday (gas ionizado)}
+\item<2-> \blue{Espectroscop\'{\i}a Zeeman (gas neutro o molecular)}
+\end{itemize}
+\item<1-> Componente en el plano del cielo
+\begin{itemize}
+\item<3-> \blue{Emisi\'on/absorpci\'on polarizada de granos alineados}
+\item<3-> \blue{M\'etodo Chandrasekhar-Fermi (t\'ecnica estad\'{\i}stica)}
+\end{itemize}
+\item<4-> Resultados num\'ericos: par\'ametros de Stokes
+\end{itemize}
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\centerline{\color{white}{Campo Magn\'etico Proyectado: Estrella O}}
+\vfill
+\centerline{\includegraphics[height=0.7\textheight]{bproj-Ostar-t200-full}}
+\vfill
+\centerline{\color{white}{Grises: l\'{\i}nea de visi\'on; Vectores rojos: plano del cielo}}
+\end{frame}
+\begin{frame}[plain]
+\centerline{\color{white}{Campo Magn\'etico Proyectado: Estrella B}}
+\vfill
+  \centerline{\includegraphics[height=0.7\textheight]{bproj-Bstar-t1000-full}}
+\vfill
+\centerline{\color{white}{Grises: l\'{\i}nea de visi\'on; Vectores rojos: plano del cielo}}
+\end{frame}
+\begin{frame}[plain]
+\centerline{\color{white}{Enfoque en gl\'obulo denso: Estrella O}}
+\vfill
+  \centerline{\includegraphics[height=0.7\textheight]{bproj-Ostar-t200-globule-south}}
+\vfill
+\end{frame}
+\begin{frame}[plain]
+\centerline{\color{white}{Enfoque en gl\'obulo denso: Estrella B}}
+\vfill
+\centerline{\includegraphics[height=0.7\textheight]{bproj-Bstar-t1000-globule-south}}
+\vfill
+\end{frame}
+}
+{
+\setbeamercolor{background canvas}{bg=white!90!blue}
+\begin{frame}[plain]
+\centerline{Campo Magn\'etico Proyectado: Resumen}
+\vfill
+\begin{itemize}
+\item<1-> Orden a gran escala en el gas neutro
+\vfill
+\item<2-> En los gl\'obulos densos: Estrella O
+ \begin{itemize}
+    \item<2->\blue{Doblado en el gas molecular}
+    \item<2-> \blue{Perpendicular al frente de ionizaci\'on en el gas ionizado}
+\end{itemize}
+\vfill
+\item<3-> En los gl\'obulos densos: Estrella B
+\begin{itemize}
+    \item<3-> \blue{Doblado en el gas molecular}
+    \item<3-> \blue{En el gas neutro/ionizado: dominado por material difuso en la
+    l\'{\i}nea de visi\'on.}
+  \end{itemize}
+\vfill
+\item<4-> Gl\'obulos no parecen a los casos idealizados [Henney et al.\ 2009]
+\end{itemize}
+\vfill
+\end{frame}
+\begin{frame}[plain]
+\centerline{CONCLUSIONES GENERALES}
+\vfill
+\begin{itemize}
+\item En las escales de tiempo de las simulaciones, el campo
+  magn\'etico no afecta la expansi\'on de la regi\'on HII
+\item Hay m\'as fragmentaci\'on y gl\'obulos m\'as densos en el caso
+  de la estrella O
+\item Radiaci\'on FUV no-ionizante es importante en el caso de la
+  estrella B.
+\item Expansi\'on de la regi\'on HII y PDR borran estructura fina
+  desordenada en el campo magn\'etico y producen orden a gran escala
+  en el cascar\'on neutro.
+\item Gl\'obulos densos tienen campos longitudinales que se doblan en
+  la cabeza, en el gas neutro/molecular.
+\item Dispersi\'on de velocidades en el gas ionizado es de orden
+  8~km~s$^{-1}$: inicialmente por el flujo de champ\'an y luego por
+  los flujos fotoevaporados.
+\end{itemize}
+\vfill
+\end{frame}
+\begin{frame}[plain]
+\centerline{Todavia por hacer\dots}
+\vfill
+\begin{itemize}
+\item Presi\'on de radiaci\'on
+\vfill
+\item Vientos estelares
+\vfill
+\item Autogravidad
+\vfill
+\item Fuentes ionizadoras multiples
+\vfill
+\item etc
+\end{itemize}
+\vfill
+\end{frame}
+\begin{frame}[plain]
+\centerline{PROXIMAMENTE}
+\vfill
+\centerline{\includegraphics[width=0.8\textwidth]{mnr_18507_LR}}
+\vfill
+\centerline{Vis\'{\i}tenos en YouTube: \texttt{www.youtube.com/divBequals0}}
+\vfill
+\end{frame}
+}
+\end{document}

@@ -1,0 +1,759 @@
+% Created 2012-07-11 Wed 15:29
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{movie15}
+\usepackage{etex} 
+\usepackage{pgfpages}
+\usepackage{tikz}
+\usepackage{will-beamer-poland} 
+\usepackage{xcolor}
+\tolerance=1000
+
+\graphicspath{ 
+  {../TownsvillePoster/figs/},
+  {../LarimTalk2010/movies/},   
+  {figs/},   
+}
+
+\newcommand\backskip{\vspace*{-\baselineskip}}
+\newcommand\backsmallskip{\vspace*{-\smallskipamount}}
+\newcommand\backmedskip{\vspace*{-\medskipamount}}
+\newcommand\backbigskip{\vspace*{-\bigskipamount}}
+
+\setkeys{Gin}{width=\linewidth, height=0.8\textheight, keepaspectratio=true}
+
+% \setbeameroption{show notes}
+
+% \renewcommand\baselinestretch{1.2}
+
+\title{Dynamics of the Orion Nebula}
+\author{William J. Henney}
+\date[Warsaw 2012]{July 2012 \(\cdot\) NCAC, Warsaw}
+\institute[CRyA, UNAM]
+{
+  \structure{Centro de Radioastronomía y Astrofísica\\
+  UNAM, Morelia, México}
+}
+
+\hypersetup{
+  pdfkeywords={Orion Nebula, Astrophysics, Dynamics},
+  pdfsubject={},
+  pdfcreator={Lovingly hand-crafted by the author using pdflatex and beamer}
+}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Plan of the talk}
+    \tableofcontents[currentsubsection, hideothersubsections]
+  \end{frame}
+}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Principal collaborators}
+
+\begin{block}{CRyA-UNAM, Morelia, Mexico}
+\begin{itemize}
+\item Jane Arthur
+\item Enrique Vázquez-Semadeni
+\item Sac-Nicté Serrano Medina
+\end{itemize}
+\end{block}
+
+\begin{block}{Elsewhere}
+  \begin{itemize}
+  \item Fabio de Colle (UC Santa Cruz, USA)
+  \item Garrelt Mellema (Stockholm Observatory, Sweden)
+  \item María Teresa García-Díaz (IA-UNAM, Ensenada, Mexico)
+  \item Bob O'Dell (Vanderbilt, USA)
+  \end{itemize}
+\end{block}
+
+\end{frame}
+
+
+
+
+
+% \begin{frame}
+% \frametitle{Abstract}
+
+% I review what we know about the dynamics of photoionized regions in general and the Orion Nebula in particular.  I will cover the fundamental physical processes that are important in setting ionized gas in motion: thermal pressure gradients, stellar winds, jets and other outflows, radiation pressure, magnetic fields, instabilities, turbulence.  I will also describe results from recent numerical simulations and observations of the kinematics of the ionized gas in Orion.  Some questions that I will address are:  Why does Orion not look like a Strömgren sphere?  What is the cause of all of the structure that we see?  Does the stellar wind have any effect on the dynamics of the nebula?  When is it OK to just ignore the dynamics?
+% \end{frame}
+
+
+\section{What we want to explain}
+
+% \begin{frame}
+%   \frametitle{What we want to explain}
+%   \begin{block}{Structure of the nebula}
+%     Large-scale, small-scale
+%   \end{block}
+%   \begin{block}{Internal dynamics}
+%     Linewidths, champagne flow, stellar wind
+%   \end{block}
+% \end{frame}
+
+\subsection{Structure of the nebula}
+\newcommand\micron{\(\upmu\mathrm{m}\)}
+\begin{frame}
+  \frametitle{Large-scale structure of Orion: Herschel's view}
+  \begin{columns}
+    \column{0.5\linewidth} 
+    \begin{itemize}
+    \item HYSOVAR program\\ (Billot et al.\ 2012ApJ...753L..35B)
+    \item<alert@2> \textcolor{red}{Red}: Herschel \SI{160}{\micron}
+    \item<alert@3> \textcolor{green}{Green}: Herschel \SI{70}{\micron}
+    \item<alert@4> \textcolor{blue}{Blue}: Spitzer \(\SI{8}{\micron} + \SI{24}{\micron}\)
+    \item Google: \texttt{herschel orion} 
+    \end{itemize}
+    \column{0.5\linewidth} 
+    \only<1>{\includegraphics[trim=500 150 200 150, clip]{orion-herschel-spitzer-rotate.jpg}}%
+    \only<2>{\includegraphics[trim=500 150 200 150, clip]{orion-herschel-spitzer-rotate-red.jpg}}%
+    \only<3>{\includegraphics[trim=500 150 200 150, clip]{orion-herschel-spitzer-rotate-green.jpg}}% 
+    \only<4>{\includegraphics[trim=500 150 200 150, clip]{orion-herschel-spitzer-rotate-blue.jpg}}% 
+  \end{columns}
+  % \note<1>{The red band is from cold dust. }
+  % \note<1>{The green band is from slightly warmer dust and probably
+  %   the [\ion{O}{I}] \(\SI{63}{\micron}\) line. }
+  % \note<2>{The blue band is a combination of PAHs and warm grains. }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Large-scale structure of Orion: Spitzer's view}
+  \begin{columns}
+    \column{0.5\linewidth} 
+    \begin{itemize}
+    \item NASA/JPL-Caltech/T.~Megeath (University of Toledo, Ohio)
+    \item<alert@2> \textcolor{red}{Red}: Spitzer MIPS \SI{24.0}{\micron}
+    \item<alert@3> \textcolor{green}{Green}: Spitzer IRAC \SI{8.0}{\micron} 
+    \item<alert@3,4> \textcolor{cyan}{Cyan}: Spitzer IRAC \SI{4.5}{\micron} 
+    \item<alert@4> \textcolor{blue}{Blue}: Spitzer IRAC \SI{3.6}{\micron} 
+    \item Google: \texttt{spitzer orion} 
+    \end{itemize}
+    \column{0.5\linewidth} 
+    \only<1>{\includegraphics{orion-spitzer-ssc2011-06.jpg}}%
+    \only<2>{\includegraphics{orion-spitzer-ssc2011-06-red.jpg}}%
+    \only<3>{\includegraphics{orion-spitzer-ssc2011-06-green.jpg}}%
+    \only<4>{\includegraphics{orion-spitzer-ssc2011-06-blue.jpg}}%
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Large-scale structure of Orion: Spitzer \& 2MASS}
+  \begin{columns}
+    \column{0.5\linewidth} 
+    \begin{itemize}
+    \item NASA/JPL-Caltech/J. Stauffer (SSC/Caltech)
+    \item<alert@2> \textcolor{red}{Red}: Spitzer IRAC \SI{4.5}{\micron}
+    \item<alert@3> \textcolor{green}{Green}: Spitzer IRAC \SI{3.6}{\micron} 
+    \item<alert@4> \textcolor{blue}{Blue}: 2MASS \SI{2.2}{\micron} 
+    \item Google: \texttt{spitzer 2mass orion} 
+    \end{itemize}
+    \column{0.5\linewidth} 
+    \only<1>{\includegraphics[trim=150 1200 150 1800, clip]{sig10-004}}%
+    \only<2>{\includegraphics[trim=150 1200 150 1800, clip]{sig10-004-red}}%
+    \only<3>{\includegraphics[trim=150 1200 150 1800, clip]{sig10-004-green}}%
+    \only<4>{\includegraphics[trim=150 1200 150 1800, clip]{sig10-004-blue}}%
+    \only<2>{\includegraphics[trim=150 1200 150 1800, clip]{sig10-004-red}}%
+  \end{columns}
+\end{frame}
+
+
+\subsection{Kinematics of ionized gas in the Orion Nebula}
+\newcommand\ha{H\(\upalpha\) 6563\,\AA}
+\newcommand\nii{[\ion{N}{2}] 6584\,\AA}
+\newcommand\oi{[\ion{O}{1}] 6300\,\AA} 
+\newcommand\sii{[\ion{S}{2}] 6716,31\,\AA}
+\newcommand\siil{[\ion{S}{2}] 6731\,\AA}
+\newcommand\siii{[\ion{S}{3}] 6312\,\AA}
+\newcommand\oiii{[\ion{O}{3}] 5007\,\AA} 
+\newcommand\Bull{\ensuremath{\bullet}}
+
+\begin{frame}
+  \frametitle{Velocity mapping of the Orion Nebula}
+  \begin{block}{Lines}
+    \smallskip
+    \begin{centering}
+      \begin{tabular}{@{}l@{\quad\quad}l@{\quad\quad}l@{}}
+        \Bull{} \oi{} & \Bull{} \sii{} & \Bull{} \nii{} \\
+        \Bull{} \siii{} & \Bull{} \ha{} & \Bull{} \oiii{}
+      \end{tabular}\par
+    \end{centering}
+  \end{block}
+  \begin{block}{Resolution}
+    \begin{itemize}
+    \item  \(3'' \times 2'' \times \SI{10}{km s^{-1}}\)
+    \end{itemize}
+  \end{block}
+  \begin{block}{Papers}
+    \begin{itemize}
+    \item {Doi}, T. and {O'Dell}, C.~R. and {Hartigan}, P. (2004)
+    \item {Garc{\'{\i}}a-D{\'{\i}}az}, M.~T. and {Henney},
+      W.~J. (2007)
+    \item {Garc{\'{\i}}a-D{\'{\i}}az}, M.~T. and {Henney}, W.~J. and
+      {López}, J.~A. and {Doi}, T. (2008)
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{Longslit echelle spectra: [\ion{N}{2}] 6584\,\AA}
+  \begin{centering}
+    \only<1>{\includegraphics[angle=-90,
+      width=0.9\linewidth]{nii_01x}}%
+    \only<2>{\includegraphics[angle=-90,
+      width=0.9\linewidth]{nii_02x}}%
+    \par
+  \end{centering}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Velocity moment maps: \only<1>{Brightness}\only<2>{Mean
+      velocity}\only<3>{RMS width}}
+  \begin{centering}
+    \only<1>{\includegraphics{moments-bymoment-sum}}%
+    \only<2>{\includegraphics{moments-bymoment-mean}}%
+    \only<3>{\includegraphics{moments-bymoment-sigma}}%
+    \par
+  \end{centering}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Velocity correlations: 
+    \only<1>{\ha{} versus \oiii{}}% 
+    \only<2>{\nii{} versus \oiii{}}% 
+    \only<3>{\siii{} versus \siil{}}% 
+    \only<4>{\siil{} versus \oi{}}% 
+  }
+  \begin{centering}
+      \only<1>{\includegraphics{vmean-oiii-ha}}%
+      \only<2>{\includegraphics{vmean-nii-oiii}}%
+      \only<3>{\includegraphics{vmean-sii-siii}}%
+      \only<4>{\includegraphics{vmean-oi-sii}}%
+      \par
+  \end{centering}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Linewidth correlations: 
+    \only<1>{\ha{} versus \oiii{}}% 
+    \only<2>{\nii{} versus \oiii{}}% 
+    \only<3>{\siii{} versus \siil{}}% 
+    \only<4>{\siil{} versus \oi{}}% 
+  }
+  \begin{centering}
+      \only<1>{\includegraphics{sigsq-oiii-ha}}%
+      \only<2>{\includegraphics{sigsq-nii-oiii}}%
+      \only<3>{\includegraphics{sigsq-sii-siii}}%
+      \only<4>{\includegraphics{sigsq-oi-sii}}%
+      \par
+  \end{centering}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Slicing the velocity cubes}
+  \foreach \y [count=\x] in {52,53,...,85} {%
+    \only<\x>{\includegraphics[page=\y, trim=0 30 0 75,clip]{oldtalks/windsor-talk.pdf}}%
+  }%
+\end{frame}
+
+
+
+
+\subsection{Neutral gas in the heart of Orion}
+
+\begin{frame}[c]
+  \frametitle{Zooming in on the Trapezium region}
+  \setkeys{Gin}{height=0.8\textheight, keepaspectratio=true}
+  \begin{centering}
+    \only<1>{\includegraphics{oldtalks/TFE06/All_quart_hilight}}%
+    \only<2>{\includegraphics{oldtalks/TFE06/All_quart}}%
+    \par
+  \end{centering}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Bright bars and dark lanes}
+  \setkeys{Gin}{height=0.8\textheight, keepaspectratio=true}
+  \begin{centering}
+    \only<1,7>{\includegraphics{oldtalks/TFE06/talk_image_658+656+502}}%
+    \only<2,6>{\includegraphics{oldtalks/TFE06/talk_image_658+673+631}}%
+    \only<3>{\includegraphics{oldtalks/TFE06/talk_image_658+673+631_labels}}%
+    \only<4>{\includegraphics{oldtalks/TFE06/talk_image_658+673+631_oneray}}%
+    \only<5>{\includegraphics{oldtalks/TFE06/talk_image_658+673+631_bothrays}}%
+    \par
+  \end{centering}
+\end{frame}
+
+
+\newlength\myunit
+\setlength\myunit{0.8cm}
+
+\begin{frame}
+  \frametitle{Shadow cast onto a curved screen}
+  \begin{centering}
+    \only<1>{ 
+      \includegraphics{oldtalks/TFE06/shadow-curve-thin-render}
+    } 
+    \only<2>{
+  \begin{pgfpicture}{0cm}{0cm}{13\myunit}{7\myunit}
+    \pgfsetxvec{\pgfpoint{\myunit}{0cm}}
+    \pgfsetyvec{\pgfpoint{0cm}{\myunit}}
+    \pgfputat{\pgfxy(6.5,3.2)}{%
+      \pgfbox[center,center]{
+        \includegraphics[height=8\myunit]{oldtalks/SF05/trapSII-NII-Ha-crop}%
+      }
+    }
+    \pgfsetlinewidth{3pt}
+    \pgfputat{\pgfxy(2,1)}{%
+      \pgfbox[center,center]{
+        \includegraphics[height=4\myunit]{oldtalks/SF05/shadow-model}}%
+    }%
+    \begin{pgfscope}
+      \color{red!15!white!85!black}
+      \pgfputat{\pgfxy(7,0)}{%
+        \pgfsetdash{{6pt}{4pt}}{0pt}
+        \pgfrect[stroke]{\pgfxy(0,0)}{\pgfxy(3,4.5)}
+      }
+      \pgfputat{\pgfxy(1,-0.5)}{%
+        \pgfsetdash{{6pt}{4pt}}{0pt}
+        \pgfrect[stroke]{\pgfxy(0,0)}{\pgfxy(2.1,3.15)}
+      }%
+    \end{pgfscope}
+    \pgfputat{\pgfxy(8,5)}{%
+      {\color{red!15!white!85!black}\pgfrect[fill]{\pgfxy(-0.1,-0.1)}{\pgfxy(5,3)}}
+      \pgfbox[left,bottom]{
+        \parbox{5\myunit}{\raggedright The bright filament throws
+          an ionization shadow onto the molecular cloud\\[\smallskipamount]
+        }%
+      }%
+    }%
+  \end{pgfpicture}
+  }
+  \par
+  \end{centering}
+\end{frame}
+
+
+\section{Physical ingredients}
+
+\subsection{Governing equations}
+\begin{frame}
+  \frametitle{Governing equations}
+  \begin{block}{Euler equations}
+    Conservation of mass, \alert{momentum}, energy
+  \end{block}
+  \begin{block}{Ionization balance}
+    Global and local ionization parameter
+  \end{block}
+  \begin{block}{Radiative transfer}
+    \alert{Ionizing radiation}, non-ionizing radiation, X-rays
+  \end{block}
+  \begin{block}{Want more details?}
+    See \href{http://adsabs.harvard.edu/abs/2007dmsf.book..103H}{Henney \texttt{2007dmsf.book..103H}}
+  \end{block}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Euler equations}
+  \begin{centering}
+    \includegraphics[width=.8\linewidth]{EulerEquations.jpg}\par
+  \note{
+    \[
+    \frac{d}{dt} ( \rho \VEC{u} ) + \VEC{\grad} ( P + \rho u^2 ) = \rho \VEC{a} 
+    \]
+  }
+  \note{ There is also an energy equation, which is important in some
+    circumstances.  But in the ionized gas, it can usually be replaced
+    by the isothermal assumption.  }
+  \end{centering}
+\end{frame}
+
+\subsection{Ionization balance}
+
+\begin{frame}
+  \frametitle{Ionization balance}
+  \only<1>{%
+  \begin{block}{Local ionization parameter}
+    Dimensionless ratio of ionizing photon density to gas particle density
+    \[
+    \Upsilon = \frac{F_{\mathrm{ion}}}{c n} 
+    \]
+    In static equilibrium, the Hydrogen ionization fraction \(x\)
+    satisifies 
+    \[
+    \frac{x^2}{1 - x} \simeq \num{3e5}\, \Upsilon
+    \]
+  \end{block}}
+  \only<2>{%
+  \begin{block}{Global ionization parameter}
+    For static, ionization-bounded region:
+    \[
+    \langle\Upsilon\rangle \simeq 0.006 
+    \left(  
+      \frac{\langle n\rangle_{\mathrm{rms}}}{\SI{e3}{cm^{-3}}}
+    \right)^{1/3} 
+    \left(  
+      \frac{Q_{\mathrm{H}}}{\SI{e49}{s^{-1}}} 
+    \right)^{1/3} 
+    \]
+    \begin{itemize}
+    \item For a given dust-gas ratio, dust opacity is more important at high \(\langle\Upsilon\rangle\)
+    \item Advective (flow) terms are globally more important in the ionization
+      and heating/cooling balance for low \(\langle\Upsilon\rangle\)
+    \end{itemize}
+  \end{block}}
+  \only<3>{%
+  \begin{block}{Heavy-element ionization}
+    \bigskip
+    \begin{centering}
+      \includegraphics[height=0.7\textheight]{oldtalks/TFE06/lineplot.pdf}\par
+    \end{centering}
+  \end{block}}
+\end{frame}
+
+\subsection{Radiative transfer}
+
+\begin{frame}
+  \frametitle{Radiative transfer}
+  \begin{block}{Ionizing radiation}
+    \begin{itemize}
+    \item All absorbed in \hii{} region (or ionization front)
+    \item Higher density gas absorbs more efficiently (per unit mass)
+    \end{itemize}
+  \end{block}
+  \begin{block}{FUV/optical radiation}
+    Some absorbed in \hii{} region but mainly in near PDR (PAH excitation)
+  \end{block}
+  \begin{block}{X rays}
+    \begin{itemize}
+    \item Produced by T Tauri chromospheres: \(\sim 1~L_\odot\)
+    \item Produced by base of O~star wind: \(\sim 1~L_\odot\)
+    \item Produced by shocked stellar wind bubble: \(\sim 0.01~L_\odot\)
+    \item Absorbed in far PDR and molecular gas
+    \end{itemize} 
+  \end{block}
+\end{frame}
+
+\subsection{Body forces}
+
+\begin{frame}
+  \frametitle{Body forces}
+  \begin{block}{Gravity}
+    Only important in the molecular gas
+  \end{block}
+  \begin{block}{Radiation pressure}
+    \begin{itemize}
+    \item Trapped resonance lines (e.g., Lyman \(\upalpha\))
+    \item Ionizing radiation momentum acting directly on gas
+      \begin{itemize}
+      \item Only important for \emph{very} high ionization parameter, \(\Upsilon\)
+      \end{itemize}
+    \item \alert{Lower energy radiation absorbed by dust}
+      \begin{itemize}
+      \item Important for high ionization parameter, \(\Upsilon\)
+      \item Collisionally coupled to gas
+      \end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Magnetic fields}
+
+
+\begin{frame}
+  \frametitle{Magnetic fields}
+  \begin{block}{\emph{No time today!} \quad But please see \dots}
+    \begin{columns}
+      \column{0.6\linewidth}
+      \includegraphics{figs/Masthead-Henney-2009.png}\par
+      \bigskip 
+      \includegraphics{figs/Masthead-Arthur-2011.png}\par
+      \column{0.4\linewidth}
+      \includegraphics{figs/Streamers}\par
+      \bigskip 
+      \includegraphics{figs/Globule-Structure-New}\par
+    \end{columns}
+  \end{block}
+\end{frame}
+
+\section{Building blocks for the internal dynamics}
+
+\subsection{Thermal pressure gradients}
+
+\begin{frame}
+  \frametitle{Thermal pressure gradients \dots}
+  \only<1>{%
+  \begin{block}{\dots drive the non-steady global expansion of the \hii{} region}
+    \begin{centering}
+      \includegraphics[trim=0 300 0 150, clip, height=0.6\textheight]{figs/Ipad-Sketch-HII-Expansion}\par
+    \end{centering}
+    Note that the neutral gas expands faster than the ionized gas.
+  \end{block}}
+  \only<2>{%
+  \begin{block}{\dots drive steady-state photoevaporation flows}
+    From globules, filaments, escarpments, proplyds, etc\par
+    \begin{centering}
+      \includegraphics[height=0.6\textheight]{figs/Ipad-Sketch-Globule}\par
+    \end{centering}
+    Here, the ionized gas moves fastest.
+  \end{block}}
+\end{frame}
+
+\begin{frame}[squeeze, shrink=5]
+  \frametitle{Steady flow down a pressure gradient}
+  \begin{block}{Steady-state continuity equation}
+    \[
+    \rho u r^k = \text{constant} \quad 
+    k = \left\{\scriptstyle
+      \begin{array}{ll}
+        0 & \text{ (plane)}\\
+        1 & \text{ (cylindrical)}\\
+        2 & \text{ (spherical)}
+      \end{array}
+    \right.
+    \]
+  \end{block}
+  \begin{block}{Isothermal Bernoulli equation}
+    \[
+    \frac12 u^2 + c_0^2 \ln \rho  + \Phi = \text{constant along a streamline}
+    \]
+  \end{block}
+  \begin{block}{Condition for acceleration of a diverging flow}
+    \[
+    \frac{du}{dr} > 0  \quad \text{if} \quad u > c_0 \quad \text{and} \quad
+    k > 0
+    \]
+  \end{block}
+\end{frame}
+
+
+
+\subsection{Steady-state photoevaporation flows}
+
+\begin{frame}
+  \frametitle{Corrugated ionization fronts}
+  \foreach \y [count=\x] in {41,42,43} {%
+    \only<\x>{\includegraphics[page=\y, trim=0 23 0 68,clip]{oldtalks/windsor-talk.pdf}}%
+  }%
+\end{frame}
+
+
+\begin{frame}
+  \def\DIR{/Users/will/Dropbox/Presentations/HoustonTalk2011/movies} 
+  \frametitle{Photoevaporation of isolated globules   \quad \Ref{\small Henney et al. (2009)}}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \includemovie[label=glob-s80-255-side, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{\DIR/rgb-NHO-s80-255-evo+350+350.avi}\\
+    \bigskip
+    \includemovie[label=glob-s80-255-top, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{\DIR/rgb-NHO-s80-255-evo+010+080.avi}
+    \column{0.5\linewidth}
+    \includemovie[label=glob-s80-127-side, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{\DIR/rgb-NHO-s80-127m-evo+350+350.avi}\\
+    \bigskip
+    \includemovie[label=glob-s80-127-top, autoplay, autopause, repeat, controls]
+    {\linewidth}{0.498\linewidth}{\DIR/rgb-NHO-s80-127m-evo+010+080.avi}
+  \end{columns}
+  \bigskip
+  \centerline{\color{red}{[N\,II]}\quad
+    \color{green}{H\(\upalpha\)}\quad
+    \color{blue}{[O\,III]}}
+\end{frame}
+
+\subsection{Winds, shocks, shells}
+\begin{frame}
+  \frametitle{Winds, shocks, shells}
+  \begin{block}{\emph{No time today!} }
+    \includegraphics{figs/Ipad-Sketch-Shocks}
+  \end{block}
+\end{frame}
+
+\section{Application of \hii{} region models to Orion}
+
+\begin{frame}
+  \frametitle{Application of \hii{} region models to Orion}
+  \begin{block}{Simple models}
+    \begin{itemize}
+    \item \alert{Analytic calculation} or numerical simulations
+    \item High degree of symmetry (1D plane or \alert{2D cylindical})
+    \item Possibility to include realistic microphysics
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Turbulent models}
+    \begin{itemize}
+    \item Numerical simulations only
+    \item Fully 3D, no particular symmetry imposed
+    \item \alert{But \dots}
+      \begin{itemize}
+      \item Simplified microphysics, {\scriptsize albeit a big
+          improvement on the competition!}
+      \item Uncertain initial conditions
+      \end{itemize}
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+
+\subsection{Simple models}
+
+\begin{frame}
+  \frametitle{Steady flow from a plane ionization front}
+  \foreach \y [count=\x] in {35,36,37,38} {%
+    \only<\x>{\includegraphics[page=\y, trim=0 30 0 75, clip]{oldtalks/windsor-talk.pdf}}%
+  }%
+\end{frame}
+
+
+
+
+\subsection{Turbulent models}
+
+\newlength\maxheight
+\setlength\maxheight{0.8\textheight}
+\newlength\moviewidth
+\setlength\moviewidth{0.7\textwidth}
+
+\begin{frame}
+\frametitle{Turbulent models: initial conditions}
+\includegraphics{figs/rgb-CPF-initial}
+\end{frame}
+
+\begin{frame}[shrink=5]
+\frametitle{Turbulent models: state of play}
+\begin{block}{Physics we have}
+  \begin{itemize}
+  \item 3D time-dependent, hydrodynamics
+  \item Approximate radiative transfer
+  \item Microphysics:
+    \begin{itemize}
+    \item good for ionized gas
+    \item fair for PDR
+    \item poor for molecular gas
+    \end{itemize}
+  \item {}[Ideal magnetohydrodynamics]
+  \end{itemize}
+\end{block}
+\begin{block}{Physics we lack}
+  \begin{itemize}
+  \item Stellar winds
+  \item Radiation pressure
+  \item Diffuse field
+  \item Self-gravity
+  \item {\footnotesize Better microphysics, better radiative transfer,
+    \scriptsize multifluids, non-ideal MHD, \tiny \(\upkappa\)-distributions, etc \dots}
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[plain]%%
+\hspace*{-1ex}\includemovie[label=new-movie, autoplay, autopause, controls, repeat=1]
+{1.27968\paperheight}{0.96\paperheight}{/Users/will/Movies/O-Star-512-PDR-2012.mov}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Turbulent models: results}
+  \begin{columns}
+    \column{0.6\linewidth}
+    \begin{itemize}
+    \item Many morphological features of observed \hii{} regions are
+      reproduced naturally
+      \begin{itemize}
+      \item Due to existing density structure in the
+        turbulent molecular cloud, combined with fragmentation induced
+        by interaction with the ionized gas
+      \end{itemize}
+    \item Velocity dispersions of order the sound speed are
+      maintained in the ionized gas during the entire evolution
+    \item The highest pressure neutral/molecular gas is driven to
+      equipartition between thermal, magnetic, and turbulent energies
+    \item Lower pressure gas bifurcates into zones dominated by one or
+      the other
+    \end{itemize}
+    \column{0.4\linewidth}
+    \includegraphics{figs/comparison3_vs_t_Ostar}%
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Turbulent models: more results}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \includegraphics{figs/mhd-pressures-rgb-Ostar-et-0200-pram-pmag}
+    \column{0.5\linewidth}
+    \includegraphics{figs/mhd-pressures-rgb-Ostar-et-0200-n-B}
+  \end{columns}
+\end{frame}
+
+\section{What about the stellar wind?}
+
+
+
+\subsection{Why is the X-ray gas seen only in the EON?}
+
+\begin{frame}
+  \frametitle{Percolation of the shocked wind}
+  \begin{columns}
+    \column{0.4\linewidth}
+    \begin{itemize}
+    \item Hot gas pressure should be roughly uniform (high sound
+      speed, low Mach number)
+    \item Ionized gas pressure is 100 times higher in inner Huygens region
+      than in outer EON (causally disconnected). 
+    \item Therefore, volume filling factor of hot gas in inner region
+      should be very small
+    \end{itemize}
+    \column{0.6\linewidth}
+    \includegraphics{figs/Ipad-Sketch-Wind-Percolation} 
+  \end{columns}
+\end{frame}
+
+\subsection{Momentum-driven versus energy-driven}
+\setlength\moviewidth{0.5\linewidth}
+\begin{frame}
+  \frametitle{``Predicted'' X-ray emission}
+  \begin{columns}
+    \column{0.5\linewidth}
+    Momentum-driven wind\\
+    \includemovie[label=momentum-driven-movie, autoplay, autopause, controls,
+    repeat=0]
+    {\moviewidth}{\moviewidth}{figs/Movie-Wind-Momentum.mp4}%
+    \column{0.5\linewidth}
+    Energy-driven wind\\
+    \includemovie[label=energy-driven-movie, autoplay, autopause, controls,
+    repeat=0]
+    {\moviewidth}{\moviewidth}{figs/Movie-Wind-Energy.mp4}
+  \end{columns}
+\end{frame}
+
+\section*{The End}
+
+\begin{frame}
+  \frametitle{Conclusions}
+  \begin{itemize}
+  \item We understand some things \dots
+  \item \dots we are working on figuring out the rest.
+  \item \emph{Thanks for sharing all the data, Bob!}
+  \end{itemize}
+\end{frame}
+
+
+\end{document}

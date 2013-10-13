@@ -1,0 +1,87 @@
+
+* Poster for Townsville meeting - September 2010
+
+Plan is to use tikz mindmap library to make something amazing!
+
+** Figures
+*** Bstar evolution
+**** Mosaic of BBB and xTd images
++ [X] [[file:figs/src/mhdcuts-Bstar-mosaic.py][mhdcuts-Bstar-mosaic.py]]
+  + [[file:figs/src/mhdcuts-Bstar-mosaic-bright.png][mhdcuts-Bstar-mosaic-bright.png]]
+**** Mosaic of emission images
++ [X] [[file:figs/src/rgb-im-Bstar-mosaic.py][rgb-im-Bstar-mosaic.py]]
+  + [[file:figs/src/rgb-im-Bstar-mosaic-bright.png][rgb-im-Bstar-mosaic-bright.png]]
+
+** Outline of poster
+This should map to a tree structure in tikz
++ Subheadings represent child nodes
++ Plain lists represent contents of the node
+
+*** Title Node
++ Title 
++ Abstract
+  + this can actually be the conclusions
+
+**** Authors
++ List of authors
+  + superscripted with affiliation
+**** CRyA
++ CRyA Photo
+***** Will Henney
++ Will Photo
+***** Jane Arthur
++ Jane Photo
+***** Enrique Vázquez
++ Enrique Photo
+**** Santa Cruz
+***** Fabio de Colle
++ Fabio Photo
+**** Stockholm
+***** Garrelt Mellema
++ Garrelt Photo
+
+*** Results - cut planes
+
+*** Results - simulated images
+**** MHD versus HD
+***** Optical lines
+***** Long wavelength
+**** B star versus O star
+***** Optical lines
+***** Long wavelength
+
+
+*** Results - statistics
+
+**** Pressures
+
+**** Thermal
+
+*** Detailed view of individual globules
+
+*** Conclusions
+
+
+* Use of Tikz
+
++ The manual is here: [[file:/usr/local/texlive/2010/texmf-dist/doc/generic/pgf/pgfmanual.pdf][pgfmanual.pdf]]
+
+
+** Putting stuff on the background layer
+Example from manual:
+#+begin_src latex
+  \begin{pgfonlayer}{background} 
+  \node [fill=black!30,fit=(waiting) (critical) (semaphore) (leave critical) (enter critical)] {}; 
+  \end{pgfonlayer} 
+#+end_src
+That requires the =fit= library. In our case, we just need to fill the page.
+
+** Size of concept nodes
+
++ They can be changed with =text width=, but we also need to set =level distance= on each child, otherwise they overlap
+
++ This seems to work doing things by hand, but I really want to define a new style (like =huge mindmap=) that will set all these parameters at once. 
+
+** Size of paper
+
++ Paper width is 36in = 91.44cm

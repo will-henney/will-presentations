@@ -1,0 +1,32 @@
+\usepackage{arevtext}
+\usepackage{microtype}
+% \usepackage[origletters, varv, vari, varw]{arevmath}
+\usepackage[varv, vari, varw]{arevmath}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{movie15}
+\usepackage{upgreek,lgreek}
+\usetikzlibrary{mindmap,positioning,shadows,backgrounds,calc,shapes.geometric}
+\usetheme{WillBlack}
+% \setbeamercolor{math text}{fg=normal text.fg!50!white}
+\setbeamercolor{math text}{fg=black!20!green!20!white}
+% \setbeamercolor{normal text in math text}{fg=normal text.fg}
+\setbeamerfont{structure}{series=\bfseries\boldmath}
+\setbeamercolor{alerted text}{fg=orange!80!yellow}
+\newcommand\Ref[1]{\textcolor{white!70!black!90!yellow}{#1}}
+%% global typesetting parameters
+\frenchspacing
+
+\newcounter{ionstage}
+\DeclareRobustCommand\ion[2]{\setcounter{ionstage}{#2}%
+  \ifmmode%
+  #1\,\scalebox{1.0}[0.85]{\Roman{ionstage}}%
+  \else%
+  \text{#1\,\scalebox{1.0}[0.85]{\Roman{ionstage}}}%
+  \fi%
+}
+% \newcommand\hii{H\,II}
+\newcommand\hii{\texorpdfstring{\ion{H}{2}}{H II}}
+

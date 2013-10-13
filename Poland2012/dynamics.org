@@ -1,0 +1,152 @@
+#+TITLE:     Dynamics of the Orion Nebula
+#+AUTHOR:    William Henney
+#+EMAIL:     will@henney.org
+#+DATE:      2012-07-01
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation]
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_HEADER_EXTRA: \usepackage{will-beamer-poland}
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+
+
+
+
+* Preamble
+** Abstract
+
+I review what we know about the dynamics of photoionized regions in general and the Orion Nebula in particular.  I will cover the fundamental physical processes that are important in setting ionized gas in motion: thermal pressure gradients, stellar winds, jets and other outflows, radiation pressure, magnetic fields, instabilities, turbulence.  I will also describe results from recent numerical simulations and observations of the kinematics of the ionized gas in Orion.  Some questions that I will address are:  Why does Orion not look like a Strömgren sphere?  What is the cause of all of the structure that we see?  Does the stellar wind have any effect on the dynamics of the nebula?  When is it OK to just ignore the dynamics?
+
+* Ingredients
+
+** What drives nebular dynamics?
+
++ Inviscid momentum equation 
+\[
+\frac{d}{dt} ( \rho \VEC{u} ) + \VEC{\grad} ( P + \rho u^2 ) = \rho \VEC{a} 
+\]
+
+** Conservation equations
+
+
+
+** Gas pressure gradients 
+
+Isothermal Bernoulli equation 
+
+
+** Radiation pressure
+
+
+
+** Magnetic fields
+
+
+
+** Font test
+
+\[
+abcdefghijklmnopqrstuvwxyz
+\]
+
+\ion{O}{3} or O\,\textsc{iii}
+
+\[
+x^2 + y^2 = z^2 \sin^2 \alpha
+\]
+
+
+* Image credits 						   :noexport:
+
+** [[file:figs/orion-spitzer-ssc2011-06.jpg][orion-spitzer-ssc2011-06.jpg]]
+
+
++ Date :: 2011-05-26
++ ID :: ssc2011-06a
++ Credit :: NASA/JPL-Caltech/T. Megeath (University of Toledo, Ohio)
+
+
+| Color | Wavelength | Telescope    |
+|-------+------------+--------------|
+| Blue  | 3.6 µm     | Spitzer IRAC |
+| Cyan  | 4.5 µm     | Spitzer IRAC |
+| Green | 8.0 µm     | Spitzer IRAC |
+| Red   | 24.0 µm    | Spitzer MIPS |
+
+** [[file:figs/orion-spitzer.jpg][orion-spitzer.jpg]]
+
++ Date :: 2010-04-01
++ ID :: sig10-003
++ Credit :: NASA/JPL-Caltech/J. Stauffer (SSC/Caltech)
++ Link :: http://www.spitzer.caltech.edu/images/3018-sig10-003-Warm-Mission-Dreamy-Stars-of-Orion
+
+
+
+| Color | Wavelength | Telescope    |
+|-------+------------+--------------|
+| Cyan  | 3.6 µm     | Spitzer IRAC |
+| Red   | 4.5 µm     | Spitzer IRAC |
+
+
+** [[file:figs/sig10-004.jpg][sig10-004.jpg]]
+
+
++ Date :: 2010-04-02
++ ID :: sig10-004
++ Credit :: NASA/JPL-Caltech/J. Stauffer (SSC/Caltech)
+
++ Link :: http://www.spitzer.caltech.edu/images/3022-sig10-004-Orion-s-Dreamy-Stars
+
+| Color | Wavelength | Telescope    |
+|-------+------------+--------------|
+| Blue  | 2.2 µm     | 2MASS        |
+| Green | 3.6 µm     | Spitzer IRAC |
+| Red   | 4.5 µm     | Spitzer IRAC |
+
+** [[file:figs/626715main_pia13959-full_full.jpg][626715main_pia13959-full_full.jpg]]
+
+*** Colors
+Infrared data at wavelengths of 8.0 and 24 microns from Spitzer are rendered in blue. Herschel data with wavelengths of 70 and 160 microns are represented in green and red, respectively. 
+
+*** Links
+
++ http://www.nasa.gov/mission_pages/herschel/multimedia/pia13959.html
+
++ [[http://herschel.cf.ac.uk/mission/key-programmes/ism#OT1_nbillot_1][HYSOVAR program]] (Nicolas Billot)
+
+*** Article
+
++ Billot et al 2002 http://adsabs.harvard.edu/abs/2012ApJ...753L..35B
+
+** [[file:figs/Herschel_Vela-C.jpg][Herschel_Vela-C.jpg]]
+
+*** Colors
+
+This false-colour image combines data acquired with the PACS instrument at 70 micron (shown in blue) and 160 micron (shown in green) and with the SPIRE instrument at 250 micron (shown in red).
+
+
+
+*** Links
+
++ http://sci.esa.int/science-e/www/object/index.cfm?fobjectid=50495
+
+*** Article
+
+Hill et al (2011)
+
+http://adsabs.harvard.edu/abs/2011A%26A...533A..94H
+
+
+
+* Video captions
+
+M = 30 M⊙,  T_eff = 37,500 K,  Q_H = 5×10⁴⁸ s⁻¹ 

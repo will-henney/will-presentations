@@ -1,0 +1,11 @@
+All calculations are performed on a fixed, regular Cartesian grid in two or three dimensions. The MHD Riemann solver uses a standard second-order Runge-Kutta method for the time integration and a spatially second-order reconstruction of the primitive variables at the interfaces (except in shocks). Lapidus viscosity is applied to fluxes at cell interfaces, following \citet{1984JCoPh..54..174C}. The constrained transport (CT) method \citep[e.g.,][]{2000JCoPh.161..605T} is used to conserve \(\vec{\nabla} \cdot \vec{B} = 0\) to machine accuracy. 
+
+The C\textsuperscript{2}-ray (Conservative-Causal ray, \citealp{2006NewA...11..374M}) algorithm uses a short-characteristic method to calculate the radiative transfer of ionising radiation (equation~(\ref{eq:tau})), together with an explicitly photon-conserving iterative technique for solving the ionisation rate equation (equation~(\ref{mhd5})), which allows one to use timesteps that are much longer than the ionisation/recombination timescales without loss of accuracy \citep{2006MNRAS.371.1057I}. 
+
+The radiative heating and cooling terms (\New{\(H\)} and \(L\) in equation~(\ref{mhd3})) are calculated explicitly, using a local fractional timestep technique to accurately treat those cells undergoing rapid temperature change. Heating is principally due to absorption of stellar radiation by gas or dust: ionizing extreme ultraviolet (EUV) radiation in the ionized region, non-ionizing far ultraviolet (FUV) radiation in the neutral gas and x rays in the most shielded molecular gas. Cooling is principally due to collisionally excited line radiation of ions, atoms, or molecules. All of the various processes that contribute to \(H\) and \(L\), together with their implementation in the code, are discussed in detail in Appendix~A of \citet{Henney:2009}. The individual components of the Phab-C\textsuperscript{2} code have been extensively tested against standard problems \citep{De-Colle:2005, 2004Ap&SS.293..173D, 2006MNRAS.371.1057I}. 
+% In addition, \citet{Arthur:2009} present further test cases for the combined algorithm.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "wjh-townsville-poster"
+%%% End: 

@@ -1,0 +1,46 @@
+\begin{tikzpicture}[
+  huge mindmap
+  ] 
+  \begin{pgfonlayer}{background}
+    % \node {\includegraphics[width=\textwidth]{rgb-im-Bstar-mosaic-bright}};
+    
+  \end{pgfonlayer}
+  \path[concept color=white!80!blue, text=black] 
+  node[concept, circular drop shadow={shadow xshift=0.3cm, shadow yshift=-0.3cm}, text width=15cm] {\bfseries\Title} 
+  [clockwise from=0] 
+  child[concept color=white!80!green!70!black, level distance=30cm] { 
+    node[concept] {practical} 
+    [clockwise from=90] 
+    child { node[concept] {algorithms} 
+      [clockwise from=120] 
+      child { node[concept] {fourth level} 
+        [clockwise from=150] 
+        child { node[concept] {fifth level} 
+          [clockwise from=180] 
+          child { node[concept] {sixth level} 
+          }
+        }
+      }
+    } 
+    child { node[concept] {data structures} } 
+    child { node[concept, level distance=20cm] {pro\-gramming languages} } 
+    child { node[concept, level distance=15cm] {software engineer\-ing} } 
+  } 
+  child[concept color=white!60!blue, level distance=25cm] { 
+    node[concept] {applied} 
+    [clockwise from=-30] 
+    child { node[concept] {databases} } 
+    child { node[concept] {WWW} } 
+  } 
+  child[concept color=white!60!red, level distance=20cm] { node[concept] {technical} } 
+  child[concept color=white!60!orange, level distance=15cm] { node[concept] {\Authors} }; 
+\end{tikzpicture} 
+
+% \tikz[mindmap,concept color=red!50] 
+% \node [concept] {Root concept} 
+% child[grow=right] {node[concept] {Child concept}}; 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "wjh-townsville-poster"
+%%% End: 

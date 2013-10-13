@@ -1,0 +1,31 @@
+\documentclass{article}
+% \usepackage[paperwidth=36in, paperheight=50in, margin=0cm]{geometry}
+\usepackage[paperwidth=18in, paperheight=25in, margin=0cm]{geometry}
+% \usepackage[paperwidth=36cm, paperheight=50cm, margin=0cm]{geometry}
+\usepackage{arev}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{fixltx2e}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,positioning,shadows,backgrounds,calc,shapes.geometric}
+\usepackage{natbib}
+\usepackage{astrojournals}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true, 
+  linkcolor = red!50!yellow!50!white,
+  anchorcolor = red,
+  citecolor = yellow!50!white, 
+  filecolor = red, 
+  pagecolor = red,
+  urlcolor = red
+}
+
+\graphicspath{ {../figs/}, }
+\DeclareRobustCommand\New[1]{#1}
+\begin{document}
+\input{nodes}
+\input{layout}
+\end{document}

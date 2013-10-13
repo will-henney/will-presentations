@@ -1,0 +1,10 @@
+
+* Will's tests of literate programming with org-babel
+  :LOGBOOK:
+  - Note taken on [2010-09-02 Thu 12:20] \\
+    File created
+  :END:
+
+** Making a tikz tree structure
+
+

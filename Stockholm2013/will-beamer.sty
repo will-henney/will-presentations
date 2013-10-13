@@ -1,0 +1,51 @@
+\let\quarternote\@undefined
+\let\eighthnote\@undefined
+%% 
+\usepackage{microtype}
+%% 
+\usepackage{libertine}\usefonttheme{serif}
+% \usepackage{arevtext}
+% \usepackage[varv, vari, varw]{arevmath}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{movie15}
+\usepackage{upgreek,lgreek}
+\usetikzlibrary{arrows,shapes,snakes}
+\usetheme{WillWhite}
+\newcommand\Ref[1]{\textcolor{black!70!yellow}{#1}}
+%% global typesetting parameters
+\frenchspacing
+
+\newcounter{ionstage}
+\DeclareRobustCommand\ion[2]{\setcounter{ionstage}{#2}%
+  \ifmmode%
+  % \text{#1\,\scalebox{1.0}[0.85]{\Roman{ionstage}}}%
+  \text{#1\,\textsc{\roman{ionstage}}}% 
+  \else%
+  #1\,\textsc{\roman{ionstage}}% 
+  \fi%
+}
+% \newcommand\hii{H\,II}
+\newcommand\hii{\texorpdfstring{\ion{H}{2}}{H II}}
+
+\newcommand\VEC{\vec}
+% \newcommand\VEC{\mathbf}
+% \DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\grad}{\nabla}
+
+\newlength\cwidtha
+\newlength\cwidthb
+\newlength\cheight
+\newenvironment{sidefig}[1]{%
+  \settowidth\cwidtha{#1}
+  \settoheight\cheight{#1}
+  \setlength\cwidthb{\textwidth}
+  \addtolength\cwidthb{-\cwidtha}
+  \begin{columns}
+    \column{\cwidtha}
+    #1
+    \column{\cwidthb}}
+  {\end{columns}}
+
+

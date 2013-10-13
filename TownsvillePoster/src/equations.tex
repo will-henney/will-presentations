@@ -1,0 +1,63 @@
+%The equations solved are schematically as follows:
+\begin{gather}
+  {\partial \rho \over\partial t}
+  +\nabla\cdot\left(\,\rho \vec v\,\right)  = 0  \label{mhd1}
+  \\
+ {\partial \rho \vec v \over\partial t}
+  +\nabla\cdot
+  \left(\rho \vec v \vec v + p_{\mathrm{tot}} \boldsymbol I-\vec B \vec B\right)=0
+ \label{mhd2}
+ \\
+ {\partial e \over\partial t}
+  +\nabla\cdot
+  \left( \left(e+p_{\mathrm{tot}}\right)\vec v
+    - \bigl(\vec v \cdot \vec B\,\bigr)\vec B\right) = \New{H} - L
+ \label{mhd3}
+ \\
+ {\partial \vec B \over\partial t}
+  +\nabla\cdot
+  \left(\vec v \vec B - \vec B \vec v\right) =0
+ \label{mhd4}
+\end{gather}
+% where $\rho$ is the mass density, $\vec v$ is the velocity vector, $p_{\mathrm{tot}} = p_{\mathrm{gas}}+B^2/2$ is the (\(\textrm{magnetic} + \textrm{thermal}\)) total pressure, $I$ is the identity matrix, $\vec B$ is the magnetic field (in units of \(\mathrm{Gauss} / \surd 4\pi \)), $e$ is the total energy defined as $e= \frac{1}{\gamma-1} p_{\mathrm{gas}}+ \frac{1}{2} \rho v^2+ \frac{1}{2} B^2$ (with $\gamma=5/3$), and \(L\) and \New{\(H\)} are respectively the microphysical cooling and heating rates, which are functions of the local gas and radiation conditions.
+% The above equations represent the conservation of mass (\ref{mhd1}), momentum (\ref{mhd2}), energy (\ref{mhd3}) and magnetic flux (\ref{mhd4}).
+% They are combined with an equation for hydrogen ionisation/recombination:
+\newcommand\Hp{_\mathrm{p}}
+\newcommand\Hz{_\mathrm{n}}
+\begin{multline}
+  {\partial\, n\Hz \over\partial t}
+  + \nabla \cdot \left(\,n\Hz \vec v\,\right) = \\
+  n\Hp\, n_{\mathrm{e}}\, \alpha(T) - n\Hz \left( n_{\mathrm{e}} C(T)  + 
+   \int_{\nu_0}^\infty \!\!\!\sigma_\nu (4 \pi J_\nu / h\nu) \,d\nu \right),  
+ \label{mhd5}
+\end{multline}
+%
+% where \(n\Hp\), \(n\Hz\), and \(n_{\mathrm{e}}\) are the number densities of ionised and neutral hydrogen, and electrons, respectively. Additionally, \(\alpha(T)\) and \(C(T)\) are respectively the radiative recombination and collisional ionisation coefficients, while \(\sigma_\nu\) is the photoionization cross-section and \(J_\nu\) is the local mean intensity of the ionising radiation field, both functions of the photon frequency \(\nu\). The direct contribution of a single, point-like radiation source, of luminosity \(\mathcal{L}^*_\nu\) and located at \(\vec r_*\), to the local radiation field at a point \(\vec r\) is given by 
+\begin{gather}
+  4\pi J^*_\nu(\vec r) = 
+  \frac{ \mathcal{L}^*_\nu \, e^{-\tau_\nu} }{ 4 \pi |\vec r - \vec r_*|^2 }, 
+  \label{eq:rad}\\
+  % \intertext{with}
+  \tau_\nu = 
+  \int_0^{|\vec r - \vec r_*|} \!\!\!  n\Hz (\vec r_* + s \vec e_r) \, \sigma_\nu \, ds ,
+  \label{eq:tau}
+\end{gather}
+(\ref{mhd1}) Mass conservation\\
+(\ref{mhd2}) Momentum conservation\\
+(\ref{mhd3}) Energy conservation\\
+(\ref{mhd4}) Magnetic flux conservation\\
+(\ref{mhd5}) Hydrogen ionization/recombination\\
+(\ref{eq:rad}) Radiative transfer of ionizing radiation\\
+(\ref{eq:tau}) Optical depth at Lyman limit\\
+% where \(\vec e_r\) is the unit vector \((\vec r - \vec r_*)/|\vec r -
+% \vec r_*| \) and \(s\) is the distance along the straight-line path
+% between \(\vec r_*\) and \(\vec r\). The diffuse field due to
+% ground-state recombinations is treated in the standard on-the-spot
+% approximation 
+% %\citep{2006agna.book.....O}, 
+% in which it is not explicitly included in \(J_\nu\) and the case-B value for \(\alpha(T)\) is used.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "wjh-townsville-poster"
+%%% End: 

@@ -1,0 +1,25 @@
+* Title of talk
+Dynamics of the Orion Nebula: ISM
+* What to include
+** Mainly based on Poland Talk
+New bits are marked with checkboxes.
++ Physical ingredients
+  + Governing equations
+  + Ionization balance
+  + Radiative transfer
+  + Body forces
+  + Magnetic fields
++ Building blocks for the internal dynamics
+  + Thermal pressure gradients
+  + Steady state photoevaporation flows
+  + Winds, shocks
+    + [ ] Add in some LL object stuff here
+    + More stuff on stellar wind?
++ Application of HII region models to Orion
+  + Simple models
+  + Turbulent models
++ [ ] Observational diagnostics of the dynamics
+  1. Spectroscopy: line-of-sight movement
+  2. Proper motions: plane-of-sky movement
+     + But only pattern speeds - non-steady motions
+  3. Test particles

@@ -1,0 +1,22 @@
+\documentclass[presentation]{beamer}
+\usepackage{media9}
+
+\begin{document}
+Note that this does not work. 
+
+\begin{frame}
+  \def\BigMovie{/Users/will/Movies/O-Star-512-PDR-2012.mov}
+  \includemedia[
+  label=test_video, % defines JavaScript object annotRM[’some_dice’]
+  width=1.27968\paperheight, height=0.96\paperheight,
+  activate=pageopen,
+  addresource=\BigMovie, 
+  flashvars={
+    source=\BigMovie % same path as in addresource!
+    &loop=true % loop video
+    &scaleMode=letterbox % preserve aspect ratio while scaling the video
+  }
+  ]{}{VPlayer.swf}
+\end{frame}
+
+\end{document}

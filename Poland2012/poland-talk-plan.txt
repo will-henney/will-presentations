@@ -1,0 +1,87 @@
+* Motivation
+
+- Dynamics of Orion
+  - Global evolution
+    - Structure of environment
+    - Evolutionary timescale
+  - Internal structure
+    - Kinematics of ionized gas
+
+* Physical Ingredients
+  - Governing equations 
+    - Euler equations (mass, momentum, energy)
+      - mass (or continuity) equation allows one to relate the density to the velocity for a given geometry (divergent, convergent, plane parallel)
+      - energy equation is important for determining the local sound speed but this is roughly constant in the ionized gas 
+    - ionization balance
+      - most concisely expressed by an ionization parameter, can be local or global
+        - global ionization parameter Upsilon ~ (Q_H n)^{1/3}
+          - apart from the degree of ionization, the ionization parameter also determines other things
+          - how important is dust opacity? For a given dust/gas ratio, it is more important for high Upsilon
+            - the dust optical depth to the ionization front is proportional to Upsilon
+          - How important is advection in the global ionization balance? More important for low Upsilon
+    - radiative transfer
+      - ionizing radiation
+        - all absorbed in the H II region
+          - the same mass of gas is more efficient at absorbing ionizing radiation when the density is increased (and vice versa)
+          - this means that compressed shells can trap the i-front
+          - also explains why more gas is ionized as the region expands
+          - the emissivity of a recombination line such as H alpha effectively traces the local absorption of ionizing radiation (assuming static ionization equilibrium)
+          - the surface brightness of an ionization bounded layer therefore traces the flux of ionizing radiation that is incident upon it (modulo geometrical factors...)
+        - diffuse ionizing field from recombinations and scattering
+      - FUV/optical radiation
+        - some absorbed in the H II region but mainly in the near PDR
+      - X rays
+        - produced by 
+          - 50% T Tauri chromospheres
+          - 50% O star wind acceleration zone
+          - 1% Stellar wind bubble
+        - absorbed in far PDR and molecular gas
+        
+  - Momentum equation is the one most directly related to the dynamics
+     - and mass equation and energy equation
+     - three parts: non-steady, dynamic pressure balance, and body forces
+  - Thermal pressure gradients
+     - non steady global evolution
+        - Spitzer solution for uniform medium
+        - Modification in turbulent case
+  - Ionization balance and radiative transfer
+     - indirect effect on dynamics (via energy equation)
+     - structure of an ionization front
+  - Body forces
+    - Gravity
+      - Only important for the molecular gas
+    - Radiation pressure
+      - trapped resonance lines
+      - ionizing radiation momentum acting on gas
+      - Lower energy radiation acting on dust
+    - Magnetic field
+
+* Building blocks for the internal dynamics
+  - Ionization fronts
+  - Photoevaporation flows
+    - steady state photo evaporation flows
+        - carving out cavity
+        - application to Orion
+          - Bar / proplyds / Orion S
+     - champagne flow 
+       - transient spherical ones
+       - steady one-sided ones
+  - Stellar winds
+  - Shocks
+    - non-steady shocks
+      - global shock driven into ISM by H II region expansion
+      - bow shocks driven by stellar jets (HH objects)
+    - steady state shocks
+      - proplyds bow shocks
+      - LL object bow shocks
+      - stellar wind stagnation shock
+        - there will only be a distinct shell in the ionized gas if there are supersonic internal flows. 
+
+
+* Numerical simulations
+  - The big video
+  - Effects of stellar wins
+     - Momentum versus energy driven
+     - simplified steady state calculation
+        - videos
+     - need for non steady simulations

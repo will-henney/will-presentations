@@ -1,0 +1,514 @@
+\pagecolor{black}
+\linespread{1.3}
+
+\tikzset{
+  wjh-concept/.style={
+    concept color=blue!50!black, 
+    % concept color=green!30!black,
+    text=white, fill
+    opacity=0.8, text opacity=1.0, font=\huge\bfseries,
+    level 2 concept/.append style={sibling angle=35, minimum size=1cm},
+    level 4 concept/.append style={minimum size=1cm, text width=1cm},
+    every extra concept/.style={ellipse, minimum size=1cm, text width=2cm},
+  },
+  meta concept color/.style={
+    concept color=green!30!black, 
+  }
+  snug/.style={
+    inner sep=0cm, outer sep=0cm
+  },
+  wjh-fill-annotation/.style={annotation, fill=red!30!black, opacity=0.8},
+  wjh-explanation/.style={annotation, font=\footnotesize, text width=4cm,
+    fill=white!40!black, opacity=0.85, text ragged}, 
+  wjh-colorkey/.style={wjh-explanation, font=\bfseries\footnotesize,
+    text width=3cm, inner sep=6pt, text centered},
+  % wjh-details/.style={wjh-explanation, font=\tiny, text width=5cm},
+  wjh-details/.style={wjh-explanation, font=\footnotesize, text width=7cm},
+}
+\setkeys{Gin}{
+  width=\linewidth, 
+  % draft
+}
+
+\newcommand\Important[1]{\textbf{\LARGE #1}}
+\newcommand\EM[1]{\textbf{\emph{#1}}\color{white}}
+
+%%%
+%%% THE BACKGROUND IMAGES
+%%%
+\tikzset{bg-image-style/.style={
+    inner sep=0pt, outer sep=0pt, minimum size=0cm, 
+    text width=\paperwidth
+  }
+}
+
+\begin{tikzpicture}[remember picture, overlay, bg-image-style]
+  \begin{pgfonlayer}{background}
+    \draw[green] (current page.north) node[anchor=north]
+    (turb-bstar-image-mosaic) {\includegraphics{src/rgb-im-Bstar-mosaic-bright}};
+
+    % \draw[green] (current page.south) node[anchor=south] 
+    % {\includegraphics{src/rgb-im-Bstar-mosaic-bright}};
+
+    \draw[green] (current page.center) node[anchor=center]
+    (turb-bstar-cut-mosaic)
+    {\includegraphics{src/mhdcuts-Bstar-mosaic-bright}};
+
+
+    
+    % \draw (current page.south) 
+    % node [text width=3cm, anchor=south east] 
+    % (uniform-2Myr)
+    % {\includegraphics[clip, trim=0 0 1080 0]{hsv-krum/mhdcuts-B30krumx-stitchup-nolabels-020}};
+    % \draw (uniform-2Myr.east) 
+    % node [text width=3cm, anchor=west] 
+    % (uniform-6Myr)
+    % {\includegraphics[clip, trim=0 0 1080 0]{hsv-krum/mhdcuts-B30krumx-stitchup-nolabels-060}};
+
+    % \draw (current page.south east) 
+    % node [text width=9cm, anchor=south east] 
+    % (glob-cut-70)
+    % {\includegraphics{globule/hsv-xtd-bbb-cuts-s80-2d501m-0070}};
+
+    % \draw (glob-cut-70.west) 
+    % node [text width=9cm, anchor=east] 
+    % (glob-cut-40)
+    % {\includegraphics{globule/hsv-xtd-bbb-cuts-s80-2d501m-0040}};
+
+    % \draw (glob-cut-40.west) 
+    % node [text width=9cm, anchor=east] 
+    % (glob-cut-20)
+    % {\includegraphics{globule/hsv-xtd-bbb-cuts-s80-2d501m-0020}};
+
+    % \draw (current page.south west) 
+    % node [text width=12cm, anchor=south west] 
+    % (glob-im-S80L)
+    % {\includegraphics{globule/paper-emview-S80L-new}};
+
+    % \draw (glob-im-S80L.north) 
+    % node [text width=12cm, anchor=south] 
+    % (glob-im-S80H)
+    % {\includegraphics{globule/paper-emview-new}};
+
+ \end{pgfonlayer}
+\end{tikzpicture}
+
+
+\tikzset{
+  mm-style/.style={huge mindmap, wjh-concept},
+}
+\begin{tikzpicture}[mm-style, remember picture, overlay]
+  \path
+  node[concept, above=-6cm of turb-bstar-cut-mosaic.north]
+  (root-concept)
+  {Turbulent Magnetized H\,II Regions\\
+    \bigskip
+    \parbox{0.9\linewidth}{\small\mdseries\centering
+      Three-dimensional radiation magnetohydrodynamic simulations of the evolution of
+      photoionized and photodissociated regions around high mass stars
+      in turbulent molecular clouds}
+  } 
+  child [grow=north, concept color=red!80!black] {
+    node[concept] (authorlist) {\Authors}
+    [clockwise from=180]
+    % [clockwise from=160]
+    child[level distance=5cm] {
+      node[concept, text width=1.5cm]{\includegraphics[clip, trim=0 5 0 5]{people/Will_crop-1}}
+    }
+    child[level distance=5cm] {
+      node[concept, text width=1.5cm]{\includegraphics{people/Jane_crop}}
+    }
+    child[level distance=5cm] {
+      node[concept, text width=1.5cm]{\includegraphics[clip, trim=0 15 0 0]{people/Fabio_crop}}
+    }
+    child[level distance=5cm] {
+      node[concept, text width=1.5cm]{\includegraphics[clip, trim=0 5 0 5]{people/Garrelt_crop}}
+    }
+    child[level distance=5cm] {
+      node[concept, text width=1.5cm]{\includegraphics[clip, trim=0 0 0 10]{people/Enrique_crop}}
+    }
+  }
+  child [grow=150] {
+    node[concept] {\Important{B-star\\ Evolution\\} \mbox{\(dt = 0.1\)~Myr}
+      \mbox{\(t_{\mathrm{max}} = 1.3\)~Myr}}
+    child [grow=-180] {
+      node[concept] 
+      {Cut Planes of Physical Variables}
+      child [grow=north west] { 
+        node[concept]
+        (bbb-node)
+        at ($(turb-bstar-cut-mosaic.north west) + (5.5, -1.5)$)
+        {
+          Magnetic field strength and direction
+        }
+        child {
+          node[concept] at ($(bbb-node) + (2, -1)$) {\(XY\)}
+        }
+        child {
+          node[concept] at ($(bbb-node) + (1, -6)$) {\(XZ\)}
+        }
+        child {
+          node[concept] at ($(bbb-node) + (-2, -12.5)$) {\(YZ\)}
+        }
+     }
+      child [grow=south west] {
+        node[concept]
+        (xtd-node)
+        at ($(turb-bstar-cut-mosaic.north west) + (10, -5)$)
+        {Ionization, density, temperature}
+        child {
+          node[concept] at ($(xtd-node) + (-2, -1)$) {\(XY\)}
+        }
+        child {
+          node[concept] at ($(xtd-node) + (-1, -5.5)$) {\(XZ\)}
+        }
+        child {
+          node[concept] at ($(xtd-node) + (2, -12)$) {\(YZ\)}
+        }
+     }
+    }
+    child [grow=north] {
+      node [concept]
+      (emission-maps)
+      {Simulated Emission Maps}
+      child {
+        node[concept]
+        (optical-emission-maps)
+        at ($(turb-bstar-image-mosaic.center) + (-13, -2)$)
+        {Optical Emission}
+      }
+      child {
+        node[concept] 
+        (infrared-emission-maps)
+        at ($(turb-bstar-image-mosaic.north) + (-6.5, -2)$)
+        {IR/Radio Emission}
+      }
+    }
+  }
+  child [grow=30] {
+    node[concept] (statistics-root) {\Important{Statistics}}
+    child [grow=45] {
+      node[concept] (n-T) {Temperature--Density\\ distribution}
+    }
+    child [grow=0] {
+      node[concept] (n-B) {B-Field--Density\\ distribution}
+    }
+  }
+  child [grow=-45, level distance=12cm] {
+    node[concept, xshift=-0.7cm, yshift=-10cm] (BvO) {\Important{O-star}\\ MHD versus HD}
+  }
+  child [grow=-135, level distance=12cm] {
+    node[concept, xshift=0.7cm, yshift=-10cm] (HDvMHD) {\Important{B-star}\\ MHD versus HD}
+  }
+  % child {
+  %   node[concept, below left=20cm of current page.center] (globule-root) 
+  %   {\Important{Fine Detail:} Globules \& Pillars}
+  %   child [grow=-120] {
+  %     node[concept] (globule-80) {B-field \(\perp\) photons}
+  %   }
+  %   child [grow=-15] {
+  %     node[concept] (globule-00-45) {Other angles}
+  %   }
+  % }
+  ;
+  
+ % \path
+  % node[extra concept, below left=10cm] 
+  % at (current page.center) 
+  % {Uniform B-field};
+
+ 
+  
+
+  % \node[below=0cm of current page.north, fill=red] {BOX};
+
+  %%% A N N O T A T I O N S
+  \begin{pgfonlayer}{background}
+    %% Globule figures
+    % \node[annotation, above right=of glob-im-S80H.center, text width=8cm] 
+    % (globule-cartoon) {
+    %   \includegraphics{globule/Globule-Structure-New}
+    % };
+    % \node[annotation, above=1cm of globule-00-45.center, text width=6cm] 
+    % (glob-im-S00L-S45L) {
+    %   \includegraphics{globule/paper-emview-S00L-S45L-new}
+    % };
+
+
+    % Turbulence
+    \node[wjh-fill-annotation, below=0cm of HDvMHD.center, text width=15cm]
+    (HD-MHD-Bstar-im) {
+      \includegraphics{rgb-turb/movie-Bstar-stitchup-nolabels-100}
+    };
+    \node[wjh-fill-annotation, below=0cm of BvO.center, text width=15cm]
+    (HD-MHD-Ostar-im) {
+      \includegraphics{rgb-turb/movie-Ostar-stitchup-nolabels-100}
+    };
+
+
+    % Statistics
+    % n-T
+    \node[wjh-fill-annotation, above right=of n-T.center, text width=5cm]
+    (n-T-im-900) {
+      \includegraphics{stats/mhd-pressures-rgb-Bstar-ep-0900-n-T-mass.pdf}
+    };
+    \node[wjh-fill-annotation, left=-1.1cm of n-T-im-900.west, text width=5cm]
+    (n-T-im-100) {
+      \includegraphics{stats/mhd-pressures-rgb-Bstar-ep-0100-n-T-mass.pdf}%
+    };
+    % n-B
+    \node[wjh-fill-annotation, below right=of n-B.center, text width=5cm]
+    (n-B-im-900) {
+      \includegraphics{stats/mhd-pressures-rgb-Bstar-ep-0900-n-B-mass.pdf}
+    };
+    \node[wjh-fill-annotation, left=-1.35 cm of n-B-im-900.west, text width=5cm]
+    (n-B-im-100) {
+      \includegraphics{stats/mhd-pressures-rgb-Bstar-ep-0100-n-B-mass.pdf}%
+    };
+
+
+  \end{pgfonlayer}
+
+  %%%% E X P L A N A T I O N S
+  % These should go on top of everything else
+
+  % Affiliations
+  \node[wjh-explanation, right=-0.5cm of authorlist, text width=6.5cm]
+  (affiliations) {
+    \EM{%
+      1. CRyA, UNAM, Morelia, Mexico\\
+      2. University of California, Santa Cruz\\
+      3. Stockholm Observatory, Sweden\\
+    }
+  };
+
+  % Conclusions
+  \node[wjh-explanation, text width=12cm, font=\large, inner sep=10pt,
+  anchor=north, yshift=2cm]
+  (conclusions) 
+  at (current page.center)
+  {
+    \EM{\Large Conclusions}\\
+    \begin{itemize}
+    \item The global evolution of an HII region in a \textit{turbulent
+        medium} is little changed by realistic magnetic field levels
+      \textit{on length scales of a few parsecs and timescales of
+        around 1 million years}.
+    \item But\dots the shape of the HII region is more regular when
+      the B-field is included.
+    \item In the turbulent case at small scales, the magnetic field
+      reduces the efficiency of fragmentation of the molecular gas by
+      impeding radiation-driven implosion and the formation of
+      globules.
+    \end{itemize}
+  };
+
+  % Initial conditions
+  \node[wjh-explanation, below=of turb-bstar-image-mosaic.south west,
+  anchor=north west, xshift=1cm, yshift=-2cm, text width=7cm,
+  font=\small, inner sep=6pt]
+  (initial-conditions) {
+    \EM{Initial conditions}\\
+    \citet{2005ApJ...618..344V}
+    \begin{description}
+    \item[Box size] \((4~\mathrm{pc})^3\)
+    \item[Mean density] \(10^3~\mathrm{cm}^{-3}\)
+    \item[Gravity] 4 Jeans masses
+    \item[B-field] \(\langle B\rangle_x = 14.6~\mu\mathrm{G}\) (\(\beta = 0.1\))
+    \item[Forced turbulence] \(M = 10\) at \(5~\mathrm{K}\)
+    \item[Ionizing star] B0V: \(Q_\mathrm{H} = 4 \times 10^{46}~\mathrm{s}^{-1}\)
+    \end{description}
+  };
+
+  \node[extra concept, xshift=2cm, yshift=-0.5cm]
+  (time zero)
+  at (turb-bstar-image-mosaic.south west)
+  {\(t = 0\)};
+  \node[extra concept, xshift=-2cm, yshift=-0.5cm]
+  (time final)
+  at (turb-bstar-image-mosaic.south east)
+  {\(t = 1.3~\mathrm{Myr}\)};
+  \begin{pgfonlayer}{background}
+    \draw[concept connection] (time zero) edge (time final);
+  \end{pgfonlayer}
+  
+  % MHD-HD
+  \node[extra concept, text width=0.9cm, below right=of HD-MHD-Bstar-im.north west] {MHD};
+  \node[extra concept, text width=0.9cm, below left=of HD-MHD-Bstar-im.north east] {HD};
+  \node[extra concept, text width=0.9cm, below right=of HD-MHD-Ostar-im.north west] {MHD};
+  \node[extra concept, text width=0.9cm, below left=of HD-MHD-Ostar-im.north east] {HD};
+
+  % Cut planes
+  % \begin{pgfonlayer}{background}
+    \node[extra concept] (xy-plane) 
+    at ($(turb-bstar-cut-mosaic.west) + (2, 6.5)$)
+    {
+      Central\\ \(XY\)-plane
+    };
+    \node[extra concept] (xz-plane) 
+    at ($(turb-bstar-cut-mosaic.west) + (2, 0)$)
+    {
+      Central\\ \(XZ\)-plane
+    };
+    \node[extra concept] (yz-plane) 
+    at ($(turb-bstar-cut-mosaic.west) + (2, -6.5)$)
+    {
+      Central\\ \(YZ\)-plane
+    };
+    \node[extra concept] (xy-plane-right) 
+    at ($(turb-bstar-cut-mosaic.east) + (-2, 6.5)$)
+    {
+      Central\\ \(XY\)-plane
+    };
+    \node[extra concept] (xz-plane-right) 
+    at ($(turb-bstar-cut-mosaic.east) + (-2, 0)$)
+    {
+      Central\\ \(XZ\)-plane
+    };
+    \node[extra concept] (yz-plane-right) 
+    at ($(turb-bstar-cut-mosaic.east) + (-2, -6.5)$)
+    {
+      Central\\ \(YZ\)-plane
+    };
+  % \end{pgfonlayer}
+
+  % Statistics
+  \node[wjh-explanation, above left=0cm of statistics-root, anchor=center]
+  (statistics-explanation) {
+    \EM{Two-dimensional distribution functions of physical variables}
+  };
+  \node[wjh-colorkey, above=-0.7cm of n-B]
+  {
+    \EM{Color coding:}\\
+    \color{red}{Molecular gas}\\
+    \color{green}{Neutral gas}\\
+    \color{blue}{Ionized gas}
+  };
+
+  \node[wjh-explanation, above left=of n-T-im-100.center]
+  (n-T-explanation-100) {
+    \EM{Early evolution:}\\ Ionized gas and shocked portion of neutral/molecular gas are highly over-pressured
+  };
+
+  \node[wjh-explanation, above right=of n-T-im-900.center,
+  anchor=center, xshift=1cm, yshift=0.5cm]
+  (n-T-explanation-900) {
+    \EM{Late evolution:}\\ All gas is tending towards constant pressure (diagonal line).
+  };
+
+  \node[wjh-explanation, below right=0 cm of n-B-im-900.center]
+  (n-B-explanation-ionized) {
+    \EM{Ionized gas:}\\ Evolves at approximately constant mean Alfven
+    speed, albeit with a large spread. Magnetic pressure never dominates.
+  };
+  \node[wjh-explanation, below=0 cm of n-B-im-100.center,
+  xshift=0.8cm, yshift=-0.5cm]
+  (n-B-explanation-neutral) {
+    \EM{Neutral/molecular gas:}\\ Magnetically dominated.
+  };
+    
+   
+  % Emission map keys - evolution
+  \node[wjh-colorkey, text width=2.5cm, above right=-0.5cm of optical-emission-maps]
+  (optical-emission-key) {
+    \EM{Color coding:}\\
+    \KEY{[S\,II] 6716~\AA}{[N\,II] 6584~\AA}{H\(\alpha\) 6563~\AA}
+  };
+  \node[wjh-colorkey, below right=-0.5cm of infrared-emission-maps]
+  (infrared-emission-key) {
+    \EM{Color coding:}\\
+    \KEY{FIR Cold dust}{MIR Warm~PAHs}{Radio Free-free}
+  };
+
+  % Emission map keys - mhd-hd
+  \node[wjh-colorkey, above=1cm of HD-MHD-Bstar-im.center]
+  (Bstar-mhd-hd-key) {
+    \EM{Color coding:}\\
+    \KEY{[S\,II] 6716~\AA}{[N\,II] 6584~\AA}{H\(\alpha\) 6563~\AA}
+  };
+  \node[wjh-colorkey, above=1cm of HD-MHD-Ostar-im.center]
+  (Ostar-mhd-hd-key) {
+    \EM{Color coding:}\\
+    \KEY{[N\,II] 6584~\AA}{H\(\alpha\) 6563~\AA}{[O\,III] 5007~\AA}
+  };
+  \node[wjh-colorkey, above=2cm of HD-MHD-Bstar-im.south]
+  (Bstar-mhd-hd-key2) {
+    \EM{Color coding:}\\
+    \KEY{FIR Cold dust}{MIR Warm~PAHs}{Radio Free-free}
+  };
+  \node[wjh-colorkey, above=2cm of HD-MHD-Ostar-im.south]
+  (Ostar-mhd-hd-key2) {
+    \EM{Color coding:}\\
+    \KEY{FIR Cold dust}{MIR Warm~PAHs}{Radio Free-free}
+  };
+  
+  % Physical vars 
+  \node[wjh-colorkey, text width=3cm, right=-0.3cm of xtd-node]
+  (xtd-key) {
+    \EM{Color coding:}\\ 
+    \color{white!10!black}{Cold} \color{white!80!black}{neut}\color{white}{ral}\\
+    \color{red!10!blue!50!white!50!black}{Warm} \color{red!10!blue!30!white}{neutral}\\
+    \color{blue!80!black}{Parti}\color{green!80!black}{ally io}\color{yellow!80!black}{nized}\\
+    \color{red!70!black}{Fully} \color{red!90!white}{ionized}
+  };
+  \node[wjh-colorkey, text width=3.5cm, above left=-0.5cm of bbb-node]
+  (bbb-key) {
+    \EM{Color coding:}\\ 
+    \color{red!70!black}{Vertical} \color{red!90!white}{field} \rotatebox{90}{\(\leftrightarrows\)}\\
+    \color{magenta!70!black}{Diagonal} \color{magenta!90!white}{field \rotatebox{45}{\(\leftrightarrows\)}}\\
+    \color{blue!70!black}{Horizontal} \color{blue!90!white}{field \(\leftrightarrows\)}\\
+    \color{green!70!black}{Diagonal} \color{green!90!white}{field \rotatebox{135}{\(\leftrightarrows\)}}\\
+    \color{white!60!black}{Out-of-plane} \color{white!80!black}{field
+      \scalebox{1.2}{\(\otimes~\odot\)}}\\
+    \color{black}{Weak} \color{white!10!black}{field}
+  };
+
+
+  % Bibliography
+  \node[wjh-details, above right=0.5 cm of current page.south west]
+  (biblio) {
+    \newcommand\bibfont{\color{yellow!50!white}\footnotesize}
+    \renewcommand\bibsection{\subsubsection*{\color{yellow!50!white}\bibname}}
+    % \EM{References}\\
+    \bibliographystyle{mn2e}
+    \bibliography{BibDeskLibrary}
+  };
+
+  % Details
+  \node[wjh-details, above=0.2cm of biblio]
+  (details-equations) {
+    \EM{The Small Print: Equations}\\
+    \input{equations}
+  };
+  \node[wjh-details, above left=0.5cm of current page.south east]
+  (details-code) {
+    \EM{The Small Print: Implementation}\\
+    \setlength\parskip{\smallskipamount}\input{implementation}
+  };
+
+  \node[wjh-details, above left=0.5cm of current page.south, text
+  width=12cm, anchor=south east]
+  (acknowledgements) {
+    \EM{Acknowledgments}\\
+Part of the numerical simulations reported in this poster were carried out at the Departamento de Superc\'omputo, Direcci\'on General de Servicios de C\'omputo Acad\'emico, Universidad Nacional Aut\'onoma de M\'exico. WJH and SJA are grateful for financial support from DGAPA-UNAM, Mexico (PAPIIT IN112006, IN110108 and IN100309).  FDC acknowledges support by the European Community's ``Marie Curie Actions -- Human Resource and Mobility'' within the JETSET (Jet Simulations, Experiments and Theory) network under contract MRTN-CT-2000~005592.    
+  };
+
+  \node[wjh-details, right=0.5cm of acknowledgements, text width=12cm, font=\Large]
+  (contact) {
+    \smallskip
+    \EM{For further details}\\
+    \begin{itemize}
+    \item Ask Will to show you the videos!
+    \item Email: \texttt{w.henney@crya.unam.mx}
+    \end{itemize}
+    \smallskip
+  };
+
+
+\end{tikzpicture} 
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "wjh-townsville-poster"
+%%% End: 
