@@ -1,4 +1,4 @@
-\documentclass[presentation, draft]{beamer}
+\documentclass[presentation]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{fixltx2e}
@@ -15,6 +15,7 @@
 \tolerance=1000
 
 \graphicspath{ 
+  {figs/},
   {../TownsvillePoster/figs/},
   {../LarimTalk2010/movies/},   
   {../Poland2012/figs/},   
@@ -94,7 +95,72 @@
   \tableofcontents[hidesubsections]
 \end{frame}
 
-\section{Physical ingredients}
+\section{Observational diagnostics of Orion Nebula dynamics}
+\label{sec:obs}
+
+\begin{frame}
+  \frametitle{How can we observe gas motions in the nebula?}
+  \begin{block}{Emission line spectroscopy}
+    \begin{itemize}
+    \item Motions along line of sight only
+    \item Affected by thermal broadening
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Proper motions}
+    \begin{itemize}
+    \item Motions in plane of sky
+    \item Gives pattern speed, not gas velocity
+      \begin{itemize}
+      \item \(\Rightarrow\) non-steady motions only
+      \end{itemize}
+    \item Requires spatially sharp emission features and relatively high velocities
+      \begin{itemize}
+      \item \(\Rightarrow\) best suited to jets and other outfows
+      \end{itemize}
+    \end{itemize}
+  \end{block}
+  
+  \begin{block}{Test particles}
+    \begin{itemize}
+    \item Use of stellar bowshocks to probe the nebular flow
+    \end{itemize}
+  \end{block}
+
+  \end{frame}
+
+\subsection{Radial velocities}
+\begin{frame}
+  \frametitle{Slicing the velocity cubes}
+  \foreach \y [count=\x] in {52,53,...,85} {%
+    \only<\x>{\includegraphics[page=\y, trim=0 30 0 75,clip]{oldtalks/windsor-talk.pdf}}%
+  }%
+\end{frame}
+
+\subsection{Proper motions}
+
+\begin{frame}
+  \frametitle{Non-steady motions of jet knots}
+  \hfill
+  \includegraphics[height=0.8\textheight]{LL2-Will-Crop-Annotate}
+  \hfill
+  \includegraphics[height=0.8\textheight]{LL2-propermotions3.pdf}
+  \hfill\null
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jets are everywhere in Orion}
+  \makebox[0pt][l]{\hspace*{0.3\textwidth}\includegraphics{OH2008-fig5}}%
+  \only<2>{\makebox[0pt][l]{\includegraphics{bob-arrows6-alpha}}}%
+\end{frame}
+
+
+\subsection{Test particles}
+
+
+
+
+\section{Physical ingredients for dynamic models}
 
 \subsection{Governing equations}
 \begin{frame}
@@ -171,6 +237,10 @@
       \includegraphics[height=0.7\textheight]{oldtalks/TFE06/lineplot.pdf}\par
     \end{centering}
   \end{block}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example: Ionization structure of the inner Orion Nebula}
 \end{frame}
 
 \subsection{Radiative transfer}
@@ -468,39 +538,5 @@
     \includegraphics{poland-figs/mhd-pressures-rgb-Ostar-et-0200-n-B}
   \end{columns}
 \end{frame}
-
-\section{Observational diagnostics of Orion Nebula dynamics}
-\label{sec:obs}
-
-\begin{frame}
-  \frametitle{How can we observe gas motions in the nebula?}
-  \begin{block}{Emission line spectroscopy}
-    \begin{itemize}
-    \item Motions along line of sight only
-    \item Affected by thermal broadening
-    \end{itemize}
-  \end{block}
-
-  \begin{block}{Proper motions}
-    \begin{itemize}
-    \item Motions in plane of sky
-    \item Gives pattern speed, not gas velocity
-      \begin{itemize}
-      \item \(\Rightarrow\) non-steady motions only
-      \end{itemize}
-    \item Requires spatially sharp emission features and relatively high velocities
-      \begin{itemize}
-      \item \(\Rightarrow\) best suited to jets and other outfows
-      \end{itemize}
-    \end{itemize}
-  \end{block}
-  
-  \begin{block}{Test particles}
-    \begin{itemize}
-    \item Use of stellar bowshocks to probe the nebular flow
-    \end{itemize}
-  \end{block}
-
-  \end{frame}
 
 \end{document}
