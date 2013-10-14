@@ -495,15 +495,42 @@
 \end{block}
 \end{frame}
 
-{
-  \usebackgroundtemplate{
-    \parbox[c][\paperheight][c]{\paperwidth}{\missingmovietext}
-  }
 \begin{frame}[plain]%%
-\hspace*{-1ex}\includemovie[label=new-movie, autoplay, autopause, controls, repeat=1]
-{1.27968\paperheight}{0.96\paperheight}{poland-figs/O-Star-512-PDR-2012.mov}
+  \newlength\figwidth
+  \setlength\figwidth{0.33\textwidth}
+  \renewcommand\arraystretch{0.0}
+  \setlength\tabcolsep{0pt}
+  \graphicspath{
+    {poland-figs/movie-stills/O-Star-512-PDR-2012/},
+    }
+  \begin{tabular}{lll}
+    \includegraphics[width=\figwidth]{01-Opening-Titles}
+    & 
+    \includegraphics[width=\figwidth]{02-Model-Parameters}
+    & 
+    \includegraphics[width=\figwidth]{03-Color-Scheme}
+    % & 
+    % \includegraphics[width=\figwidth]{04-Evolution-Start}
+    \\
+    \includegraphics[width=\figwidth]{05-Evolution-Mid}
+    & 
+    \includegraphics[width=\figwidth]{06-Evolution-End}
+    & 
+    \includegraphics[width=\figwidth]{07-Detail-View}
+    % & 
+    % \includegraphics[width=\figwidth]{08-Swimming-Sisters} 
+    \\
+    % \includegraphics[width=\figwidth]{09-Long-Wav-Color-Scheme}
+    % & 
+    \includegraphics[width=\figwidth]{10-Long-Wav-Mid}
+    & 
+    \includegraphics[width=\figwidth]{11-Long-Wav-End}
+    & 
+    \includegraphics[width=\figwidth]{12-Simulations-Credit}
+\end{tabular}
+
 \end{frame}
-}
+
 
 \begin{frame}
   \frametitle{Turbulent models: results}
@@ -538,5 +565,17 @@
     \includegraphics{poland-figs/mhd-pressures-rgb-Ostar-et-0200-n-B}
   \end{columns}
 \end{frame}
+
+{
+  \usebackgroundtemplate{
+    \parbox[c][\paperheight][c]{\paperwidth}{\missingmovietext}
+  }
+\begin{frame}[plain]%%
+\hspace*{-1ex}\includemovie[label=new-movie, autoplay, autopause, controls, repeat=1]
+{1.27968\paperheight}{0.96\paperheight}{poland-figs/O-Star-512-PDR-2012.mov}
+\end{frame}
+}
+
+
 
 \end{document}
