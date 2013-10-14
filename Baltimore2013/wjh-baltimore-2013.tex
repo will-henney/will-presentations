@@ -33,7 +33,7 @@
 % \renewcommand\baselinestretch{1.2}
 
 \title{Dynamics of the Orion Nebula: ISM}
-\author{William J. Henney}
+\author{\textit{William J. Henney}}
 \date[Baltimore 2013]{October 2013 \(\cdot\) STScI, Baltimore}
 \institute[CRyA, UNAM]
 {
@@ -71,20 +71,21 @@
 
 \begin{block}{CRyA-UNAM, Morelia, Mexico}
 \begin{description}
-\item[\small HD] Jane Arthur
-\item[\small Turbulence] Enrique Vázquez-Semadeni
-\item[\small Students] Sac-Nicté Serrano Medina
-\item A. Jorge Tarango Yong
-\item Luis Ángel Gutierrez Soto 
+\item[\small HD] \textit{Jane Arthur}
+\item[\small Turbulence] \textit{Enrique Vázquez-Semadeni}
+\item[\small Students] \textit{Sac-Nicté Serrano Medina}
+\item \textit{A. Jorge Tarango Yong}
+\item \textit{Luis Ángel Gutierrez Soto} 
 \end{description}
 \end{block}
 
 \begin{block}{Elsewhere}
   \begin{description}
-  \item[\small MHD] Fabio de Colle (ICN-UNAM, Mexico)
-  \item[\small Radiation] Garrelt Mellema (Stockholm Observatory, Sweden)
-  \item[\small Observations] María Teresa García-Díaz (IA-UNAM, Ensenada, Mexico)
-  \item Bob O'Dell (Vanderbilt, USA)
+  \item[\small MHD] \textit{Fabio de Colle} (ICN-UNAM, Mexico)
+  \item[\small Radiation] \textit{Garrelt Mellema} (Stockholm Observatory, Sweden)
+  \item[\small Observations] \textit{María Teresa García-Díaz} (IA-UNAM, Ensenada, Mexico)
+  \item \textit{Bob O'Dell} (Vanderbilt, USA)
+  \item \textit{Bob Rubin} \textbf{[\textdagger{} 2013-03-03]} (NASA-AMES/Orion Enterprises)
   \end{description}
 \end{block}
 
@@ -151,14 +152,36 @@
 \begin{frame}
   \frametitle{Jets are everywhere in Orion}
   \makebox[0pt][l]{\hspace*{0.3\textwidth}\includegraphics{OH2008-fig5}}%
-  \only<2>{\makebox[0pt][l]{\includegraphics{bob-arrows6-alpha}}}%
+  \only<2->{\makebox[0pt][l]{\includegraphics[width=0.5\textwidth]{bob-arrows6}}}%
+  \only<3>{\includegraphics[width=0.5\textwidth]{OH2008-fig7}}
 \end{frame}
 
 
 \subsection{Test particles}
 
+\begin{frame}
+  \frametitle{Stationary bowshocks as probes of the nebular flow}
+  \includegraphics{LL1-schematic}
+\end{frame}
 
+\begin{frame}
+  \frametitle{More bowshocks}
+  \renewcommand\arraystretch{0}
+  \setlength\tabcolsep{0pt}
+  \begin{tabular}{l}
+    \includegraphics[height=0.8\textheight]{north-west-field-combined}\\
+  \end{tabular}%
+  \begin{tabular}{l}
+    \includegraphics[height=0.266\textheight]{LL266-558-15x15arcsec-annot}\\
+    \includegraphics[height=0.266\textheight]{Proplyd-Bow2-10x10arcsec-annot}\\
+    \includegraphics[height=0.266\textheight]{LL6-60x60arcsec-annot}\\
+  \end{tabular}
+\end{frame}
 
+\begin{frame}
+  \frametitle{Two-shock stationary flow pattern}
+  \centering\includegraphics[width=\textwidth]{LL-outer-inner}
+\end{frame}
 
 \section{Physical ingredients for dynamic models}
 
@@ -239,8 +262,30 @@
   \end{block}}
 \end{frame}
 
+
+\begin{frame}[c]
+  \frametitle{Ionization structure in the Orion Nebula}
+  \setkeys{Gin}{height=0.8\textheight, keepaspectratio=true}
+  \begin{centering}
+    \only<1>{\includegraphics{oldtalks/TFE06/All_quart}}%
+    \only<2>{\includegraphics{oldtalks/TFE06/All_quart_hilight}}%
+    \par
+  \end{centering}
+\end{frame}
+
 \begin{frame}
-  \frametitle{Example: Ionization structure of the inner Orion Nebula}
+  \frametitle{Complex ionization structure in the heart of the nebula}
+  \setkeys{Gin}{height=0.8\textheight, keepaspectratio=true}
+  \begin{centering}
+    \only<1>{\includegraphics{oldtalks/TFE06/talk_image_658+656+502}}%
+    \only<2>{\includegraphics{oldtalks/TFE06/talk_image_658+673+631}}%
+    % \only<1,7>{\includegraphics{oldtalks/TFE06/talk_image_658+656+502}}%
+    % \only<2,6>{\includegraphics{oldtalks/TFE06/talk_image_658+673+631}}%
+    % \only<3>{\includegraphics{oldtalks/TFE06/talk_image_658+673+631_labels}}%
+    % \only<4>{\includegraphics{oldtalks/TFE06/talk_image_658+673+631_oneray}}%
+    % \only<5>{\includegraphics{oldtalks/TFE06/talk_image_658+673+631_bothrays}}%
+    \par
+  \end{centering}
 \end{frame}
 
 \subsection{Radiative transfer}
@@ -408,13 +453,18 @@
 }
 
 \subsection{Winds, shocks, shells}
+{
+  \usebackgroundtemplate{
+     {\centering\includegraphics[height=0.93\paperheight]{wind-geometry-extended}}
+  }
 \begin{frame}
-  \frametitle{Winds, shocks, shells}
-  \begin{block}{\emph{No time today!} }
-    \includegraphics{poland-figs/Ipad-Sketch-Shocks}
-  \end{block}
+  \frametitle{\hspace*{0.5\textwidth}Winds, shocks, shells}
+%  \includegraphics[width=\textwidth]{wind-geometry-extended}
+  % \begin{block}{\emph{No time today!} }
+  %   \includegraphics{poland-figs/Ipad-Sketch-Shocks}
+  % \end{block}
 \end{frame}
-
+}
 
 \section{Application of \hii{} region models to Orion}
 
@@ -566,15 +616,15 @@
   \end{columns}
 \end{frame}
 
-{
-  \usebackgroundtemplate{
-    \parbox[c][\paperheight][c]{\paperwidth}{\missingmovietext}
-  }
+% {
+%   \usebackgroundtemplate{
+%     \parbox[c][\paperheight][c]{\paperwidth}{\missingmovietext}
+%   }
 \begin{frame}[plain]%%
 \hspace*{-1ex}\includemovie[label=new-movie, autoplay, autopause, controls, repeat=1]
 {1.27968\paperheight}{0.96\paperheight}{poland-figs/O-Star-512-PDR-2012.mov}
 \end{frame}
-}
+% }
 
 
 
