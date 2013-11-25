@@ -1,0 +1,100 @@
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{movie15}
+\usepackage{etex} 
+\usepackage{pgfpages}
+\usepackage{tikz}
+\usepackage{will-beamer-baltimore} 
+\usepackage{xcolor}
+\tolerance=1000
+
+\graphicspath{ 
+  {figs/},
+  {../TownsvillePoster/figs/},
+  {../LarimTalk2010/movies/},   
+  {../Poland2012/figs/},   
+}
+
+\newcommand\backskip{\vspace*{-\baselineskip}}
+\newcommand\backsmallskip{\vspace*{-\smallskipamount}}
+\newcommand\backmedskip{\vspace*{-\medskipamount}}
+\newcommand\backbigskip{\vspace*{-\bigskipamount}}
+
+\setkeys{Gin}{width=\linewidth, height=0.8\textheight, keepaspectratio=true}
+
+% \setbeameroption{show notes}
+
+% \renewcommand\baselinestretch{1.2}
+
+\title{Dynamics of ionized gas around massive young star clusters}
+\author{\textit{William J. Henney}}
+\date[Baltimore 2013]{Dece,ber 2013 \(\cdot\) Puebla, Mexico}
+\institute[CRyA, UNAM]
+{
+  \structure{Centro de Radioastronomía y Astrofísica\\
+  UNAM, Morelia, México}
+}
+
+\hypersetup{
+  pdfkeywords={Orion Nebula, Astrophysics, Dynamics},
+  pdfsubject={},
+  pdfcreator={Lovingly hand-crafted by the author using pdflatex and beamer}
+}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Coming up next \dots}
+    \tableofcontents[
+    sectionstyle=show/shaded,
+    currentsubsection, 
+    hideothersubsections
+    ]
+  \end{frame}
+}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Principal collaborators}
+
+\begin{block}{CRyA-UNAM, Morelia, Mexico}
+\begin{description}
+\item[\small HD] \textit{Jane Arthur}
+\item[\small Turbulence] \textit{Enrique Vázquez-Semadeni}
+\item[\small Students] \textit{Sac-Nicté Serrano Medina}
+\item \textit{A. Jorge Tarango Yong}
+\item \textit{Luis Ángel Gutierrez Soto} 
+\end{description}
+\end{block}
+
+\begin{block}{Elsewhere}
+  \begin{description}
+  \item[\small MHD] \textit{Fabio de Colle} (ICN-UNAM, Mexico)
+  \item[\small Radiation] \textit{Garrelt Mellema} (Stockholm Observatory, Sweden)
+  \item[\small Observations] \textit{María Teresa García-Díaz} (IA-UNAM, Ensenada, Mexico)
+  \item \textit{Bob O'Dell} (Vanderbilt, USA)
+  \item \textit{Bob Rubin} \textbf{[\textdagger{} 2013-03-03]} (NASA-AMES/Orion Enterprises)
+  \end{description}
+\end{block}
+
+\end{frame}
+
+\begin{frame}<beamer>
+  \frametitle{Dynamics of the Orion Nebula}
+  \tableofcontents[hidesubsections]
+\end{frame}
+
+
+\end{document}
