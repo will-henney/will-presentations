@@ -2,6 +2,20 @@ Only short, so don't need much stuff.
 
 + Show the video early
 
+
+* General outline
+
+** Brief overview of scope and ingredients
+** Turbulent HII regions
+*** Show video
+*** Turbulence statistics
+*** Observational diagnostics
+** Missing ingredients
+*** Magnetic fields
+*** Stellar winds
+
+
+
 * Stuff on stellar winds
 + More important for more massive clusters
 + Very dependent on whether energy or momentum driven
@@ -29,7 +43,8 @@ Only short, so don't need much stuff.
 + M17 comes from various places, including Povich et al (2009)
 + M42 comes from Guedel (2008) and elsewhere
 + Note that 1 keV = 1.16e7 K
-
+*** TODO Resolve discrepancy in T for same source
+Particularly NGC 3603 - see Townsley paper below
 
 * X-rays from wind-bubbles in massive star clusters
 
