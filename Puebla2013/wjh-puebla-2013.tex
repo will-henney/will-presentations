@@ -6,19 +6,19 @@
 \usepackage{hyperref}
 \usepackage{siunitx}
 \usepackage{booktabs}
-\usepackage{movie15}
+\usepackage{media9}
 \usepackage{etex} 
 \usepackage{pgfpages}
 \usepackage{tikz}
-\usepackage{will-beamer-baltimore} 
+\usepackage{will-beamer-puebla} 
 \usepackage{xcolor}
 \tolerance=1000
 
 \graphicspath{ 
   {figs/},
+  {../Baltimore2013/figs/},
   {../TownsvillePoster/figs/},
   {../LarimTalk2010/movies/},   
-  {../Poland2012/figs/},   
 }
 
 \newcommand\backskip{\vspace*{-\baselineskip}}
@@ -34,7 +34,7 @@
 
 \title{Dynamics of ionized gas around massive young star clusters}
 \author{\textit{William J. Henney}}
-\date[Baltimore 2013]{Dece,ber 2013 \(\cdot\) Puebla, Mexico}
+\date[Baltimore 2013]{December 2013 \(\cdot\) Puebla, Mexico}
 \institute[CRyA, UNAM]
 {
   \structure{Centro de Radioastronomía y Astrofísica\\
@@ -95,6 +95,138 @@
   \frametitle{Dynamics of the Orion Nebula}
   \tableofcontents[hidesubsections]
 \end{frame}
+
+\section{Whatever}
+\subsection{Turbulent models}
+
+\newlength\maxheight
+\setlength\maxheight{0.8\textheight}
+\newlength\moviewidth
+\setlength\moviewidth{0.7\textwidth}
+
+\begin{frame}
+\frametitle{Turbulent models: initial conditions}
+\includegraphics{poland-figs/rgb-CPF-initial}
+\end{frame}
+
+\begin{frame}[shrink=5]
+\frametitle{Turbulent models: state of play}
+\begin{block}{Physics we have}
+  \begin{itemize}
+  \item 3D time-dependent, hydrodynamics
+  \item Approximate radiative transfer
+  \item Microphysics:
+    \begin{itemize}
+    \item good for ionized gas
+    \item fair for PDR
+    \item poor for molecular gas
+    \end{itemize}
+  \item {}[Ideal magnetohydrodynamics]
+  \end{itemize}
+\end{block}
+\begin{block}{Physics we lack}
+  \begin{itemize}
+  \item Stellar winds
+  \item Radiation pressure
+  \item Diffuse field
+  \item Self-gravity
+  \item {\footnotesize Better microphysics, better radiative transfer,
+    \scriptsize multifluids, non-ideal MHD, \tiny \(\upkappa\)-distributions, etc \dots}
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[plain]%%
+  \newlength\figwidth
+  \setlength\figwidth{0.33\textwidth}
+  \renewcommand\arraystretch{0.0}
+  \setlength\tabcolsep{0pt}
+  \graphicspath{
+    {poland-figs/movie-stills/O-Star-512-PDR-2012/},
+    }
+  \begin{tabular}{lll}
+    \includegraphics[width=\figwidth]{01-Opening-Titles}
+    & 
+    \includegraphics[width=\figwidth]{02-Model-Parameters}
+    & 
+    \includegraphics[width=\figwidth]{03-Color-Scheme}
+    % & 
+    % \includegraphics[width=\figwidth]{04-Evolution-Start}
+    \\
+    \includegraphics[width=\figwidth]{05-Evolution-Mid}
+    & 
+    \includegraphics[width=\figwidth]{06-Evolution-End}
+    & 
+    \includegraphics[width=\figwidth]{07-Detail-View}
+    % & 
+    % \includegraphics[width=\figwidth]{08-Swimming-Sisters} 
+    \\
+    % \includegraphics[width=\figwidth]{09-Long-Wav-Color-Scheme}
+    % & 
+    \includegraphics[width=\figwidth]{10-Long-Wav-Mid}
+    & 
+    \includegraphics[width=\figwidth]{11-Long-Wav-End}
+    & 
+    \includegraphics[width=\figwidth]{12-Simulations-Credit}
+\end{tabular}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Turbulent models: results}
+  \begin{columns}
+    \column{0.6\linewidth}
+    \begin{itemize}
+    \item Many morphological features of observed \hii{} regions are
+      reproduced naturally
+      \begin{itemize}
+      \item Due to existing density structure in the
+        turbulent molecular cloud, combined with fragmentation induced
+        by interaction with the ionized gas
+      \end{itemize}
+    \item Velocity dispersions of order the sound speed are
+      maintained in the ionized gas during the entire evolution
+    \item The highest pressure neutral/molecular gas is driven to
+      equipartition between thermal, magnetic, and turbulent energies
+    \item Lower pressure gas bifurcates into zones dominated by one or
+      the other
+    \end{itemize}
+    \column{0.4\linewidth}
+    \includegraphics{poland-figs/comparison3_vs_t_Ostar}%
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Turbulent models: more results}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \includegraphics{poland-figs/mhd-pressures-rgb-Ostar-et-0200-pram-pmag}
+    \column{0.5\linewidth}
+    \includegraphics{poland-figs/mhd-pressures-rgb-Ostar-et-0200-n-B}
+  \end{columns}
+\end{frame}
+
+% {
+%   \usebackgroundtemplate{
+%     \parbox[c][\paperheight][c]{\paperwidth}{\missingmovietext}
+%   }
+\def\MovieFile{poland-figs/O-Star-512-PDR-2012.mov}
+\def\MoviePlayer{StrobeMediaPlayback.swf} % or VPlayer.swf
+\begin{frame}[plain]%%
+\hspace*{-1ex}%
+% \includemovie[label=new-movie, autoplay, autopause, controls, repeat=1]
+% {1.27968\paperheight}{0.96\paperheight}{poland-figs/O-Star-512-PDR-2012.mov}
+\includemedia[
+  width=1.27968\paperheight,
+  height=0.96\paperheight,
+  activate=pageopen,
+  addresource=\MovieFile,
+  flashvars={src=\MovieFile&scaleMode=letterbox}
+]{}{\MoviePlayer}
+\end{frame}
+% }
+
 
 
 \end{document}

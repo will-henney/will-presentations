@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{media9}
+\def\MovieFile{poland-figs/O-Star-512-PDR-2012.mov}
+\begin{document}
+
+\includemedia[
+  width=0.4\linewidth,
+  height=0.3\linewidth,
+  activate=pageopen,
+  addresource=\Movie File,
+  flashvars={source=\MovieFile}
+]{}{VPlayer.swf}
+
+Note that with \texttt{StrobeMediaPlayback.swf} we need to use
+\texttt{src=FOO} instead of \texttt{source=FOO} 
+
+\includemedia[
+  width=0.4\linewidth,
+  height=0.3\linewidth,
+  activate=pageopen,
+  addresource=\Movie File,
+  flashvars={src=\MovieFile}
+]{}{VPlayer.swf}
+
+\end{document}
