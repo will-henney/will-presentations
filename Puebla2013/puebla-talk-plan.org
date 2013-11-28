@@ -1,0 +1,77 @@
+Only short, so don't need much stuff. 
+
++ Show the video early
+
+* Stuff on stellar winds
++ More important for more massive clusters
++ Very dependent on whether energy or momentum driven
++ Show videos of two cases
++ Also show cuts through the cubes
++ Uncertainties in the physics of stellar wind shocks
+  + Why is gas always at 1e6 K?
+  + Jane's paper on Orion
+  + Models produce hard x-rays that are not observed
+
+
+** Table of wind properties
+| Object     |         T_{c} | N       |       Z |  R_{sc} |         L_{mec} |           L_X | X/mec          |
+|            |      [keV] | >O7     | [Z_sun ] | [pc] | [10^38 erg/s] | [10^34 erg/s] | [1e-4]         |
+|------------+------------+---------+---------+------+--------------+--------------+----------------|
+| NGC 3603   |        3.1 |         |       1 | 0.71 |          1.7 |          1.6 | 0.94           |
+| Arches     |        1.5 |         |       4 |  0.2 |          1.1 |       [2..4] | [1.82 .. 3.64] |
+| Quintuplet |        2.4 |         |       1 |  1.0 |          2.6 |          1.0 | 0.38           |
+| Carina     | 0.25, 0.55 | 50      |         |      |              |           >3 |                |
+| M 17       |        0.7 | [8..12] |       1 |  0.1 |  [0.1..0.35] |         0.25 | [0.71 .. 2.50] |
+| M42        |        0.1 | 1       |       1 |  0.1 |        0.007 |       0.0055 | 0.79           |
+#+TBLFM: $8=$-1/$-2;f2
+
++ The first three come from Anorve-Zeferino
++ M17 comes from various places, including Povich et al (2009)
++ M42 comes from Guedel (2008) and elsewhere
++ Note that 1 keV = 1.16e7 K
+
+
+* X-rays from wind-bubbles in massive star clusters
+
+** Townsley et al 2011b: Chandra observations of many regions
++ Three temperature fits to spectra
++ Gives NGC 3603 components as 0.53, 0.35, 0.6 keV
+  + Wiht the 0.6 keV component dominating
+  + [ ] This is much softer than the 3.1 keV given in Anorve-Zeferino - why?
+** Ezoe et al 2008: Carina XMM observations
++ Two temperature fits to spectra
++ 0.25 and 0.55 keV with roughly equal fluxes
+** Guedel 2008: Orion Wind Bubble XMM observations
++ 1 - 2 e6 K single-temperature fits
+** Arthur 2013: Orion Wind bubble theory
++ (notes taken with text to speech via touchpad my iphone)
++ spherical models of wind bubble in Orion
+  + models with mass loading
+  + models with conduction
+  + models with both
++ Luminosity is okay
++ Spectrum is too hard
+  +  soft is less than 1 kilo electron volts
+** Velázquez et al 2013: M17 wind bubble theory
++ Soft x-rays (0.5-1.5 keV) come from wind-ism interaction
+  + extends to low-density part of the bubble
++ Harder x-rays come from the wind-wind interaction zone
+  + concetrated around the core of the cluster
+** Mernier 2013: M17 X-rays observations
++ Diffuse emission covered in
+  + Fig 1
+  + Sec 3.3
+  + Fig 8 - spectrum is clearly harder than what is seen in Orion
+** Anorve-Zeferino 2008: X-rays from SSCs
++ Mainly consider: NGC 3606, Arches, Quintuplet
++ 
++ Also consider M17 case
++ Have varying degrees of inhibition of conduction
++ 
+
+** Povich et al. 2008: weather vanes
++ They find MIR bowshocks in M17 and RCW 49
++ They interpret these as O stars in the periphery of the HII region
++ Most are interacting with the HII region gas
++ But one may be interacting with the stellar wind exhaust
+** 
