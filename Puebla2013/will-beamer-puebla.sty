@@ -2,6 +2,17 @@
 \let\eighthnote\@undefined
 %% 
 \usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{multimedia}
+\usepackage{etex} 
+\usepackage{pgfpages}
+\usepackage{xcolor}
+
 %% 
 \usepackage{txlibertine}\usefonttheme{serif}
 % \usepackage{arevtext}
@@ -9,7 +20,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{tikz}
-\usepackage{movie15}
+%% Conflicts with multimedia
+%% \usepackage{movie15}
 \usepackage{upgreek,lgreek}
 \usetikzlibrary{mindmap,positioning,shadows,backgrounds,calc,shapes.geometric}
 \usetheme{WillWhite}
@@ -33,4 +45,10 @@
 % \newcommand\VEC{\mathbf}
 % \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\grad}{\nabla}
+
+\newcommand\backskip{\vspace*{-\baselineskip}}
+\newcommand\backsmallskip{\vspace*{-\smallskipamount}}
+\newcommand\backmedskip{\vspace*{-\medskipamount}}
+\newcommand\backbigskip{\vspace*{-\bigskipamount}}
+
 

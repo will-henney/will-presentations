@@ -1,17 +1,5 @@
 \documentclass[presentation]{beamer}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{fixltx2e}
-\usepackage{textcomp}
-\usepackage{hyperref}
-\usepackage{siunitx}
-\usepackage{booktabs}
-\usepackage{media9}
-\usepackage{etex} 
-\usepackage{pgfpages}
-\usepackage{tikz}
 \usepackage{will-beamer-puebla} 
-\usepackage{xcolor}
 \tolerance=1000
 
 \graphicspath{ 
@@ -19,11 +7,6 @@
   {../TownsvillePoster/figs/},
   {../LarimTalk2010/movies/},   
 }
-
-\newcommand\backskip{\vspace*{-\baselineskip}}
-\newcommand\backsmallskip{\vspace*{-\smallskipamount}}
-\newcommand\backmedskip{\vspace*{-\medskipamount}}
-\newcommand\backbigskip{\vspace*{-\bigskipamount}}
 
 \setkeys{Gin}{width=\linewidth, height=0.8\textheight, keepaspectratio=true}
 
@@ -37,11 +20,13 @@
 \institute[CRyA, UNAM]
 {
   \structure{Centro de Radioastronomía y Astrofísica\\
-  UNAM, Morelia, México}
+    UNAM, Morelia, México}
+  \bigskip\bigskip
+  \textit{Remember to turn off power saver!} 
 }
 
 \hypersetup{
-  pdfkeywords={Orion Nebula, Astrophysics, Dynamics},
+  pdfkeywords={Massive Star Clusters, Astrophysics, Dynamics, Radiation},
   pdfsubject={},
   pdfcreator={Lovingly hand-crafted by the author using pdflatex and beamer}
 }
@@ -61,6 +46,16 @@
 
 
 
+\newcommand\missingmovietext{
+  \begin{center}
+    \bfseries\ttfamily
+    This PDF viewer does not support embedded videos
+    \par \bigskip
+    To view the movie, please open the PDF file in \textit{Adobe Reader}
+    
+  \end{center}
+  }
+
 \begin{document}
 
 \maketitle
@@ -74,7 +69,7 @@
 \item[\small Turbulence] \textit{Enrique Vázquez-Semadeni}
 \item[\small Students] \textit{Sac-Nicté Serrano Medina}
 \item \textit{A. Jorge Tarango Yong}
-\item \textit{Luis Ángel Gutierrez Soto} 
+\item \textit{Luis Ángel Gutierrez Soto}
 \end{description}
 \end{block}
 
@@ -82,10 +77,10 @@
   \begin{description}
   \item[\small MHD] \textit{Fabio de Colle} (ICN-UNAM, Mexico)
   \item[\small Radiation] \textit{Garrelt Mellema} (Stockholm Observatory, Sweden)
+  \item[\small \textmu{}-physics] \textit{Gary Ferland} (Kentucky, USA)
   \item[\small Observations] \textit{María Teresa García-Díaz} (IA-UNAM, Ensenada, Mexico)
   \item \textit{Bob O'Dell} (Vanderbilt, USA)
-  \item \textit{Bob Rubin} \textbf{[\textdagger{} 2013-03-03]} (NASA-AMES/Orion Enterprises)
-  \end{description}
+    \end{description}
 \end{block}
 
 \end{frame}
@@ -102,6 +97,7 @@
 \setlength\maxheight{0.8\textheight}
 \newlength\moviewidth
 \setlength\moviewidth{0.7\textwidth}
+\newlength\movieheight
 
 \begin{frame}
 \frametitle{Turbulent models: initial conditions}
@@ -206,25 +202,57 @@
   \end{columns}
 \end{frame}
 
-% {
-%   \usebackgroundtemplate{
-%     \parbox[c][\paperheight][c]{\paperwidth}{\missingmovietext}
-%   }
-\def\MovieFile{poland-figs/O-Star-512-PDR-2012.mov}
-\def\MoviePlayer{StrobeMediaPlayback.swf} % or VPlayer.swf
-\begin{frame}[plain]%%
-\hspace*{-1ex}%
-% \includemovie[label=new-movie, autoplay, autopause, controls, repeat=1]
-% {1.27968\paperheight}{0.96\paperheight}{poland-figs/O-Star-512-PDR-2012.mov}
-\includemedia[
-  width=1.27968\paperheight,
-  height=0.96\paperheight,
-  activate=pageopen,
-  addresource=\MovieFile,
-  flashvars={src=\MovieFile&scaleMode=letterbox}
-]{}{\MoviePlayer}
-\end{frame}
+% This doesn't work with multimedia package since movie is opaque even
+% in Preview.app
+% \usebackgroundtemplate{
+%   \parbox[c][\paperheight][c]{\paperwidth}{\missingmovietext}
 % }
+
+\def\MovieFile{poland-figs/O-Star-512-PDR-2012.mov}
+% Ratio: 0.75
+% \setlength\moviewidth{1.27968\paperheight}
+% \setlength\movieheight{0.96\paperheight}
+\begin{frame}%%
+  \frametitle{Turbulent \hii{} regions: the movie}
+  \graphicspath{
+    {poland-figs/movie-stills/O-Star-512-PDR-2012/},
+  }
+  \begin{columns}
+    %%
+    %% The movie itself
+    %%
+    \column{0.7\linewidth}
+    \setlength\moviewidth{\linewidth}
+    \setlength\movieheight{0.75\moviewidth}
+    \movie[width=\moviewidth, height=\movieheight, label=bigmovie,
+    autostart, showcontrols, start=2s]
+    {\includegraphics[width=\moviewidth, height=\movieheight]{01-Opening-Titles}}
+    {\MovieFile}
+    %%
+    %% Buttons to control the movie
+    %%
+    \column{0.3\linewidth}
+    \includegraphics[width=\linewidth]{02-Model-Parameters}
+    \par\bigskip
+    % Jump to Evolution
+    \hyperlinkmovie[start=20s, duration=6s, loop]{bigmovie}
+    {\beamerbutton{Evolution of optical line emission}}
+    % Jump to 100,000
+    \hyperlinkmovie[start=48s, duration=8s, palindrome]{bigmovie}
+    {\beamerbutton{Rotation at \(t=100,000\)~years}}
+    % Jump to 200,000
+    \hyperlinkmovie[start=75s, duration=8s, palindrome]{bigmovie}
+    {\beamerbutton{Rotation at \(t=200,000\)~years}}
+    % Jump to Long wavelength
+    \hyperlinkmovie[start=110s, duration=5s, loop]{bigmovie}
+    {\beamerbutton{Neutral/molecular gas evolution}}
+    % Jump to Credits 
+    \hyperlinkmovie[start=153s]{bigmovie}
+    {\beamerbutton{Show the credits}}
+    % Open in viewer
+    \href{run:\MovieFile}{\beamerbutton{Open in external viewer}}
+  \end{columns}
+\end{frame}
 
 
 
