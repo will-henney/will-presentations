@@ -1,0 +1,20 @@
+\documentclass{beamer}
+\usepackage{multimedia}
+\begin{document}
+
+\def\MovieFile{poland-figs/O-Star-512-PDR-2012.mov}
+\newlength\moviewidth
+\newlength\movieheight
+\setlength\moviewidth{1.27968\paperheight}
+\setlength\movieheight{0.96\paperheight}
+\begin{frame}[plain]%%
+  \graphicspath{
+    {poland-figs/movie-stills/O-Star-512-PDR-2012/},
+  }
+  \hspace*{-2ex}%
+  \movie[width=\moviewidth, height=\movieheight]
+  {\includegraphics[width=\moviewidth]{01-Opening-Titles}}
+  {\MovieFile}
+\end{frame}
+  
+\end{document}
