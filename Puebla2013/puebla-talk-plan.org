@@ -6,15 +6,28 @@ Only short, so don't need much stuff.
 * General outline
 
 ** Brief overview of scope and ingredients
-** Turbulent HII regions
+** Simulations of Turbulent HII regions
 *** Show video
+Do this first
 *** Turbulence statistics
 *** Observational diagnostics
+Sac stuff, but figures are too tall
 ** Missing ingredients
 *** Magnetic fields
+Briefly show video
 *** Stellar winds
-
-
+Drop this
+** A third way to study kinematics
++ Everyone knows about spectroscopy
+  + Disadvantages:
+    + thermal broadening
+    + low spatial resolution
++ Everyone knows about proper motions
+  + Disadvantages:
+    + non-steady only
+    + sharp features only
++ But there is a third way: test particles
+  + or weather vanes
 
 * Stuff on stellar winds
 + More important for more massive clusters
