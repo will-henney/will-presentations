@@ -4,8 +4,6 @@
 
 \graphicspath{ 
   {figs/},
-  {../TownsvillePoster/figs/},
-  {../LarimTalk2010/movies/},   
 }
 
 \setkeys{Gin}{width=\linewidth, height=0.8\textheight, keepaspectratio=true}
@@ -14,7 +12,8 @@
 
 % \renewcommand\baselinestretch{1.2}
 
-\title[Ionized gas dynamics]{Dynamics of ionized gas around\\ massive young star clusters}
+% \title[Ionized gas dynamics]{Dynamics of ionized gas around\\ massive young star clusters}
+\title[Ionized gas dynamics]{Order versus disorder in\\ photo-ionized gas dynamics}
 \author{\textit{William J. Henney}}
 \date[Baltimore 2013]{
   December 2013 \(\cdot\) Puebla, Mexico
@@ -89,12 +88,12 @@
 \end{frame}
 
 \begin{frame}<beamer>
-  \frametitle{Dynamics of the Orion Nebula}
+  \frametitle{Dynamics of ionized gas around\\ massive young star clusters}
   \tableofcontents[hidesubsections]
 \end{frame}
 
-\section{Whatever}
-\subsection{Turbulent models}
+\section{Turbulent \hii{} regions}
+\subsection{Simulations}
 
 \newlength\maxheight
 \setlength\maxheight{0.8\textheight}
@@ -102,10 +101,10 @@
 \setlength\moviewidth{0.7\textwidth}
 \newlength\movieheight
 
-\begin{frame}
-\frametitle{Turbulent models: initial conditions}
-\includegraphics{poland-figs/rgb-CPF-initial}
-\end{frame}
+% \begin{frame}
+% \frametitle{Turbulent models: initial conditions}
+% \includegraphics{poland-figs/rgb-CPF-initial}
+% \end{frame}
 
 \begin{frame}[shrink=5]
 \frametitle{Turbulent models: state of play}
@@ -128,82 +127,49 @@
   \item Radiation pressure
   \item Diffuse field
   \item Self-gravity
-  \item {\footnotesize Better microphysics, better radiative transfer,
+  \item{} 
+    {\footnotesize Better microphysics, better radiative transfer,
     \scriptsize multifluids, non-ideal MHD, \tiny \(\upkappa\)-distributions, etc \dots}
   \end{itemize}
 \end{block}
 \end{frame}
 
-\begin{frame}[plain]%%
-  \newlength\figwidth
-  \setlength\figwidth{0.33\textwidth}
-  \renewcommand\arraystretch{0.0}
-  \setlength\tabcolsep{0pt}
-  \graphicspath{
-    {poland-figs/movie-stills/O-Star-512-PDR-2012/},
-    }
-  \begin{tabular}{lll}
-    \includegraphics[width=\figwidth]{01-Opening-Titles}
-    & 
-    \includegraphics[width=\figwidth]{02-Model-Parameters}
-    & 
-    \includegraphics[width=\figwidth]{03-Color-Scheme}
-    % & 
-    % \includegraphics[width=\figwidth]{04-Evolution-Start}
-    \\
-    \includegraphics[width=\figwidth]{05-Evolution-Mid}
-    & 
-    \includegraphics[width=\figwidth]{06-Evolution-End}
-    & 
-    \includegraphics[width=\figwidth]{07-Detail-View}
-    % & 
-    % \includegraphics[width=\figwidth]{08-Swimming-Sisters} 
-    \\
-    % \includegraphics[width=\figwidth]{09-Long-Wav-Color-Scheme}
-    % & 
-    \includegraphics[width=\figwidth]{10-Long-Wav-Mid}
-    & 
-    \includegraphics[width=\figwidth]{11-Long-Wav-End}
-    & 
-    \includegraphics[width=\figwidth]{12-Simulations-Credit}
-\end{tabular}
+% \begin{frame}[plain]%%
+%   \newlength\figwidth
+%   \setlength\figwidth{0.33\textwidth}
+%   \renewcommand\arraystretch{0.0}
+%   \setlength\tabcolsep{0pt}
+%   \graphicspath{
+%     {poland-figs/movie-stills/O-Star-512-PDR-2012/},
+%     }
+%   \begin{tabular}{lll}
+%     \includegraphics[width=\figwidth]{01-Opening-Titles}
+%     & 
+%     \includegraphics[width=\figwidth]{02-Model-Parameters}
+%     & 
+%     \includegraphics[width=\figwidth]{03-Color-Scheme}
+%     % & 
+%     % \includegraphics[width=\figwidth]{04-Evolution-Start}
+%     \\
+%     \includegraphics[width=\figwidth]{05-Evolution-Mid}
+%     & 
+%     \includegraphics[width=\figwidth]{06-Evolution-End}
+%     & 
+%     \includegraphics[width=\figwidth]{07-Detail-View}
+%     % & 
+%     % \includegraphics[width=\figwidth]{08-Swimming-Sisters} 
+%     \\
+%     % \includegraphics[width=\figwidth]{09-Long-Wav-Color-Scheme}
+%     % & 
+%     \includegraphics[width=\figwidth]{10-Long-Wav-Mid}
+%     & 
+%     \includegraphics[width=\figwidth]{11-Long-Wav-End}
+%     & 
+%     \includegraphics[width=\figwidth]{12-Simulations-Credit}
+% \end{tabular}
 
-\end{frame}
+% \end{frame}
 
-
-\begin{frame}
-  \frametitle{Turbulent models: results}
-  \begin{columns}
-    \column{0.6\linewidth}
-    \begin{itemize}
-    \item Many morphological features of observed \hii{} regions are
-      reproduced naturally
-      \begin{itemize}
-      \item Due to existing density structure in the
-        turbulent molecular cloud, combined with fragmentation induced
-        by interaction with the ionized gas
-      \end{itemize}
-    \item Velocity dispersions of order the sound speed are
-      maintained in the ionized gas during the entire evolution
-    \item The highest pressure neutral/molecular gas is driven to
-      equipartition between thermal, magnetic, and turbulent energies
-    \item Lower pressure gas bifurcates into zones dominated by one or
-      the other
-    \end{itemize}
-    \column{0.4\linewidth}
-    \includegraphics{poland-figs/comparison3_vs_t_Ostar}%
-  \end{columns}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Turbulent models: more results}
-  \begin{columns}
-    \column{0.5\linewidth}
-    \includegraphics{poland-figs/mhd-pressures-rgb-Ostar-et-0200-pram-pmag}
-    \column{0.5\linewidth}
-    \includegraphics{poland-figs/mhd-pressures-rgb-Ostar-et-0200-n-B}
-  \end{columns}
-\end{frame}
 
 % This doesn't work with multimedia package since movie is opaque even
 % in Preview.app
@@ -257,6 +223,146 @@
   \end{columns}
 \end{frame}
 
+\subsection{Simulation results}
 
+\begin{frame}
+  \frametitle{Morphology and kinematics}
+  \begin{columns}
+    \column{0.55\linewidth}
+    \begin{itemize}
+    \item Many morphological features of observed \hii{} regions are
+      reproduced naturally
+      \begin{itemize}
+      \item Due to existing density structure in the
+        turbulent molecular cloud, combined with fragmentation induced
+        by interaction with the ionized gas
+      \end{itemize}
+    \item Velocity dispersions of order the sound speed are
+      maintained in the ionized gas during the entire evolution
+    \end{itemize}
+    \column{0.45\linewidth}
+    \includegraphics[trim=0 190 0 0, clip, width=\linewidth]
+    {poland-figs/comparison3_vs_t_Ostar}\\
+    \includegraphics[trim=0 0 0 600, clip, width=\linewidth]{poland-figs/comparison3_vs_t_Ostar}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Energy equipartition (and lack thereof \dots)}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \begin{itemize}
+    \item The highest pressure neutral and molecular gas is driven to
+      near equipartition between thermal, magnetic, and turbulent energies
+    \end{itemize}
+    \smallskip
+    \centering
+    \includegraphics[height=0.6\textheight]
+    {poland-figs/mhd-pressures-rgb-Ostar-et-0200-pram-pmag}\\
+    \column{0.5\linewidth}
+    \centering
+    \includegraphics[height=0.6\textheight]
+    {poland-figs/mhd-pressures-rgb-Ostar-et-0200-n-B}
+    \begin{itemize}
+    \item Lower pressure gas bifurcates into zones dominated by one or
+      the other
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+
+\subsection{Observational diagnostics of ionized turbulence?}
+\begin{frame}
+  \frametitle{Evolution of simulated ``observed'' velocity statistics}
+  \begin{block}{Second-order velocity structure function}
+    \smallskip
+    \centerline{\(
+    S_2(l\,) = \sigma_{\mathrm{los}}^{-2}
+    \left\langle 
+      \left[ \widebar{V_{\mathrm{los}}} (\VEC{r}_1) 
+        - \widebar{V_{\mathrm{los}}} (\VEC{r}_2) \right]^2 
+    \right\rangle_{|\VEC{r}_1 - \VEC{r}_2| = l} 
+    \)}
+    \begin{itemize}
+    \item Seems to steepen with time:
+    \end{itemize}
+    \includegraphics[width=\linewidth]{sf-will-oiii-annotate}
+    \begin{itemize}
+    \item Does this reflect an evolution of the underlying turbulence?
+      \begin{itemize}
+      \item Perhaps increasing compressibility?
+      \item \textit{No} \dots it only occurs for certain viewing angles
+      \end{itemize}
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Champagne flows mess up the structure function}
+  \includegraphics{pdf-vc-will}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{But what about Velocity Channel Analysis?}
+  \begin{itemize}
+  \item Hopeless for H\(\upalpha\) -- more promising for [\ion{O}{3}]
+  \end{itemize}
+  \includegraphics{vca-will}
+\end{frame}
+
+
+\section{A novel probe of internal dynamics}
+
+\subsection{Kinematics and Proper Motions}
+\begin{frame}
+  \frametitle{Traditional probes of gas kinematics}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \begin{block}{Spectroscopy}
+      
+    \end{block}
+    \column{0.5\linewidth}
+    \begin{block}{Proper Motions}
+      
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\subsection{Bowshocks as test particles}
+
+\begin{frame}
+  \frametitle{Stationary bowshocks as probes of the nebular flow}
+  \includegraphics{balti-figs/LL1-schematic}
+\end{frame}
+
+\begin{frame}
+  \frametitle{More bowshocks}
+  \renewcommand\arraystretch{0}
+  \setlength\tabcolsep{0pt}
+  \begin{tabular}{l}
+    \includegraphics[height=0.8\textheight]{balti-figs/north-west-field-combined}\\
+  \end{tabular}%
+  \begin{tabular}{l}
+    \includegraphics[height=0.266\textheight]{balti-figs/LL266-558-15x15arcsec-annot}\\
+    \includegraphics[height=0.266\textheight]{balti-figs/Proplyd-Bow2-10x10arcsec-annot}\\
+    \includegraphics[height=0.266\textheight]{balti-figs/LL6-60x60arcsec-annot}\\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Two-shock stationary flow pattern}
+  \centering\includegraphics[width=\textwidth]{balti-figs/LL-outer-inner}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Orientation of the bowshocks in Orion}
+  \centering
+  \only<1>{\includegraphics[width=\textwidth]{ll-positions}}
+  \only<2>{\includegraphics[width=\textwidth]{ll-positions-zoom}}
+\end{frame}
 
 \end{document}

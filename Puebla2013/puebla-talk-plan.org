@@ -11,7 +11,22 @@ Only short, so don't need much stuff.
 Do this first
 *** Turbulence statistics
 *** Observational diagnostics
-Sac stuff, but figures are too tall
++ Sac stuff, but figures are too tall
+  + Jane is doing more figures for me
++ Can we infer turbulence properties from (fake) observations?
+  + If we can't do this for simulations, what hope is there for real objects?
+  + Traditional diagnostics:
+    + 2nd order structure function of velocity - mean square velocity difference as function of separation
+    + Velocity channel power spectra for thin and thick slices
+  + Generally assumed that structure function reflects the underlying 3D velocity power spectrum, but is this true?
+    + /Sometimes.../
+    + We see an evolution from about 0.7 to about 1.0 in the slope of the [O III] structure function in the xy plane
+      + Kolmogorov is +2/3 and Burger is +1
+  + VCA
+    + Thick slices - slope determined by density statistics (or in our case, emissivity)
+    + Thin slices - slope affected by velocity statistics
+
+**** 
 ** Missing ingredients
 *** Magnetic fields
 Briefly show video
