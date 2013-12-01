@@ -20,6 +20,10 @@
 .DS_Store
 _region_.tex
 */figs
+!Puebla2013/figs
+!Puebla2013/figs/*.pdf
+!Puebla2013/figs/*.png
+!Puebla2013/figs/*.jpg
 */movies
 Baltimore2013/wjh-baltimore-2013.pdf
 HoustonTalk2011/mhdtalk-en-oct2011.pdf
