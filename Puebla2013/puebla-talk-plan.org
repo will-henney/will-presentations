@@ -2,6 +2,11 @@ Only short, so don't need much stuff.
 
 + Show the video early
 
+* Things still to do 
++ [ ] Partial conclusion first part
++ [ ] Partial conclusion second part
++ [ ] Add notes to slides
++ [ ] Combine LL position figures
 
 * General outline
 
