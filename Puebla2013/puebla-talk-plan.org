@@ -3,9 +3,9 @@ Only short, so don't need much stuff.
 + Show the video early
 
 * Things still to do 
-+ [ ] Partial conclusion first part
++ [X] Partial conclusion first part
 + [X] Partial conclusion second part
-+ [ ] Add notes to slides
++ [ ] Add notes to slides 
 + [ ] Combine LL position figures
 
 * General outline
