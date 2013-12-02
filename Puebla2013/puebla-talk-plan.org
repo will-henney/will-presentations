@@ -1,12 +1,16 @@
 Only short, so don't need much stuff. 
 
 + Show the video early
-
+  
 * Things still to do 
 + [X] Partial conclusion first part
 + [X] Partial conclusion second part
-+ [ ] Add notes to slides 
-+ [ ] Combine LL position figures
++ [ ] Add notes to slides
++ [ ] Add figures to PM/radvel slide
++ [X] Combine LL position figures
++ [X] Add text to LL figure slides
++ [X] Annotate turbulence graphs
++ [X] Add citations
 
 * General outline
 
