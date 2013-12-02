@@ -4,7 +4,7 @@ Only short, so don't need much stuff.
 
 * Things still to do 
 + [ ] Partial conclusion first part
-+ [ ] Partial conclusion second part
++ [X] Partial conclusion second part
 + [ ] Add notes to slides
 + [ ] Combine LL position figures
 
