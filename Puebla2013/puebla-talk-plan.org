@@ -5,12 +5,13 @@ Only short, so don't need much stuff.
 * Things still to do 
 + [X] Partial conclusion first part
 + [X] Partial conclusion second part
-+ [ ] Add notes to slides
-+ [ ] Add figures to PM/radvel slide
 + [X] Combine LL position figures
 + [X] Add text to LL figure slides
 + [X] Annotate turbulence graphs
 + [X] Add citations
+** Abandoned for lack of time
++ [ ] Add notes to slides
++ [ ] Add figures to PM/radvel slide
 
 * General outline
 
