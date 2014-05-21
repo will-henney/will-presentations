@@ -1,0 +1,105 @@
+\documentclass[presentation]{beamer}
+\usepackage{will-beamer} 
+\usepackage[LGRx, T1]{fontenc}
+\usepackage[greek, english]{babel}
+\tolerance=1000
+
+\graphicspath{ 
+  {figs/},
+}
+
+\setkeys{Gin}{width=\linewidth, height=0.85\textheight, keepaspectratio=true}
+
+\title[Ionized gas dynamics]{Structure and evolution\\ of photo-ionized regions}
+\author{\textit{William J. Henney}}
+\date[OSSF 2014]{
+  May 2014 \(\cdot\) \foreignlanguage{greek}{Θεσσαλονίκη}, Greece
+  \par\bigskip
+  \alert{\textit{Remember to turn off power saver!}}
+}
+
+\institute[CRyA, UNAM]
+{
+  \structure{Centro de Radioastronomía y Astrofísica\\
+    UNAM, Morelia, México}
+}
+
+\hypersetup{
+  pdfkeywords={Massive Star Clusters, Astrophysics, Dynamics, Radiation},
+  pdfsubject={},
+  pdfcreator={Lovingly hand-crafted by the author using pdflatex and beamer}
+}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Coming up next \dots}
+    \tableofcontents[
+    sectionstyle=show/shaded,
+    currentsubsection, 
+    hideothersubsections
+    ]
+  \end{frame}
+}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+\newlength\maxheight
+\setlength\maxheight{0.8\textheight}
+\newlength\moviewidth
+\setlength\moviewidth{0.7\textwidth}
+\newlength\movieheight
+\def\MovieFile{figs/Ostar-512-PDR-2014.mov}
+% Ratio: 0.75
+% \setlength\moviewidth{1.27968\paperheight}
+% \setlength\movieheight{0.96\paperheight}
+\begin{frame}%%
+  \frametitle{Turbulent \hii{} regions: the movie\quad \small\texttt{youtube.com/divBequals0}}
+  \graphicspath{
+    {poland-figs/movie-stills/O-Star-512-PDR-2012/},
+  }
+  \begin{columns}
+    %%
+    %% The movie itself
+    %%
+    \column{0.7\linewidth}
+    \setlength\moviewidth{\linewidth}
+    \setlength\movieheight{0.75\moviewidth}
+    \movie[width=\moviewidth, height=\movieheight, label=bigmovie,
+    autostart, showcontrols, start=2s]
+    {\includegraphics[width=\moviewidth, height=\movieheight]{01-Opening-Titles}}
+    {\MovieFile}
+    %%
+    %% Buttons to control the movie
+    %%
+    \column{0.3\linewidth}
+    \includegraphics[width=\linewidth]{02-Model-Parameters}
+    \par\bigskip
+    % Jump to Evolution
+    \hyperlinkmovie[start=21s, duration=5s, loop]{bigmovie}
+    {\beamerbutton{Evolution of optical line emission}}
+    % Jump to 100,000
+    \hyperlinkmovie[start=48s, duration=8s, palindrome]{bigmovie}
+    {\beamerbutton{Rotation at \(t=100,000\)~years}}
+    % Jump to 200,000
+    \hyperlinkmovie[start=75s, duration=8s, palindrome]{bigmovie}
+    {\beamerbutton{Rotation at \(t=200,000\)~years}}
+    % Jump to Long wavelength
+    \hyperlinkmovie[start=110s, duration=5s, loop]{bigmovie}
+    {\beamerbutton{Neutral/molecular gas evolution}}
+    % Jump to Credits 
+    \hyperlinkmovie[start=153s]{bigmovie}
+    {\beamerbutton{Show the credits}}
+    % Open in viewer
+    \href{run:\MovieFile}{\beamerbutton{Open in external viewer}}
+  \end{columns}
+\end{frame}
+
+\end{document}
