@@ -1,0 +1,240 @@
+* Talk title and sub-title
++ Structure and dynamics of H II regions
+  + "In the universe and the cloudy-verse?"
+  + No, that sounds daft
+* Things to add from Drafts note
+
++ [X] All about the ionization parameter.
+  - The global version and the local version
+  - Global ionization parameter
+    + Q / 4 \pi c n R^2
+    + Proportional to (Q n)^{1/3}
+      + For ionization bounded region
+    + Give table of examples for different regions
+      + From kappa paper
+      + Different 
+    + High values:
+      + Dust more important (for a given dust-gas ratio)
+      + Radiation pressure more important
+      + Winds more important?
+    + Low values:
+      + Floppy boundary
+      + Shocks more important
+      + I-front advection more important
+  - Local ionization parameter
+    + Determines H ionization fraction: x
+    + Ionization of other elements is /approximately/ a function of x
+      + For a given ionizing spectrum
+      + Show figure of this....
+        + [X] lineplot.pdf from oldfigs
+
++ [X] Conservation equations
+  + Use these to illustrate difference between hydro and microphysics approaches
++ [X] Use flow chart from the Sac paper. 
+  + Zoom in on different items in turn. Highlight a process and show an illustration of it.
++ [ ] Probability distribution of density.
+  + Relationship to probability distribution of brightness.
++ [ ] *Applying Cloudy to realistic H II regions*
+  + This should be a main topic
+  + What is the difference between a model and a simulation?
+    + Model is abstraction and simplification of reality
+      + Choose what is important - discard the rest
+      + Distill down to a manageable number of equations and boundary conditions
+      + Necessarily subjective - requires physical insight
+    + Simulation is trying to find a numerical "solution" of a more-or-less complicated model
+  + Two complementary approaches to studying physics of ISM:
+    + Dynamics camp
+    + Microphysics camp
+  + In the long run, they need to merge
+    + But with finite person-power and computational resources, this is tricky
+    + Improve microphysics in hydro codes
+      + Example of generating cooling curve
+    + Include dynamics in microphysics codes
+      + Against 1-zone and 2-zone models. Cautionary tale of proplyds.
+        + Correlation between density, temperature, and ionization.
+        + Example of how to do better with Cloudy
+        + Use some of slides 28-34 from Nordita talk
++ [X] Weak shocks dissipating energy. T fluctuations
+  + Find the image I made of this
+  + diss-plus-ff-t30-th60-ph60.png
++ [ ] Knudsen number. Why kappa is not important
+  + Use figure from kappa paper
++ [X] Turbulence statistics
+  + VCA versus structure functions
+  + Show thick and thin velocity slice images
+    + From first Sac paper
+    + o3-thick-thin.pdf
+  + Show power spectra for Orion
+    + From second Sac paper
+    + all-vca-HNO-xwin-new-col.pdf
+** Abandoned ideas
++ [X] Effects of magnetic fields at large sizes.
++ [X] Effects of gravity. Gravitational scale height versus size.
++ [X] Winds versus champagne flows. Jane’s simulations
+
+* Re-ordering the lagoon slides
+** Current order
+1. Reddish
+2. NIR - blue/green
+3. Gemini-RGB
+4. Detail southern ridge
+5. Texture of ionization front
+6. Hourglass
+7. Hourglass zoom
+8. Cold dust
+9. mid IR
+10. with stars
+11. without stars
+** Changes
+1. delete
+2. delete 
+3. -> 3
+4. -> 4
+5. -> 5
+6. delete
+7. delete
+8. -> 1
+9. -> 2
+10. delete
+11. delete
+
+** New order
+With text to add maybe
+
+1. Cold dust
+   - filaments
+2. mid IR
+   - yellow/red: ionized
+   - green: neutral, PDR - PAH emission from tiny grains
+3. Gemini-RGB
+   - colors represent degree of ionization
+4. Detail southern ridge
+   - put scale bar
+   - photoevap flow from globules
+   - globally concave/locally convex
+     - make a graphic overlay of this with iDraw
+5. Texture of ionization front
+   - structure on much smaller scale
+   - put scale bar
+   - but low contrast
+
+* Filling factor "problem"
++ Grazyna is concerned with this for giant regions
++ Finds value < 1% for Hodge 1013 in M101
+  + Seems to be a region like Carina
+* Setting things up
+#+BEGIN_SRC sh
+ln -s ../HoustonTalk2011 houston
+ln -s ../Poland2012/oldtalks oldtalks
+ln -s ../Poland2012/figs poland-figs
+ln -s ../Puebla2013/figs puebla-figs
+ln -s ../TownsvillePoster/figs towns-figs
+ln -s ../Olympia2014/figs greece-figs
+#+END_SRC
+
+#+RESULTS:
+* New images
+** More Herschel images
+*** Carina
++ [[file:figs/Blowing_bubbles_in_the_Carina_Nebula.jpg]]
++ 70, 160, and 250
++ 2.3 x 2.3 degrees
++ D = 2300 pc
++ Size: 92 pc
+#+BEGIN_QUOTE
+The image shows the effects of massive star formation – powerful stellar winds and radiation have carved pillars and bubbles in dense clouds of gas and dust.
+
+Giant bubbles, towering pillars and cascading clouds of dust and gas fill the star-forming nursery of the Carina Nebula seen here in a stunning new view from Herschel to launch ESA Space Science’s image of the week feature.
+
+The Carina Nebula is some 7500 lightyears from Earth and hosts some of the most massive and luminous stars in our Galaxy, including double-star system eta Carinae, which boasts over 100 times the mass of our Sun.
+
+The total amount of gas and dust traced by ESA’s Herschel space observatory in this image is equivalent to some 650 000 Suns. Including warmer gas not well traced by Herschel, the total mass may be as high as 900 000 Suns.
+
+Surrounding pillars of gas and dust point towards the bright central region of nebulosity – home to eta Carinae and numerous other massive stars.
+
+The pillars are carved by intense stellar winds and radiation blasted out by these stars, eating away at the surrounding material.
+
+Above and to the left is a chaotic web of bubbles and broken bubble arcs molded by individual regions of star formation that have swept up shells of dense clouds around them.
+
+At top right is the Gum 31 nebula, which has blown a giant bubble out of the surrounding dense clouds thanks to winds and radiation emitted by the young stellar cluster NGC 3324 that sits at its heart.
+
+The image covers approximately 2.3 x 2.3 degrees of the Carina Nebula complex and was mapped using Herschel instruments PACS and SPIRE at wavelengths of 70, 160, and 250 microns, corresponding to the blue, green, and red channels, respectively. North is to the upper left and east is to the lower left.
+
+Credit: ESA/PACS/SPIRE/Thomas Preibisch, Universitäts-Sternwarte München, Ludwig-Maximilians-Universität München, Germany
+#+END_QUOTE
+*** Orion
++ [[file:figs/ORION_A.jpg]]
++ 70, 160, 250 micron
+#+BEGIN_QUOTE
+The Orion A star-formation cloud seen by ESA’s Herschel space observatory. The Orion Nebula is located within the central bright region of this scene, where massive star formation is most intense. Cooler gas and dust is seen in red and yellow, with point-like sources the seeds of new stars.
+
+The image is a composite of the wavelengths of 70 microns (blue), 160 microns (green) and 250 microns (red) and spans about 1.3 x 2.4 degrees. North is up and east is to the left.
+
+Credits: ESA/Herschel/Ph. André, D. Polychroni, A. Roy, V. Könyves, N. Schneider for the Gould Belt survey Key Programme
+#+END_QUOTE
+*** Eagle Nebula
++ [[file:figs/A_New_View_of_an_Icon_-_Zoom_in.jpg]]
++ 70, 160, 250 micron
+#+BEGIN_QUOTE
+This new Herschel Space Observatory image of the iconic Eagle Nebula using PACS/SPIRE is a three colour composite with colours assigned as (blue=70um, green=160um, red=250um) The 70 um and 160 um data from PACS and the 250 um from SPIRE. The imaging area, which in the original data is around 95 arcminutes (cropped in the above image to 25 arminutes) on the sky contains areas of active star birth. Herschel’s far infrared instruments for the first time in this level of detail have been able to peer through the vast swathes of optically opaque material, showcasing the thermal emissions from the vast clouds and dust, which make up the nebula.
+
+Each colour shows a different temperature of dust, from around 10 degrees above absolute zero (10K) for the red, up to around 40K for the blue. In the far infrared the nebula shows its intricate tendril nature, with vast cavities forming an almost “cave-like” surrounding to the famous “pillars” which take on an ethereal ghostly appearance.
+
+The region is located 6500 light years away in the constellation of Serpens, the Serpent, one of the original 48 constellations defined by the 2nd century astronomer Ptolemy in the Almagest. Discovered first for the star cluster now known as NGC6611 which lies at its heart in the 18th century by Swiss astronomer Jean-Philippe Loys de Chéseaux. It was later re-discovered and the nebula catalogued as M16 by Charles Messier in his famous survey of the sky. The nebula which covers an area of approximately 70 light years x 55 light years is a diffuse emission HII region with very low density partially ionized gas and cold dust.
+
+It is the delicate tendrils and filaments of these, which Herschel’s unprecedented detector sensitivity can image in such detail. In 1995 the NASA/ESA Hubble Space Telescope’s image of the Eagle Nebula quickly became one of the most iconic images of the 20th Century. That image, made up of 32 separate smaller images, showed the pillars, being gradually eaten away by ultraviolet light from nearby stars. The tips of the pillars were also found to contain star forming regions, which are known as EGGS (Evaporating Gaseous Globules), and new studies using observations including these from Herschel have extended our understanding of these star incubators.
+
+Herschel’s image, produced from just over 3 hours of observing on 11-12 September 2010 shows the famous ‘Pillars of Creation’ just below the centre. It is at the tips of these several light year long pillars where astronomers are now seeing in a whole new manner, extensive star formation, with cold dust and gas undergoing gravitational collapse providing the raw materials for this activity
+
+ESA/PACS& SPIRE Consortium, Tracey Hill, Frédérique Motte, Laboratoire AIM
+Paris - Saclay, CEA/IRFU - CNRS/INSU - Uni. Paris Diderot, HOBYS Key Programme
+Consortia
+#+END_QUOTE
+*** Horsehead
++ [[file:figs/Herschel_view_of_the_Horsehead_Nebula.jpg]]
++ 70, 160, 250
+#+BEGIN_QUOTE
+Stunning new view from ESA’s Herschel space observatory of the iconic Horsehead Nebula in the context of its surroundings. The image is a composite of the wavelengths of 70 microns (blue), 160 microns (green) and 250 microns (red), and covers 4.5x1.5 degrees. The image is oriented with northeast towards the left of the image and southwest towards the right.
+
+The Horsehead Nebula resides in the constellation Orion, about 1300 light-years away, and is part of the vast Orion Molecular Cloud complex. The Horsehead appears to rise above the surrounding gas and dust in the far right-hand side of this scene, and points towards the bright Flame Nebula. Intense radiation streaming away from newborn stars heats up the surrounding dust and gas, making it shine brightly to Herschel’s infrared-sensitive eyes (shown in pink and white in this image).
+
+To the left, the panoramic view also covers two other prominent sites where massive stars are forming, NGC 2068 and NGC 2071.
+
+Extensive networks of cool gas and dust weave throughout the scene in the form of red and yellow filaments, some of which may host newly forming low-mass stars.
+
+Credits: ESA/Herschel/PACS, SPIRE/N. Schneider, Ph. André, V. Könyves (CEA Saclay, France) for the “Gould Belt survey” Key Programme
+#+END_QUOTE
+** Molecular filament with small H II region
+:PROPERTIES:
+:ID:       BF87AE18-4F6B-4B64-A9E2-4EC065AFD5FD
+:END:
++ [[file:figs/Dense_filaments_of_gas_in_the_IC5146_interstellar_cloud.jpg]]
++ Excellent illustration of the way that density structure in the molecular gas feeds into the structure and dynamics of the H II region
++ 70, 250 and 500 microns
++ Credit: ESA/Herschel/SPIRE/PACS/D. Arzoumanian (CEA Saclay) for the “Gould Belt survey” Key Programme Consortium.
++ http://oshi.esa.int/#detail=image.html?id=46
++ Small H II region is Cocoon nebula
+  + Optical image
+  + [[file:figs/IC5146.jpg]]
+  + Credit: Makis Palaiologou, Stefan Binnewies, Josef Pöpsel
+  + http://www.capella-observatory.com/ImageHTMLs/DiffuseNebula/IC5146.htm
+*** Details of IC5146 Herschel image from ESA website
+#+BEGIN_QUOTE
+This colour-composite image of IC 5146 shows the extended filamentary structure of this star-forming cloud. A detailed study of this complex has shown a total of 27 filaments that all appear to have very similar widths, with a value of about 0.3 light years.
+
+Over 350 compact starless cores have been detected embedded in the filaments in this region: about 45 of these are gravitationally bound, pre-stellar core candidates, the seeds of future stars. All pre-stellar cores are located in the densest, unstable filaments of the cloud - mostly along the main filamentary streamer visible in the central part of the image.
+
+The glowing cavity on the left side of the image, also known as the Cocoon Nebula, is an HII region, where a young and bright B0 star illuminates the ionised hydrogen gas, causing it to shine. Some young stellar objects are visible as bright spots along the main filaments; many other young stellar objects are located in the Cocoon Nebula but are not visible in this image.
+
+Located at a distance of about 1500 light years, the IC 5146 complex belongs to the Gould Belt, a giant ring of stars and star-forming clouds in the vicinity of the Sun.
+
+ESA’s Herschel space observatory has revealed that nearby interstellar clouds contain networks of tangled gaseous filaments. Intriguingly, each filament is approximately the same width, hinting that they may result from interstellar sonic booms throughout our Galaxy.
+
+The filaments are huge, stretching for tens of light years through space and Herschel has shown that newly-born stars are often found in the densest parts of them.
+
+Such filaments in interstellar clouds have been glimpsed before by other infrared satellites, but they have never been seen clearly enough to have their widths measured. Now, Herschel has shown that, regardless of the length or density of a filament, the width is always roughly the same.
+
+This image was taken by ESA’s Herschel space observatory at infrared wavelengths 70, 250 and 500 microns. Stars are forming along these filaments.
+
+Credit: ESA/Herschel/SPIRE/PACS/D. Arzoumanian (CEA Saclay) for the “Gould Belt survey” Key Programme Consortium.
+#+END_QUOTE
