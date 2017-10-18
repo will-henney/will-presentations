@@ -58,8 +58,46 @@ Runaways and weather vanes: the shapes of stellar bow shocks
   + EGGS
   + Cometary knots
 *** Shapes of bow shocks
-+ Defining R0 and R90 and Rc
-  + Use figure from Luis Angel paper
+**** Parameters of a bow
++ Minimum useful set of parameters that characterise a bow shape
++ Defining R_0 and R_90 and R_c and \theta_\infty
+  + Best use Fig 3 from quadrics paper
++ Interpretation
+  + R_0 - characteristic size
+  + R_c/R_0 - flatness of apex
+  + R_90/R_0 - openness of near wings
+  + \theta_\infty - openness of far wings
+
+**** Projection on plane of sky
++ Use Fig 4 from quadrics paper
+**** Empirical shape measurements
++ Use figure 1 from Luis Angel paper?
+  + Would need modifying to include R90
++ Show Fig 1 from observational paper
+  + Or two panels of it
+*** The diagnostic diagram
++ Introduce via the MIPSGAL sources
++ Show Fig 2 of observational paper
+*** The quadric shapes
++ What they are
+  + Show Fig 6 of quadric paper
++ R_90 changes for same R_c with different T_c
+  + Show Fig 7 from the paper
++ Quadrics and the diagnostic diagram
+  + Show Fig 8 of quadric paper
+  + Have an animated zoom in on the 0 \to 3 range of diagnostic graph
++ Special case of the confocal paraboloid: does not move
+*** A menagerie of theoretical bow shapes
++ The wilkinoid
++ The cantoid
++ The ancantoid
++ The dragoid
+*** Back to observations - MIPSGAL MIR sources
++ What are they?
+  + Graph of non-shape parameters
+  + Spectral type and distance variations
+*** Null-hypothesis significance testing (NHST)
++ Figure showing distribution of p-values
 *** Bow shock stability
 + Dgani (1996)
 + 
