@@ -1,0 +1,77 @@
+* Plan of talk
+** Title 
+Runaways and weather vanes: the shapes of stellar bow shocks
+*** Intro
++ Bow waves and bow shocks
+  + Supersonic bullets - images
+  + Dolphin on bow wave of ship
+    + https://www.flickr.com/photos/oneeighteen/3477163368
+  + Dolphin on bow wave of nuclear sub
+    + Good video https://youtu.be/Kc8XojxN-Xg
+    + Nice image but a bit small http://justjoep.blogspot.mx/2012/03/nuclear-dolphin-bow-wave.html
++ Astrophysical bow shocks
+  + Jet working surfaces
+    + No star to use as reference
+  + Binary stars
+    + Too small to see
+  + Stellar bow shocks
+    + ACS images of runaways
+      + Sahai 
+      + http://hubblesite.org/news_release/news/2009-03
+      + No paper that I can find - some might be EGGS/proplyds
+    + AGB stars
+      + Betelgeuse
+        + Decin (2012)
+      + Survey
+        + Cox (2012)
+        + Also Cox (2015) proceedings
+      + GALEX UV observations
+        + Sahai (2010)
+        + Saha (2014) - CIT 6
+      + H I observations
+        + Le Betre (2012) - Betelgeuse, not impressive!
+        + Matthews (2013) - other AGB, again very messy
+    + OB stars
+    + Proplyd bow shocks
+    + LL objects
+    + Galactic center stars
+      + Zajaček (2016)
+  + Dust waves
+    + Oschendorf
+      + Criticised in Mackey (2016)
+    + Akimkin (2015) considers dust drag in detail
+    + See also Katushkina (2017)
+      + Lorentz force gives filament structures
+  + Numerical Models
+    + Villaver (2012)
+      + AGB stars - 2D - nice images
+    + Mohamed (2012)
+      + Betelgeuse - 3D - videos and images
+    + Van Marle (2011)
+      + Dust dynamics
+    + Meyer (2014)
+      + Massive runaway
+    + Meyer (2016)
+      + more runaway
++ Things that are not bow shocks, but which might get confused with them
+  + Proplyds
+  + EGGS
+  + Cometary knots
+*** Shapes of bow shocks
++ Defining R0 and R90 and Rc
+  + Use figure from Luis Angel paper
+*** Bow shock stability
++ Dgani (1996)
++ 
+
+
+* Logistics
++ [[file:3rdAnnouncement.pdf][Third announcement]]
++ Hotel Casona San Antonio
+  + Address :: Calle 9 Oriente 203, Colonia Centro, Puebla Centro, Puebla, 72000, Mexico
+  + Your reservation	:: 6 nights, 1 room Change
+  + Check-in :: Sunday, October 22, 2017 (from 3:00 PM)
+  + Check-out :: 	Saturday, October 28, 2017 (until 1:00 PM)
+  + Booking number ::	1431421175
+  + PIN Code ::	8832
+  + Booked by	:: William Henney (whenney+pueblahotel@gmail.com)‎

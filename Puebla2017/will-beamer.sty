@@ -1,0 +1,54 @@
+\let\quarternote\@undefined
+\let\eighthnote\@undefined
+%% 
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{multimedia}
+\usepackage{etex} 
+%\usepackage{pgfpages}
+\usepackage{amsmath}
+\usepackage{widebar}
+
+%% 
+\usepackage{txlibertine}\usefonttheme{serif}
+% \usepackage{arevtext}
+% \usepackage[varv, vari, varw]{arevmath}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{tikz}
+%% Conflicts with multimedia
+%% \usepackage{movie15}
+\usepackage{upgreek,lgreek}
+\usetikzlibrary{mindmap,positioning,shadows,backgrounds,calc,shapes.geometric}
+\usetheme{Will}
+\newcommand\Ref[1]{\textcolor{black!70!yellow}{\scriptsize [#1]}}
+%% global typesetting parameters
+\frenchspacing
+
+\newcounter{ionstage}
+\DeclareRobustCommand\ion[2]{\setcounter{ionstage}{#2}%
+  \ifmmode%
+  % \text{#1\,\scalebox{1.0}[0.85]{\Roman{ionstage}}}%
+  \text{#1\,\textsc{\roman{ionstage}}}% 
+  \else%
+  #1\,\textsc{\roman{ionstage}}% 
+  \fi%
+}
+% \newcommand\hii{H\,II}
+\newcommand\hii{\texorpdfstring{\ion{H}{2}}{H II}}
+
+\newcommand\VEC{\mathbf}
+% \DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\grad}{\nabla}
+
+\newcommand\backskip{\vspace*{-\baselineskip}}
+\newcommand\backsmallskip{\vspace*{-\smallskipamount}}
+\newcommand\backmedskip{\vspace*{-\medskipamount}}
+\newcommand\backbigskip{\vspace*{-\bigskipamount}}
+
+

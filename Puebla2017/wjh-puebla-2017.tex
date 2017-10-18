@@ -1,0 +1,72 @@
+\documentclass[presentation]{beamer}
+\usepackage{will-beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\tolerance=1000
+
+\graphicspath{ 
+  {figs/}, {towns-figs/}, {houston/}, {houston/figs/},
+  {houston/turbfigs/}, {houston/globfigs/}, {oldtalks/}, {greece-figs/},
+}
+
+\setkeys{Gin}{width=\linewidth, height=0.85\textheight, keepaspectratio=true}
+
+\title[\hii{} regions]{Structure and evolution of \hii{} regions:\\
+  Reality, models, simulations}
+\author{\textit{William J. Henney}}
+\date[Cloudy 2016]{
+  Cloudy: Emission Lines in Astrophysics
+  \(\cdot\) August 2016 \(\cdot\) CDMX, Mexico
+}
+
+\institute[IRyA, UNAM, Mexico]
+{
+  \structure{Instituto de Radioastronomía y Astrofísica\\
+    UNAM, Morelia, México}
+}
+
+\hypersetup{
+  pdfkeywords={Massive Star Clusters, Astrophysics, Dynamics, Radiation},
+  pdfsubject={},
+  pdfcreator={Lovingly hand-crafted by the author using pdflatex and beamer}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Coming up \dots}
+    \tableofcontents[
+    currentsection, 
+    currentsubsection, 
+%    hideothersubsections
+    ]
+  \end{frame}
+}
+
+%\setbeamercolor{normal text}{fg=black!50!white,bg=blue!50!black}
+
+\begin{document}
+
+\maketitle
+
+\tikzstyle{every picture}+=[remember picture, overlay]
+
+\section{Introduction}
+
+\subsection{Scope of the talk}
+
+\begin{frame}
+  \frametitle{Bow shocks and bow waves}
+\end{frame}
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
