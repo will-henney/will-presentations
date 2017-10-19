@@ -86,21 +86,53 @@ Runaways and weather vanes: the shapes of stellar bow shocks
 + Quadrics and the diagnostic diagram
   + Show Fig 8 of quadric paper
   + Have an animated zoom in on the 0 \to 3 range of diagnostic graph
+    + And have an animation of the dots moving with i 
 + Special case of the confocal paraboloid: does not move
 *** A menagerie of theoretical bow shapes
 + The wilkinoid
 + The cantoid
 + The ancantoid
 + The dragoid
++ Regions of R_c-R_90 plane accessible to the models
 *** Back to observations - MIPSGAL MIR sources
 + What are they?
   + Graph of non-shape parameters
   + Spectral type and distance variations
 *** Null-hypothesis significance testing (NHST)
 + Figure showing distribution of p-values
-*** Bow shock stability
-+ Dgani (1996)
-+ 
++ All the statistical tests that we did
+*** Comparison with cool stars
+*** Comparison with Orion bows
+*** Perturbed bows
+- Bow shock stability
+  + Dgani (1996)
+- Time-varying wind
+- Stationary waves
+  - bow shapes
+  - movement on R_c-R_90 two-ratio plane
+*** Conclusions
+- We have a new tool for analysing bow shapes
+  - robust and simple to apply to observations
+  - requires detection of inner stellar source (only)
+- Application to different types of stellar bow shock
+  - Hot stars
+    - No clear difference in shape between supposed weather-vanes and runaways
+      - \beta cannot be very large
+      - or, the environmental identifications may be inaccurate
+    - Median shape is approximately consistent with Wilkinoid
+      - Numerical simulations also bear this out
+    - But much larger variety of shape, especially in R_c
+      - Perhaps evidence for standing wave perturbations
+        - instabilities or time-varying wind
+      - But fact that \sigma(R_90/R_0) increases with R_0 is hard to understand
+        - especially since observational uncertainties decrease with R_0
+  - Cool stars (all runaways): more closed shapes
+    - Broadly consistent with dragoids
+    - But I think ellipsoidal shells are more likely (numerical simulations)
+  - Orion bows: much flatter and more open
+*** New names?
++ R_c / R_0 - planitude
++ R_90 / R_0 - wingitude
 
 
 * Logistics
