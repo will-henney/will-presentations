@@ -132,7 +132,8 @@ Runaways and weather vanes: the shapes of stellar bow shocks
   - Orion bows: much flatter and more open
 *** New names?
 + R_c / R_0 - planitude
-+ R_90 / R_0 - wingitude
++ R_90 / R_0 - alatude
++ So we have the planitude–alatude diagram 
 
 
 * Logistics
