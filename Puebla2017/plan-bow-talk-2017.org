@@ -1,7 +1,8 @@
-* Plan of talk
-** Title 
+* [7/14] Plan of talk
+** DONE Title 
+CLOSED: [2017-10-19 Thu 18:07]
 Runaways and weather vanes: the shapes of stellar bow shocks
-*** Intro
+** TODO Intro
 + Bow waves and bow shocks
   + Supersonic bullets - images
   + Dolphin on bow wave of ship
@@ -57,8 +58,18 @@ Runaways and weather vanes: the shapes of stellar bow shocks
   + Proplyds
   + EGGS
   + Cometary knots
-*** Shapes of bow shocks
-**** Parameters of a bow
+** TODO The Grazyna Connection
++ Inspired by the seagull diagram
+  + BPT diagnostic diagram
+  + Many, many sources
+  + Other example: HR diagram
++ Ambition is to provide something similar for bow shock shapes
+  + A simple 2-D diagram of fundamental parameters
+  + Meeting ground between observations and theory
+** DONE [3/3] Shapes of bow shocks
+CLOSED: [2017-10-19 Thu 18:07]
+*** DONE Parameters of a bow
+CLOSED: [2017-10-19 Thu 16:46]
 + Minimum useful set of parameters that characterise a bow shape
 + Defining R_0 and R_90 and R_c and \theta_\infty
   + Best use Fig 3 from quadrics paper
@@ -68,17 +79,27 @@ Runaways and weather vanes: the shapes of stellar bow shocks
   + R_90/R_0 - openness of near wings
   + \theta_\infty - openness of far wings
 
-**** Projection on plane of sky
+*** DONE Projection on plane of sky
+CLOSED: [2017-10-19 Thu 17:38]
 + Use Fig 4 from quadrics paper
-**** Empirical shape measurements
+*** DONE Empirical shape measurements
+CLOSED: [2017-10-19 Thu 18:07]
 + Use figure 1 from Luis Angel paper?
   + Would need modifying to include R90
 + Show Fig 1 from observational paper
   + Or two panels of it
-*** The diagnostic diagram
+** DONE The diagnostic diagram
+CLOSED: [2017-10-19 Thu 19:44]
 + Introduce via the MIPSGAL sources
 + Show Fig 2 of observational paper
-*** The quadric shapes
+** DONE An historical antecedent
+CLOSED: [2017-10-20 Fri 18:53]
++ The R_0/D--R_90/D diagram from Robberto et al. (2005)
++ Two problems
+  1. Strong correlation between x and y => everything is compressed on the diagonal
+  2. We usually do not have a measurement for D
+** DONE The quadric shapes
+CLOSED: [2017-10-20 Fri 11:27]
 + What they are
   + Show Fig 6 of quadric paper
 + R_90 changes for same R_c with different T_c
@@ -88,33 +109,35 @@ Runaways and weather vanes: the shapes of stellar bow shocks
   + Have an animated zoom in on the 0 \to 3 range of diagnostic graph
     + And have an animation of the dots moving with i 
 + Special case of the confocal paraboloid: does not move
-*** A menagerie of theoretical bow shapes
+** DONE A menagerie of theoretical bow shapes
+CLOSED: [2017-10-20 Fri 20:46]
 + The wilkinoid
 + The cantoid
 + The ancantoid
 + The dragoid
 + Regions of R_c-R_90 plane accessible to the models
-*** Back to observations - MIPSGAL MIR sources
+** TODO Back to observations - MIPSGAL MIR sources
 + What are they?
   + Graph of non-shape parameters
   + Spectral type and distance variations
-*** Null-hypothesis significance testing (NHST)
+** TODO Null-hypothesis significance testing (NHST)
 + Figure showing distribution of p-values
 + All the statistical tests that we did
-*** Comparison with cool stars
-*** Comparison with Orion bows
-*** Perturbed bows
+** TODO Comparison with cool stars
+** TODO Comparison with Orion bows
+** TODO Perturbed bows
 - Bow shock stability
   + Dgani (1996)
 - Time-varying wind
 - Stationary waves
   - bow shapes
   - movement on R_c-R_90 two-ratio plane
-*** Conclusions
+** DONE Conclusions
+CLOSED: [2017-10-19 Thu 18:08]
 - We have a new tool for analysing bow shapes
   - robust and simple to apply to observations
   - requires detection of inner stellar source (only)
-- Application to different types of stellar bow shock
+- Sample application to different types of stellar bow shock
   - Hot stars
     - No clear difference in shape between supposed weather-vanes and runaways
       - \beta cannot be very large
@@ -122,18 +145,29 @@ Runaways and weather vanes: the shapes of stellar bow shocks
     - Median shape is approximately consistent with Wilkinoid
       - Numerical simulations also bear this out
     - But much larger variety of shape, especially in R_c
+      - Shape is surprisingly uncorrelated with any other parameter
       - Perhaps evidence for standing wave perturbations
         - instabilities or time-varying wind
-      - But fact that \sigma(R_90/R_0) increases with R_0 is hard to understand
+      - But fact that \sigma(\Lambda) increases with R_0 is hard to understand
+        - Maybe perturbation amplitudes larger for brighter stars
         - especially since observational uncertainties decrease with R_0
   - Cool stars (all runaways): more closed shapes
     - Broadly consistent with dragoids
     - But I think ellipsoidal shells are more likely (numerical simulations)
   - Orion bows: much flatter and more open
-*** New names?
+    - Median shapes consistent with cantoids with \beta \sim 0.05
+    - But other considerations suggest that finite Mach number effects are more important
+** New names?
 + R_c / R_0 - planitude
 + R_90 / R_0 - alatude
-+ So we have the planitude–alatude diagram 
++ So we have the planitude–alatude diagram
++ Do we want symbols for them?
+  + Robus and \Lambda perhaps?
+  + Or stick with \(\widetilde{R_c}\) and \(\widetilde{R_{90}}\) ?
++ Advantage of \(\Pi\) and \(\Lambda\) is that they well represent the quantities:
+  + \(\Pi\) has the flat top
+  + \(\Lambda\) has the opening wings
++ But I will need to re-do all the figures!
 
 
 * Logistics
