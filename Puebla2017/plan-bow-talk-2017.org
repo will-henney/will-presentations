@@ -180,3 +180,38 @@ CLOSED: [2017-10-19 Thu 18:08]
   + Booking number ::	1431421175
   + PIN Code ::	8832
   + Booked by	:: William Henney (whenney+pueblahotel@gmail.com)‎
+
+
+* Conference proceedings
+
+** Abstract
+:LOGBOOK:
+- Note taken on [2017-12-07 Thu 09:02] \\
+  For some reason I can't find the one that I originally sent.  I will cobble together a new one
+:END:
+Stellar bow shocks are the result of the supersonic interaction
+between a stellar wind and its environment. Some of these are
+"runaways": high-velocity stars that have been ejected from a star
+cluster. Others are "weather vanes", where it is the local
+interstellar medium itself that is moving, perhaps as the result of a
+champagne flow of ionized gas from a nearby HII region.  We propose a
+new two-dimensional classification scheme for bow shapes, which is
+based on dimensionless geometric ratios that can be estimated from
+observational images. The two ratios are related to the flatness of
+the bow’s apex, which we term planitude and the openness of its wings,
+which we term alatude.  We calculate the inclination-dependent tracks
+on the planitude-alatude plane that are predicted by simple models for
+the bow shock shape.  We also measure the shapes of bow shocks from
+three different observational datasets: mid-infrared arcs around hot
+main-sequence stars, far-infrared arcs around luminous cool stars, and
+emission-line arcs around proplyds and other young stars in the Orion
+Nebula.  Clear differences are found between the different datasets in
+their distributions on the planitude-alatude plane, which can be used
+to constrain the physics of the bow shock interaction and emission
+mechanisms in the different classes of object.
+** References
++ Added new Bibdesk template for writing out the references in the right format
+  + Appears as "Simple List" in the "Copy Using Template" context menu
+  + Example
+    : Henney, W. J., Garc\'\ia-D\'\iaz, M. T., O'Dell, C. R., and Rubin, R. H. 2013, \mnras, 428, 691-711
+
