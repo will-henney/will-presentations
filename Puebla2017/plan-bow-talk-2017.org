@@ -184,7 +184,13 @@ CLOSED: [2017-10-19 Thu 18:08]
 
 * Conference proceedings
 
-** Abstract
+
+** DONE Fill in the google form for ADS
+CLOSED: [2017-12-07 Thu 09:34]
+*** Link for editing the google form
+In case I want to change anything later
+https://docs.google.com/forms/d/e/1FAIpQLSf8ma5l9s96j9poPOoX-NqSNKiZP_rRUMzkmT_6CIDZWtiYeQ/viewform?usp=form_confirm&edit2=2_ABaOnuf_YKTkwpEU_hQBwfPpR2HNabsCvGIZ9758dTDR8FJIVD-vqzvRKm9d
+*** Abstract
 :LOGBOOK:
 - Note taken on [2017-12-07 Thu 09:02] \\
   For some reason I can't find the one that I originally sent.  I will cobble together a new one
@@ -209,9 +215,51 @@ Nebula.  Clear differences are found between the different datasets in
 their distributions on the planitude-alatude plane, which can be used
 to constrain the physics of the bow shock interaction and emission
 mechanisms in the different classes of object.
-** References
+*** References
 + Added new Bibdesk template for writing out the references in the right format
   + Appears as "Simple List" in the "Copy Using Template" context menu
   + Example
     : Henney, W. J., Garc\'\ia-D\'\iaz, M. T., O'Dell, C. R., and Rubin, R. H. 2013, \mnras, 428, 691-711
+#+BEGIN_EXAMPLE
+  Cantó, J., Raga, A. C., and Wilkin, F. P. 1996, ApJ, 469, 729-+
 
+  Cox, N. L. J., Kerschbaum, F., van Marle, A.-J., Decin, L., Ladjal, D., Mayer, A., Groenewegen, M. A. T., van Eck, S., Royer, P., Ottensamer, R., Ueta, T., Jorissen, A., Mecina, M., Meliani, Z., Luntzer, A., Blommaert, J. A. D. L., Posch, T., Vandenbussche, B., and Waelkens, C. 2012, A&A, 537, A35
+
+  García-Arredondo, F., Henney, W. J., and Arthur, S. J. 2001, ApJ, 561, 830-842
+
+  Henney, W. J., García-Díaz, M. T., O'Dell, C. R., and Rubin, R. H. 2013, MNRAS, 4
+  28, 691-711
+
+  Kobulnicky, H. A., Chick, W. T., Schurhammer, D. P., Andrews, J. E., Povich, M. S., Munari, S. A., Olivier, G. M., Sorber, R. L., Wernke, H. N., Dale, D. A., and Dixon, D. M. 2016, ApJS, 227, 18
+
+  Robberto, M., Beckwith, S. V. W., Panagia, N., Patel, S. G., Herbst, T. M., Ligori, S., Custo, A., Boccacci, P., and Bertero, M. 2005, AJ, 129, 1534-1563
+
+  Stasińska, G., Cid Fernandes, R., Mateus, A., Sodré, L., and Asari, N. V. 2006, MNRAS, 371, 972-982
+
+  Wilkin, F. P. 1996, ApJL, 459, L31+
+#+END_EXAMPLE
+** Fix up the keynote file to make it more suitable
++ [X] Remove the videos
+  * Add link to YouTube for dolphin/sub one
+  * [X] Do something with the moving-dots figure
+    + Put it in YouTube in divBequals0 account?
+    + Here it is: https://youtu.be/eNV0sMYFIp0
+  * Make videos loop
+    * [[https://www.online-tech-tips.com/google-softwaretips/loop-youtube-videos-continuously/][tutorial on online-tech-tips.com]]
+    * Change https://youtu.be/eNV0sMYFIp0
+      * To https://www.youtube.com/watch?v=eNV0sMYFIp0&playlist=eNV0sMYFIp0&autoplay=1&loop=1
+      * Nope, nothing works
+      * Just add instructions to right click and select loop
++ [X] Add in the abstract
++ [X] Add a preface that explains the changes
++ [X] Reduce file size
+  + I originally tried this with Preview and Keynote, but it led to unacceptable image quality, so no
+  + Put then I tried https://smallpdf.com/compress-pdf and it was really good
+    + Reduced size: 21MB -> 9MB
+    + Very slight loss of image quality, but totally acceptable
+
+*** Abstract for file
+Needs to be unfilled text
+#+BEGIN_EXAMPLE
+  Stellar bow shocks are the result of the supersonic interaction between a stellar wind and its environment. Some of these are "runaways": high-velocity stars that have been ejected from a star cluster. Others are "weather vanes", where it is the local interstellar medium itself that is moving, perhaps as the result of a champagne flow of ionized gas from a nearby H II region.  We propose a new two-dimensional classification scheme for bow shapes, which is based on dimensionless geometric ratios that can be estimated from observational images. The two ratios are related to the flatness of the bow’s apex, which we term planitude and the openness of its wings, which we term alatude.  We calculate the inclination-dependent tracks on the planitude-alatude plane that are predicted by simple models for the bow shock shape.  We also measure the shapes of bow shocks from three different observational datasets: mid-infrared arcs around hot main-sequence stars, far-infrared arcs around luminous cool stars, and emission-line arcs around proplyds and other young stars in the Orion Nebula.  Clear differences are found between the different datasets in their distributions on the planitude-alatude plane, which can be used to constrain the physics of the bow shock interaction and emission mechanisms in the different classes of object.
+#+END_EXAMPLE
