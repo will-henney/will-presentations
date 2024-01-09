@@ -10,6 +10,7 @@
 *.rel
 *.synctex.gz
 *conflicted\ copy*
+*Symlink\ Backup\ Copy*
 *.nav
 *.snm
 *.pdf
